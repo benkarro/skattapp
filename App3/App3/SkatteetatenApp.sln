@@ -1,0 +1,11 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SkatteetatenApp", "SkatteetatenApp.shproj", "{8C19E691-6A24-4080-94AB-B66F0FD3BD15}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	EndGlobalSection
+EndGlobal
