@@ -40,7 +40,7 @@ namespace App3
 
             requestMessage.Host="www.altinn.no";
             requestMessage.Accept= "application/hal+json";
-            requestMessage.Headers.Add("ApiKey", Resources.Strings.ApiKey);
+            requestMessage.Headers.Add("ApiKey", Resources.Strings.ApiKey); //Api Key is under (Shared) Resources/Strings.cs 
 
             
             Android.Util.Log.Debug("Request", requestMessage.ToString());
