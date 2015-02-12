@@ -15,9 +15,9 @@ namespace App3.Droid
 {
     public class CustomWebClient : WebViewClient
     {
-        private MainActivity mainActivity;
+        private AltinnActivity mainActivity;
 
-        public CustomWebClient(MainActivity mainActivity)
+        public CustomWebClient(AltinnActivity mainActivity)
         {
             // TODO: Complete member initialization
             this.mainActivity = mainActivity;

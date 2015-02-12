@@ -74,9 +74,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cookies_Android.cs" />
+    <Compile Include="MainActivity.cs" />
     <Compile Include="MyApplication.cs" />
     <Compile Include="CustomWebClient.cs" />
-    <Compile Include="MainActivity.cs" />
+    <Compile Include="AltinnActivity.cs" />
     <Compile Include="MessageView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,12 +92,13 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\Main.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Drawable\Icon.png" />
+    <AndroidResource Include="Resources\layout\Altinn.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />

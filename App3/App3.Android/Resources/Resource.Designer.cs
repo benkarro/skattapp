@@ -60,6 +60,9 @@ namespace App3.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f040001
+			public const int AltinnImageButton = 2130968577;
+			
 			// aapt resource value: 0x7f040000
 			public const int webView = 2130968576;
 			
@@ -77,7 +80,10 @@ namespace App3.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Altinn = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{

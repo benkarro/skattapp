@@ -1,89 +1,40 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Android.OS;
 
-using Xamarin.Forms.Platform.Android;
-using Android.Webkit;
 
 namespace App3.Droid
 {
     [Activity(MainLauncher = true)]
     public class MainActivity : Activity
     {
-        BroadcastReceiver mIntentReciver;
-        WebView webView;
         protected override void OnCreate(Bundle bundle)
         {
-            RequestWindowFeature(WindowFeatures.NoTitle);
-
-
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
+            // Create your application here
+
             SetContentView(Resource.Layout.Main);
-
-
-            CookieManager.Instance.RemoveExpiredCookie();
-			CookieSyncManager.CreateInstance(this);
-            CookieSyncManager.Instance.Sync();
-            CookieSyncManager.Instance.StartSync();
-
-            webView = FindViewById<WebView>(Resource.Id.webView);
-            webView.Settings.JavaScriptEnabled = true;
-            
-
-            // Use subclassed WebViewClient to intercept hybrid native calls
-            webView.SetWebViewClient(new CustomWebClient(this));
-
-            webView.LoadUrl("https://www.altinn.no/api/my/messages");
+            ImageButton inbox = FindViewById<ImageButton>(Resource.Id.AltinnImageButton);
+            inbox.Click += inbox_Click;
         }
 
+        void inbox_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(AltinnActivity));
+        }
 
         
 
         
-	public override void OnBackPressed() {
-		if (webView.CanGoBack())
-			webView.GoBack();
-		else
-			base.OnBackPressed();
-	}
-
-
-    protected override void OnPause(){
-		base.OnPause();
-		MyApplication.activityPaused();
-
-		CookieSyncManager.Instance.Sync();
-        UnregisterReceiver(mIntentReciver);
-        
-    }
-
-    protected override void OnResume()
-    {
-        base.OnResume();
-        MyApplication.activityResumed();
-        CookieSyncManager.Instance.StopSync();
-
-        //Ta imot og behandle kode fra SMS
-        IntentFilter intentFilter = new IntentFilter("SmsMessage.intent.MAIN");
-        mIntentReciver = new SMSreciver(this, webView);
-
-        RegisterReceiver(mIntentReciver, intentFilter);
-
-    }
-
-
-
 
     }
 }
-
-
-
-
