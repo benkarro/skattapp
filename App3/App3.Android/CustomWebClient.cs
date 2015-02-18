@@ -66,7 +66,7 @@ namespace App3.Droid
                             .Contains("altinnContext") == true)))
             {
                 //					url.equals(apiUrl)||
-                Intent loginIntent = new Intent(mainActivity, typeof(MessageView));
+                Intent loginIntent = new Intent(mainActivity, typeof(MessageView)); //error her når siden ikke er IDporten / og er inne på en vanlig altinn side
                 mainActivity.StartActivity(loginIntent);
                 mainActivity.Finish();
             }
