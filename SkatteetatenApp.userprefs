@@ -1,5 +1,5 @@
-﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_21_x86" />
+﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj" GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.43007c9098966165" />
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
