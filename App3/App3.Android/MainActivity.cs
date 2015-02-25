@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace App3.Droid
 {
-    [Activity(MainLauncher = true)]
+	[Activity(Label = "MainActivity")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

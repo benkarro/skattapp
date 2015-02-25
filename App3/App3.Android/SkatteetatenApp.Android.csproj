@@ -85,6 +85,7 @@
     <Compile Include="SMSreciver.cs" />
     <Compile Include="MessageAdapter.cs" />
     <Compile Include="SingleMessageView.cs" />
+    <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -95,7 +96,8 @@
     <AndroidResource Include="Resources\layout\Altinn.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\singelwebview.xml" />
+    <AndroidResource Include="Resources\Drawable\splash.png" />
+    <AndroidResource Include="Resources\Values\Styles.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
@@ -117,4 +119,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Folder Include="Resources\Values\" />
+  </ItemGroup>
 </Project>

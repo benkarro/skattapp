@@ -47,6 +47,9 @@ namespace App3.Droid
 			// aapt resource value: 0x7f020000
 			public const int Icon = 2130837504;
 			
+			// aapt resource value: 0x7f020001
+			public const int splash = 2130837505;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -60,14 +63,11 @@ namespace App3.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int AltinnImageButton = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int AltinnImageButton = 2131034113;
 			
-			// aapt resource value: 0x7f040002
-			public const int LocalWebView = 2130968578;
-			
-			// aapt resource value: 0x7f040000
-			public const int webView = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int webView = 2131034112;
 			
 			static Id()
 			{
@@ -88,15 +88,28 @@ namespace App3.Droid
 			// aapt resource value: 0x7f030001
 			public const int Main = 2130903041;
 			
-			// aapt resource value: 0x7f030002
-			public const int singelwebview = 2130903042;
-			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Style
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int Theme_Splash = 2130968576;
+			
+			static Style()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Style()
 			{
 			}
 		}

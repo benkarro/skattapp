@@ -41,10 +41,7 @@ namespace App3
             requestMessage.Host="www.altinn.no";
             requestMessage.Accept= "application/hal+json";
             requestMessage.Headers.Add("ApiKey", Resources.Strings.ApiKey); //Api Key is under (Shared) Resources/Strings.cs 
-
-            
-            Android.Util.Log.Debug("Request", requestMessage.ToString());
-
+			requestMessage.Headers.Add ("Accept-Charset", "utf-8");
            
             HttpWebResponse response = (HttpWebResponse)await requestMessage.GetResponseAsync();
             using (var sr = new StreamReader(response.GetResponseStream()))

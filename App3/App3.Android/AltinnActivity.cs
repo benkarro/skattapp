@@ -12,7 +12,7 @@ using Android.Webkit;
 
 namespace App3.Droid
 {
-    [Activity(MainLauncher = false)]
+	[Activity(MainLauncher = false, NoHistory = true) ]
     public class AltinnActivity : Activity
     {
         BroadcastReceiver mIntentReciver;
@@ -39,6 +39,8 @@ namespace App3.Droid
 
             // Use subclassed WebViewClient to intercept hybrid native calls
             webView.SetWebViewClient(new CustomWebClient(this));
+
+
 
             webView.LoadUrl("https://www.altinn.no/api/my/messages");
         }
@@ -77,11 +79,11 @@ namespace App3.Droid
         RegisterReceiver(mIntentReciver, intentFilter);
 
     }
-
-
+			
 
 
     }
+		
 }
 
 

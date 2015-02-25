@@ -36,27 +36,22 @@ namespace App3.Droid
 		Task<String> Json;
 		String JsonString;
 		String messagelink;
-		String message;
         String subject;
         String body;
-        String mime = "text/html";
-        String encoding = "UTF-8";
+       
         
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			SetContentView(Resource.Layout.singelwebview);
+			SetContentView(Resource.Layout.Altinn);
 
-			myWebView = FindViewById<WebView>(Resource.Id.LocalWebView);
+			myWebView = FindViewById<WebView>(Resource.Id.webView);
+
+		    myWebView.Settings.JavaScriptEnabled = true;
 
 			WebSettings settings = myWebView.Settings;
-			settings.DefaultTextEncodingName="UTF-8";
-
-            myWebView.Settings.JavaScriptEnabled = true;
-
-                //myWebView.getSettings().setJavaScriptEnabled(true);
-
+			settings.DefaultTextEncodingName="utf-8";
 
 			myWebView.SetWebViewClient (new SingleWebClient ());
 
@@ -84,7 +79,7 @@ namespace App3.Droid
             subject = JsonParserSingle.Subject;
             body = JsonParserSingle.Body;
 
-            myWebView.LoadData(subject + "<br/>" + body, mime, encoding);
+			myWebView.LoadData(subject + "<br/>" + body, "text/html; charset=UTF-8", null);
            
 
 

@@ -15,12 +15,16 @@ namespace App3.Droid
 {
     public class CustomWebClient : WebViewClient
     {
+
+		private ProgressDialog progressBar;
+
         private AltinnActivity mainActivity;
 
         public CustomWebClient(AltinnActivity mainActivity)
         {
             // TODO: Complete member initialization
             this.mainActivity = mainActivity;
+			progressBar = new ProgressDialog(mainActivity);
         }
 
 
@@ -55,7 +59,11 @@ namespace App3.Droid
 
         public override void OnPageFinished(WebView view, string url)
         {
+
+			base.OnPageFinished (view, url);
             CookieSyncManager.Instance.Sync();
+			progressBar.Dismiss();
+
 
 
 
@@ -71,5 +79,23 @@ namespace App3.Droid
                 mainActivity.Finish();
             }
         }
+
+		public override void OnPageStarted (WebView view, string url, Android.Graphics.Bitmap favicon)
+		{
+			base.OnPageStarted (view, url, favicon);
+
+
+
+			if (progressBar.IsShowing == false) {
+				progressBar.SetCancelable (true);
+				progressBar.SetProgressStyle (ProgressDialogStyle.Spinner);
+				progressBar.SetMessage ("Laster");
+				progressBar.Show ();
+			}
+
+		}
+
+
+		 
     }
 }
