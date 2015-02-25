@@ -46,9 +46,9 @@ namespace App3.Droid
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-			SetContentView(Resource.Layout.Main);
+			SetContentView(Resource.Layout.singelwebview);
 
-			myWebView = FindViewById<WebView>(Resource.Id.webView);
+			myWebView = FindViewById<WebView>(Resource.Id.LocalWebView);
 
 			WebSettings settings = myWebView.Settings;
 			settings.DefaultTextEncodingName="UTF-8";

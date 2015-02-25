@@ -7,5 +7,4 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="App3\App3.Android\MessageView.cs" line="40" offsetX="361" offsetY="624" expression="Json.value" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.SkatteetatenApp.Android AndroidDeviceId-Debug="42f75fc42cc6bfab" MonoForAntroid.PreferredDevice="Galaxy Nexus" />
 </Properties>
