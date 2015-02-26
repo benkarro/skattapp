@@ -9,11 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkatteetatenApp.Android", "
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SkatteetatenApp", "App3\App3\SkatteetatenApp.shproj", "{8C19E691-6A24-4080-94AB-B66F0FD3BD15}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B90F6F3B-9138-445B-956A-6FCC9A63F4C2}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		App3\App3\App3.projitems*{661c7cca-dcb6-4e75-974a-91a4f1479c3f}*SharedItemsImports = 4
 		App3\App3\App3.projitems*{8c19e691-6a24-4080-94ab-b66f0fd3bd15}*SharedItemsImports = 13
-		App3\App3\App3.projitems*{19b664cb-b611-4958-b758-dbfee1e59ada}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU

@@ -24,7 +24,7 @@ using Environment = Android.OS.Environment;
 
 namespace App3.Droid
 {
-	[Activity (Label = "SingleMessageView")]			
+	[Activity ()]			
 	public class SingleMessageView : Activity
 	{
 
@@ -38,7 +38,7 @@ namespace App3.Droid
 		String messagelink;
         String subject;
         String body;
-       
+        string aLabel;
         
 
 		protected override void OnCreate (Bundle bundle)
@@ -59,6 +59,10 @@ namespace App3.Droid
 
 			messagelink = Intent.GetStringExtra ("messagelink");
 
+            aLabel = Intent.GetStringExtra("senderlabel");
+
+            this.Title = aLabel;
+
 			HttpHelper2 = new HttpHelper2(messagelink);
 
             getJsonStringandParse(HttpHelper2);
@@ -77,6 +81,7 @@ namespace App3.Droid
 			JsonParserSingle = new JSONparserSingle(JsonString);
 
             subject = JsonParserSingle.Subject;
+            
             body = JsonParserSingle.Body;
 
 			myWebView.LoadData(subject + "<br/>" + body, "text/html; charset=UTF-8", null);

@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace App3.Droid
 {
-    [Activity(Label = "MessageView")]
+    [Activity(Label = "Inbox")]
 	public class MessageView : ListActivity 
     {
         JSONparser JsonParser;
@@ -63,8 +63,11 @@ namespace App3.Droid
 		protected override void OnListItemClick (ListView l, View v, int position, long id)
 		{
 			String messagelink = messages [position]._links.self.href;
-			var intent=new Intent(this, typeof(SingleMessageView));
+            string Header = messages[position].Subject.ToString();
+            var intent = new Intent(this, typeof(SingleMessageView));
 			intent.PutExtra ("messagelink", messagelink);
+            intent.PutExtra("senderlabel", Header);
+
 			StartActivity (intent);
 
 
