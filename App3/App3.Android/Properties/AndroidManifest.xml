@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="13" />
-	<application android:label="Skatteetaten" android:icon="@drawable/icon"></application>
+	<uses-sdk android:targetSdkVersion="21" android:minSdkVersion="15" />
+	<application android:label="Skatteetaten" android:icon="@drawable/icon" android:theme="@android:style/Theme.Material.Light"></application>
 	<uses-permission android:name="android.permission.READ_SMS" />
 	<uses-permission android:name="android.permission.RECEIVE_SMS" />
 </manifest>

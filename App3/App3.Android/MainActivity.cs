@@ -9,6 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Graphics.Drawables;
+using Android.Graphics;
+
 
 
 namespace App3.Droid
@@ -20,6 +23,14 @@ namespace App3.Droid
         {
             base.OnCreate(bundle);
 
+            //Superlys..
+            //ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(141, 217, 181));
+            
+            //Mørk..
+            //ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(154, 140, 130));
+            ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(61, 147, 126));
+            
+            ActionBar.SetBackgroundDrawable(cab);
             // Create your application here
 
             SetContentView(Resource.Layout.Main);

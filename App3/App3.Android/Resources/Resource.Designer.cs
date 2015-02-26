@@ -101,6 +101,9 @@ namespace App3.Droid
 		public partial class Style
 		{
 			
+			// aapt resource value: 0x7f040001
+			public const int AppTheme = 2130968577;
+			
 			// aapt resource value: 0x7f040000
 			public const int Theme_Splash = 2130968576;
 			

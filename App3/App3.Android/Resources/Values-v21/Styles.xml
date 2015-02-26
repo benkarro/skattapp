@@ -1,0 +1,11 @@
+﻿<resources>
+  <style name="Theme.Splash" parent="android:Theme" >
+    <item name="android:windowBackground">@drawable/icon</item>
+    <item name="android:colorBackground">@android:color/white</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+  <style name="AppTheme" parent="android:Theme.Material">
+
+  </style>
+</resources>
