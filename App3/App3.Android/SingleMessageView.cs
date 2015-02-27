@@ -58,7 +58,6 @@ namespace App3.Droid
 			myWebView.SetDownloadListener(new SingleDownloadListner(this));
 
 			messagelink = Intent.GetStringExtra ("messagelink");
-
             aLabel = Intent.GetStringExtra("senderlabel");
 
             this.Title = aLabel;

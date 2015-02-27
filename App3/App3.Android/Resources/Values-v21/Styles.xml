@@ -5,7 +5,11 @@
     <item name="android:windowNoTitle">true</item>
   </style>
 
-  <style name="AppTheme" parent="android:Theme.Material">
+  <style name="AppTheme" parent="android:Theme.Material.Light">
 
+  </style>
+
+  <style name="AppBarTheme" parent="android:Theme.Material.Light.ActionBar">
+    <item name="android:background" parent="@android:style/Theme.Material"></item>
   </style>
 </resources>
