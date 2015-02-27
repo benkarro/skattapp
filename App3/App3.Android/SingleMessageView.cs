@@ -19,13 +19,14 @@ using System.Threading.Tasks;
 
 
 using Environment = Android.OS.Environment;
+using Android.Support.V7.App;
 
  
 
 namespace App3.Droid
 {
-	[Activity ()]			
-	public class SingleMessageView : Activity
+	[Activity ()]
+    public class SingleMessageView : ActionBarActivity
 	{
 
 		private WebView myWebView;
