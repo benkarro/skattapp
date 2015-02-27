@@ -23,23 +23,20 @@ namespace App3.Droid
             // TODO: Complete member initialization
             this.mainActivity = mainActivity;
             this.webView = webView;
-
         }
 
       
         public override void OnReceive(Context context, Android.Content.Intent intent)
         {
-            Toast toast = Toast.MakeText(context, "Kode lagt inn i feltet",
+            Toast toast = Toast.MakeText(context, "Kode lagt inn feltet",
 						ToastLength.Long);
 				toast.Show();
-			String pass = intent.GetStringExtra("pass");
-			webView.EvaluateJavascript ("javascript:document.getElementById(\"input_ONETIMECODE_IDPORTEN\").value = '" + pass + "';", null);
-				//webView.LoadUrl("javascript:document.getElementById(\"input_ONETIMECODE_IDPORTEN\").value = '" pass + "';");
+				var pass = intent.GetStringExtra("pass");
+				webView.LoadUrl("javascript:document.getElementById(\"input_ONETIMECODE_IDPORTEN\").value = '"
+								+ pass + "';");
 
            
         }
 
     }
-
-	
 }

@@ -16,12 +16,13 @@ namespace App3.Droid
     public class CustomWebClient : WebViewClient
     {
 
-		readonly ProgressDialog progressBar;
+		private ProgressDialog progressBar;
 
         private AltinnActivity mainActivity;
 
         public CustomWebClient(AltinnActivity mainActivity)
         {
+            // TODO: Complete member initialization
             this.mainActivity = mainActivity;
 			progressBar = new ProgressDialog(mainActivity);
         }
