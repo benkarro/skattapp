@@ -9,12 +9,12 @@
   </style>
   <!-- Base theme applied no matter what API -->
   <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowNoTitle">false</item>
     <!--We will be using the toolbar so no need to show ActionBar-->
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette-->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#2196F3</item>
+    <item name="colorPrimary">#3D937E</item>
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">#1976D2</item>
     <!-- colorAccent is used as the default value for colorControlActivated

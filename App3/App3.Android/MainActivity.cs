@@ -28,9 +28,9 @@ namespace App3.Droid
             
             //Mørk..
             //ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(154, 140, 130));
-            ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(61, 147, 126));
+         //   ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(61, 147, 126));
             
-            ActionBar.SetBackgroundDrawable(cab);
+          //  ActionBar.SetBackgroundDrawable(cab);
             // Create your application here
 
             SetContentView(Resource.Layout.Main);
