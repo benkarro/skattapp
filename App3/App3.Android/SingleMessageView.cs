@@ -26,13 +26,12 @@ using Android.Support.V7.App;
 namespace App3.Droid
 {
 	[Activity ()]
-    public class SingleMessageView : ActionBarActivity
+	public class SingleMessageView : Activity
 	{
 
 		private WebView myWebView;
 
-		JSONparser JsonParser;
-        JSONparserSingle JsonParserSingle;
+		JSONparserSingle JsonParserSingle;
 		HttpHelper2 HttpHelper2;
 		Task<String> Json;
 		String JsonString;

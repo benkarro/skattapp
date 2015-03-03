@@ -38,6 +38,10 @@ namespace App3.Droid
 
 			getJsonStringandParse (HttpHelper2);
 
+			ActionBar actionBar = ActionBar;
+
+			actionBar.SetHomeButtonEnabled(true);
+			actionBar.SetDisplayHomeAsUpEnabled(true);
 
 
 
@@ -74,6 +78,18 @@ namespace App3.Droid
 
 		}
 
+		public override bool OnOptionsItemSelected (IMenuItem item)
+		{
 
+			switch (item.ItemId)
+			{
+			case Android.Resource.Id.Home:
+				Finish();
+				return true;
+
+			default:
+				return base.OnOptionsItemSelected(item);
+			}
+		}
     }
 }

@@ -613,29 +613,29 @@ namespace App3.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f060031
-			public const int abc_background_cache_hint_selector_material_dark = 2131099697;
-			
 			// aapt resource value: 0x7f060032
-			public const int abc_background_cache_hint_selector_material_light = 2131099698;
+			public const int abc_background_cache_hint_selector_material_dark = 2131099698;
+			
+			// aapt resource value: 0x7f060033
+			public const int abc_background_cache_hint_selector_material_light = 2131099699;
 			
 			// aapt resource value: 0x7f060000
 			public const int abc_input_method_navigation_guard = 2131099648;
 			
-			// aapt resource value: 0x7f060033
-			public const int abc_primary_text_disable_only_material_dark = 2131099699;
-			
 			// aapt resource value: 0x7f060034
-			public const int abc_primary_text_disable_only_material_light = 2131099700;
+			public const int abc_primary_text_disable_only_material_dark = 2131099700;
 			
 			// aapt resource value: 0x7f060035
-			public const int abc_primary_text_material_dark = 2131099701;
+			public const int abc_primary_text_disable_only_material_light = 2131099701;
 			
 			// aapt resource value: 0x7f060036
-			public const int abc_primary_text_material_light = 2131099702;
+			public const int abc_primary_text_material_dark = 2131099702;
 			
 			// aapt resource value: 0x7f060037
-			public const int abc_search_url_text = 2131099703;
+			public const int abc_primary_text_material_light = 2131099703;
+			
+			// aapt resource value: 0x7f060038
+			public const int abc_search_url_text = 2131099704;
 			
 			// aapt resource value: 0x7f060001
 			public const int abc_search_url_text_normal = 2131099649;
@@ -646,11 +646,11 @@ namespace App3.Droid
 			// aapt resource value: 0x7f060003
 			public const int abc_search_url_text_selected = 2131099651;
 			
-			// aapt resource value: 0x7f060038
-			public const int abc_secondary_text_material_dark = 2131099704;
-			
 			// aapt resource value: 0x7f060039
-			public const int abc_secondary_text_material_light = 2131099705;
+			public const int abc_secondary_text_material_dark = 2131099705;
+			
+			// aapt resource value: 0x7f06003a
+			public const int abc_secondary_text_material_light = 2131099706;
 			
 			// aapt resource value: 0x7f060004
 			public const int accent_material_dark = 2131099652;
@@ -786,6 +786,9 @@ namespace App3.Droid
 			
 			// aapt resource value: 0x7f060030
 			public const int switch_thumb_normal_material_light = 2131099696;
+			
+			// aapt resource value: 0x7f060031
+			public const int windowBackground = 2131099697;
 			
 			static Color()
 			{
@@ -1114,8 +1117,8 @@ namespace App3.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080040
-			public const int AltinnImageButton = 2131230784;
+			// aapt resource value: 0x7f080041
+			public const int AltinnImageButton = 2131230785;
 			
 			// aapt resource value: 0x7f080031
 			public const int action_bar = 2131230769;
@@ -1219,6 +1222,9 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080025
 			public const int list_item = 2131230757;
 			
+			// aapt resource value: 0x7f08003f
+			public const int main_content = 2131230783;
+			
 			// aapt resource value: 0x7f080015
 			public const int middle = 2131230741;
 			
@@ -1300,8 +1306,8 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080012
 			public const int useLogo = 2131230738;
 			
-			// aapt resource value: 0x7f08003f
-			public const int webView = 2131230783;
+			// aapt resource value: 0x7f080040
+			public const int webView = 2131230784;
 			
 			// aapt resource value: 0x7f08001a
 			public const int withText = 2131230746;
@@ -1817,11 +1823,14 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b0060
 			public const int Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131427424;
 			
-			// aapt resource value: 0x7f0b00ec
-			public const int MyTheme = 2131427564;
+			// aapt resource value: 0x7f0b00eb
+			public const int MyActionBar = 2131427563;
 			
 			// aapt resource value: 0x7f0b00ed
-			public const int MyTheme_Base = 2131427565;
+			public const int MyTheme = 2131427565;
+			
+			// aapt resource value: 0x7f0b00ee
+			public const int MyTheme_Base = 2131427566;
 			
 			// aapt resource value: 0x7f0b0061
 			public const int Platform_AppCompat = 2131427425;
@@ -2033,8 +2042,8 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b00a6
 			public const int Theme_AppCompat_NoActionBar = 2131427494;
 			
-			// aapt resource value: 0x7f0b00eb
-			public const int Theme_Splash = 2131427563;
+			// aapt resource value: 0x7f0b00ec
+			public const int Theme_Splash = 2131427564;
 			
 			// aapt resource value: 0x7f0b00a7
 			public const int ThemeOverlay_AppCompat = 2131427495;

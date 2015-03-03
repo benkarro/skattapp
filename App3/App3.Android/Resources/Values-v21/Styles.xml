@@ -13,7 +13,18 @@
 
 
 
-  <style name="MyTheme" parent="MyTheme.Base">
+  <style name="MyTheme" parent="android:Theme.Material.Light.DarkActionBar">
+      <item name="android:windowBackground">@color/windowBackground</item>
+
+    
+	<item name="android:colorPrimary">#3D937E</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="android:colorPrimaryDark">#368471</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="android:colorAccent">#FF4081</item>
+     <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="android:windowContentTransitions">true</item>
     <item name="android:windowAllowEnterTransitionOverlap">true</item>
     <item name="android:windowAllowReturnTransitionOverlap">true</item>

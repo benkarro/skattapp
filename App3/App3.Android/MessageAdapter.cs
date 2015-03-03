@@ -45,7 +45,9 @@ namespace App3.Droid
 
 
 				view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position].Subject;
+			view.FindViewById<TextView> (Android.Resource.Id.Text1).SetTextColor (Android.Graphics.Color.Black);
 				view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = items[position].Status;
+			view.FindViewById<TextView> (Android.Resource.Id.Text2).SetTextColor (Android.Graphics.Color.DarkGray);
                 //view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource();//7w/df7qe/f7we
 			return view;
 		}
