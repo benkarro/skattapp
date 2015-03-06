@@ -9,10 +9,11 @@ using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
 using Android.Webkit;
+using Android.Content.PM;
 
 namespace App3.Droid
 {
-	[Activity(MainLauncher = false, NoHistory = true) ]
+    [Activity(MainLauncher = false, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class AltinnActivity : Activity
     {
         BroadcastReceiver mIntentReciver;
