@@ -43,14 +43,14 @@ namespace App3.Droid
 			actionBar.SetHomeButtonEnabled(true);
 			actionBar.SetDisplayHomeAsUpEnabled(true);
 
-
-
-  
         }
 
 
 		public async void getJsonStringandParse(HttpHelper2 http)
 		{
+            
+
+
 
 			Json=  http.DownloadJson();
 			JsonString =await Json;
@@ -60,7 +60,6 @@ namespace App3.Droid
 
 
 			ListAdapter = new MessageAdapter(this, messages);
-
 
 		}
 
@@ -78,7 +77,7 @@ namespace App3.Droid
 
 		}
 
-		public override bool OnOptionsItemSelected (IMenuItem item)
+	    public override bool OnOptionsItemSelected (IMenuItem item)
 		{
 
 			switch (item.ItemId)
