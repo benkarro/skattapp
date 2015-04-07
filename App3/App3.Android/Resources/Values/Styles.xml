@@ -9,9 +9,12 @@
 
 
   <style name="Theme.Splash" parent="android:Theme" >
-    <item name="android:windowBackground">@drawable/icon</item>
-    <item name="android:colorBackground">@android:color/white</item>
+   <!--- <item name="android:windowBackground">@drawable/icon</item>
+    <item name="android:colorBackground">@android:color/white</item>-->
     <item name="android:windowNoTitle">true</item>
+
+    <item name="android:background">#FFFFFF</item>
+    <item name="android:windowBackground">@drawable/icon</item>
   </style>
 
   <style name="MyTheme" parent="MyTheme.Base">
@@ -21,6 +24,7 @@
   <style name="MyTheme.Base" parent="@android:style/Theme.Holo.Light.DarkActionBar">
    <item name="android:actionBarStyle">@style/MyActionBar</item>
    <item name="android:windowBackground">@color/windowBackground</item>
+   <item name="android:icon">@android:color/transparent</item> 
   </style>
 
 

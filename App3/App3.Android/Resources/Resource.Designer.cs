@@ -1099,10 +1099,10 @@ namespace App3.Droid
 			public const int abc_textfield_search_material = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int Icon = 2130837555;
+			public const int ic_action_logg_ut = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int splash = 2130837556;
+			public const int Icon = 2130837556;
 			
 			static Drawable()
 			{
@@ -1221,6 +1221,9 @@ namespace App3.Droid
 			
 			// aapt resource value: 0x7f080025
 			public const int list_item = 2131230757;
+			
+			// aapt resource value: 0x7f080042
+			public const int logout = 2131230786;
 			
 			// aapt resource value: 0x7f08003f
 			public const int main_content = 2131230783;
@@ -1428,6 +1431,22 @@ namespace App3.Droid
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public const int actionbar_buttons = 2131492864;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

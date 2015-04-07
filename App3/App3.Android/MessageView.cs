@@ -9,6 +9,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 using App3.Parser;
 using System.Threading.Tasks;
@@ -87,9 +88,24 @@ namespace App3.Droid
 				Finish();
 				return true;
 
+			case Resource.Id.logout:
+				CookieManager.Instance.RemoveSessionCookie();
+			
+				StartActivity(typeof(MainActivity));
+				Finish();
+				return true;
+
 			default:
 				return base.OnOptionsItemSelected(item);
 			}
+		}
+
+		public override bool OnCreateOptionsMenu (IMenu menu)
+		{
+			MenuInflater inflater = MenuInflater;
+			inflater.Inflate (Resource.Menu.actionbar_buttons, menu);
+
+			return base.OnCreateOptionsMenu (menu);
 		}
     }
 }

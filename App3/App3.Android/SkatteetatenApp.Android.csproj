@@ -20,7 +20,6 @@
     <NuGetPackageImportStamp>525366af</NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <AndroidUseLatestPlatformSdk />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,8 +101,9 @@
     <AndroidResource Include="Resources\layout\Altinn.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Drawable\splash.png" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
+    <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
@@ -136,4 +136,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
+  <ItemGroup>
+    <Folder Include="Resources\menu\" />
+  </ItemGroup>
 </Project>

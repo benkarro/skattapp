@@ -93,6 +93,34 @@ namespace App3.Droid
 
 
 		}
+
+		public override bool OnCreateOptionsMenu (IMenu menu)
+		{
+			MenuInflater inflater = MenuInflater;
+			inflater.Inflate (Resource.Menu.actionbar_buttons, menu);
+			return base.OnCreateOptionsMenu (menu);
+		}
+
+
+		public override bool OnOptionsItemSelected (IMenuItem item)
+		{
+
+			switch (item.ItemId)
+			{
+			case Android.Resource.Id.Home:
+				Finish();
+				return true;
+
+			case Resource.Id.logout:
+				CookieManager.Instance.RemoveSessionCookie();
+				StartActivity(typeof(MainActivity));
+				Finish();
+				return true;
+
+			default:
+				return base.OnOptionsItemSelected(item);
+			}
+		}
 	}
 
 	public class SingleWebClient : WebViewClient
