@@ -42,6 +42,7 @@ namespace App3.Droid
 
 			actionBar.SetHomeButtonEnabled(true);
 			actionBar.SetDisplayHomeAsUpEnabled(true);
+            //
 
         }
 

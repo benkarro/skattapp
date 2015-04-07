@@ -42,7 +42,6 @@ namespace App3.Droid
             webView.SetWebViewClient(new CustomWebClient(this));
 
 
-
             webView.LoadUrl("https://www.altinn.no/api/my/messages");
         }
 
@@ -76,7 +75,6 @@ namespace App3.Droid
         //Ta imot og behandle kode fra SMS
         IntentFilter intentFilter = new IntentFilter("SmsMessage.intent.MAIN");
         mIntentReciver = new SMSreciver(this, webView);
-
         RegisterReceiver(mIntentReciver, intentFilter);
 
     }
