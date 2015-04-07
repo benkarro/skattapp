@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)CookiesInterface.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HttpHelper2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser\Attachment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Embedded.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Find.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\JSONparser.cs" />

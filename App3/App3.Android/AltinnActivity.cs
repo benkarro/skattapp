@@ -9,10 +9,11 @@ using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
 using Android.Webkit;
+using Android.Content.PM;
 
 namespace App3.Droid
 {
-	[Activity(MainLauncher = false, NoHistory = true) ]
+    [Activity(MainLauncher = false, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
     public class AltinnActivity : Activity
     {
         BroadcastReceiver mIntentReciver;
@@ -39,7 +40,6 @@ namespace App3.Droid
 
             // Use subclassed WebViewClient to intercept hybrid native calls
             webView.SetWebViewClient(new CustomWebClient(this));
-
 
 
             webView.LoadUrl("https://www.altinn.no/api/my/messages");
@@ -75,7 +75,6 @@ namespace App3.Droid
         //Ta imot og behandle kode fra SMS
         IntentFilter intentFilter = new IntentFilter("SmsMessage.intent.MAIN");
         mIntentReciver = new SMSreciver(this, webView);
-
         RegisterReceiver(mIntentReciver, intentFilter);
 
     }
