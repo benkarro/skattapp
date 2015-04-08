@@ -60,7 +60,7 @@ namespace App3.Parser
 
     class JSONparserSingle
     {
-        public List<Messages> messages; //Added by Brage
+       // public List<Messages> messages; //Added by Brage
 
         private JSONroot root { get; set; }
         #region Elements

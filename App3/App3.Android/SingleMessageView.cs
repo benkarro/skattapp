@@ -46,7 +46,10 @@ namespace App3.Droid
 			base.OnCreate (bundle);
 			SetContentView(Resource.Layout.Altinn);
 
+			ActionBar.SetDisplayHomeAsUpEnabled (true);
+
 			myWebView = FindViewById<WebView>(Resource.Id.webView);
+
 
 		    myWebView.Settings.JavaScriptEnabled = true;
 
