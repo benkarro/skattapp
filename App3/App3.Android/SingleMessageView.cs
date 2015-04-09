@@ -11,6 +11,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Webkit;
+using Uri = Android.Net.Uri;
+
 
 using App3.Parser;
 using System.Threading.Tasks;
@@ -220,10 +222,21 @@ namespace App3.Droid
 			Java.IO.File file = new Java.IO.File (Environment.GetExternalStoragePublicDirectory (Environment.DirectoryDownloads).AbsolutePath + "/" + filename);
 			Toast.MakeText (context, "Nedlastning Klar", ToastLength.Short).Show ();
 
-			Intent intent1 = new Intent();
-			intent1.SetAction (Android.Content.Intent.ActionView);
-			intent1.SetDataAndType (dm.GetUriForDownloadedFile (id), mime);
-			context.StartActivity (intent1);
+			Intent intent1 = new Intent(Intent.ActionView);
+            Console.WriteLine("#############################################################");
+            Console.WriteLine("dm: " + dm.GetUriForDownloadedFile(id));
+            Console.WriteLine("mime: " + mime);
+            Console.WriteLine("#############################################################");
+            intent1.SetDataAndType(Uri.Parse(dm.GetUriForDownloadedFile(id).ToString()), "application/" +mime);
+            //intent1.SetAction (Android.Content.Intent.ActionView);
+
+            intent1.SetFlags(ActivityFlags.GrantReadUriPermission);
+            intent1.SetFlags(ActivityFlags.NewTask);
+            intent1.SetFlags(ActivityFlags.ClearWhenTaskReset);
+            Xamarin.Forms.Forms.Context.StartActivity(intent1);
+			//context.StartActivity(intent1);
+
+
 
 		}
 
