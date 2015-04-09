@@ -20,6 +20,7 @@ namespace App3.Parser
         public Portalview portalview { get; set; }
         public Print print { get; set; }
         public Find find { get; set; }
+		public List<Attachment> attachment { get; set; }
 
 
         

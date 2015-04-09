@@ -104,6 +104,7 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
+    <AndroidResource Include="Resources\Drawable\attachment.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
@@ -138,5 +139,8 @@
   </Target>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\attachment.png" />
   </ItemGroup>
 </Project>

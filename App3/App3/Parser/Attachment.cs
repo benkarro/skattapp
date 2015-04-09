@@ -10,9 +10,10 @@ namespace App3.Parser
     
     public class Attachment
     {
-        public string href { get; set; }
-        public string name { get; set; }
-        public string encrypted { get; set; }
-
+		public string href { get; set; }
+		public string name { get; set; }
+		public bool encrypted { get; set; }
+		public bool signinglocked { get; set; }
+		public bool signedbydefault { get; set; }
     }
 }

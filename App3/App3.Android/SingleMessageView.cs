@@ -38,6 +38,10 @@ namespace App3.Droid
 		String messagelink;
         String subject;
         String body;
+		List<Attachment> attachmentList;
+		String attachmentString="";
+
+
         string aLabel;
         
 
@@ -74,19 +78,42 @@ namespace App3.Droid
 
 		}
 
+
+
 		public async void getJsonStringandParse(HttpHelper2 http)
 		{
 
 			Json=  http.DownloadJson();
 			JsonString =await Json;
-			Console.WriteLine ("Pokemon " + JsonString);
+			//Console.WriteLine ("Pokemon " + JsonString);
 			JsonParserSingle = new JSONparserSingle(JsonString);
 
             subject = JsonParserSingle.Subject;
             
-            body = JsonParserSingle.Body;
+			body = JsonParserSingle.Body;
 
-			myWebView.LoadData(subject + "<br/>" + body, "text/html; charset=UTF-8", null);
+			attachmentList = JsonParserSingle._links.attachment;
+			if (attachmentList != null) {
+				foreach (Attachment attachment in attachmentList) {
+					
+
+					attachmentString+= "<br/>" + String.Format("<a href=\" {0} \">{1}</a>", attachment.href,attachment.name);
+
+					//String.Format("<a href=\" {0} \"><img src=\"{1}\" width=\"300\" height=\"200\" border=\"0\"/> </a>",attachment.href,"")+
+
+
+				}
+			}
+
+		//	if(attachmentList != null){
+		//		attachment
+
+		//	}
+
+
+		
+
+						myWebView.LoadData(subject + "<br/>" + body + "<br/>"+ attachmentString , "text/html; charset=UTF-8", null);
            
 
 
@@ -138,7 +165,7 @@ namespace App3.Droid
 
 	public class SingleDownloadListner : Java.Lang.Object, IDownloadListener 
 	{
-		Context context;
+		readonly Context context;
 		public SingleDownloadListner(Context context){
 			this.context=context;
 		}

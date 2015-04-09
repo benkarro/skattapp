@@ -1099,10 +1099,13 @@ namespace App3.Droid
 			public const int abc_textfield_search_material = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int ic_action_logg_ut = 2130837555;
+			public const int attachment = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int Icon = 2130837556;
+			public const int ic_action_logg_ut = 2130837556;
+			
+			// aapt resource value: 0x7f020035
+			public const int Icon = 2130837557;
 			
 			static Drawable()
 			{

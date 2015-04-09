@@ -45,6 +45,7 @@ namespace App3.Parser
             isTemplated = root._links.find.isTemplated;
 
             portalviewHref = root._links.find.href;
+
             messages =root._embedded.messages;
 
 //            for (int i = 0; i < messages.Count; i++)
@@ -72,8 +73,11 @@ namespace App3.Parser
         public String LastchangedBy { get; set; }
         public String ServiceOwner { get; set; }
         public String Type { get; set; }
-        public String ServiceCode { get; set; }
-        public String ServiceEdition { get; set; }
+		public String ServiceCode { get; set; }
+		public String ServiceEdition { get; set; }
+		public Links _links { get; set; }
+
+
        
         #endregion
 
@@ -81,6 +85,7 @@ namespace App3.Parser
         public String metadataHref { get; set; }
         public String messagePortalviewHref { get; set; }
         public String form { get; set; }
+
 
 
         public JSONparserSingle(String JSON)
@@ -93,6 +98,8 @@ namespace App3.Parser
             ServiceOwner = root.ServiceOwner;
             Body = root.Body;
             ServiceEdition = root.ServiceEdition; // Do int or stirng
+			_links = root._links;
+	
             
 
         }
