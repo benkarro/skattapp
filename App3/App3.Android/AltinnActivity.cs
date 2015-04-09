@@ -13,17 +13,18 @@ using Android.Content.PM;
 
 namespace App3.Droid
 {
-    [Activity(MainLauncher = false, NoHistory = true, ScreenOrientation = ScreenOrientation.Portrait)]
+    [Activity(MainLauncher = false, NoHistory = true, 
+        ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize
+        /*, ScreenOrientation = ScreenOrientation.Portrait*/)]
     public class AltinnActivity : Activity
     {
         BroadcastReceiver mIntentReciver;
         WebView webView;
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
+            
             RequestWindowFeature(WindowFeatures.NoTitle);
-
-
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Altinn);
@@ -35,16 +36,47 @@ namespace App3.Droid
             CookieSyncManager.Instance.StartSync();
 
             webView = FindViewById<WebView>(Resource.Id.webView);
-            webView.Settings.JavaScriptEnabled = true;
+            webView.SetWebViewClient(new CustomWebClient(this));
             
 
-            // Use subclassed WebViewClient to intercept hybrid native calls
-            webView.SetWebViewClient(new CustomWebClient(this));
+
+            if (savedInstanceState != null)
+            {
+                webView.RestoreState(savedInstanceState);
+            }
+            else
+            {
+                webView.Settings.JavaScriptEnabled = true;
 
 
-            webView.LoadUrl("https://www.altinn.no/api/my/messages");
+                // Use subclassed WebViewClient to intercept hybrid native calls
+
+
+
+
+
+                webView.LoadUrl("https://www.altinn.no/api/my/messages");
+
+
+                Console.WriteLine("####################################################");
+                Console.WriteLine("POKÈMON: " + webView.Url);
+                Console.WriteLine("####################################################");
+
+
+            }
         }
 
+        protected override void OnSaveInstanceState(Bundle outState)
+        {
+            base.OnSaveInstanceState(outState);
+            webView.SaveState(outState);
+        }
+
+        /*protected override void OnRestoreInstanceState(Bundle savedInstanceState)
+        {
+            base.OnRestoreInstanceState(savedInstanceState);
+            webView.RestoreState(savedInstanceState);
+        }*/
 
         
 
