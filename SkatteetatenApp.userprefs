@@ -2,12 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.b3f1cc5e" />
   <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\SingleMessageView.cs">
     <Files>
-      <File FileName="App3\App3.Android\Resources\menu\actionbar_buttons.xml" Line="1" Column="1" />
+      <File FileName="App3\App3.Android\Resources\menu\actionbar_buttons.xml" Line="8" Column="36" />
       <File FileName="App3\App3.Android\Cookies_Android.cs" Line="1" Column="1" />
       <File FileName="App3\App3.Android\MainActivity.cs" Line="1" Column="1" />
-      <File FileName="App3\App3.Android\MessageView.cs" Line="1" Column="1" />
-      <File FileName="App3\App3\Parser\JSONparser.cs" Line="1" Column="1" />
-      <File FileName="App3\App3.Android\SingleMessageView.cs" Line="102" Column="8" />
+      <File FileName="App3\App3.Android\SingleMessageView.cs" Line="94" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -16,5 +14,5 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="App3\App3.Android\MessageView.cs" line="40" offsetX="361" offsetY="624" expression="Json.value" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>
-  <MonoDevelop.Ide.ItemProperties.SkatteetatenApp.Android AndroidDeviceId-Debug="43007c9098966165" MonoForAntroid.PreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.SkatteetatenApp.Android AndroidDeviceId-Debug="43007c9098966165" MonoForAntroid.PreferredDevice="Nexus 4" AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

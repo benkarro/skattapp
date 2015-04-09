@@ -97,30 +97,17 @@ namespace App3.Droid
 				foreach (Attachment attachment in attachmentList) {
 					
 
-					attachmentString+= "<br/>" + String.Format("<a href=\" {0} \">{1}</a>", attachment.href,attachment.name);
+					attachmentString+= "<br/>" + String.Format("<a href=\" {0} \"><img src=\"{1}\"  border=\"0\"/> </a>",attachment.href,  "Images/attachment.png")+String.Format("<a href=\" {0} \">{1}</a>", attachment.href,attachment.name);
 
-					//String.Format("<a href=\" {0} \"><img src=\"{1}\" width=\"300\" height=\"200\" border=\"0\"/> </a>",attachment.href,"")+
+
+					//String.Format("<a href=\" {0} \"><img src=\"{1}\" width=\"300\" height=\"200\" border=\"0\"/> </a>",attachment.href, ImageSource.FromResource("App3.Droid.Resources.Drawable.attachment.png"))+
 
 
 				}
 			}
+	
 
-		//	if(attachmentList != null){
-		//		attachment
-
-		//	}
-
-
-		
-
-						myWebView.LoadData(subject + "<br/>" + body + "<br/>"+ attachmentString , "text/html; charset=UTF-8", null);
-           
-
-
-
-//			Her skal det parses
-
-
+			myWebView.LoadData(subject + "<br/>" + body + "<br/>"+ attachmentString , "text/html; charset=UTF-8", null);
 
 		}
 
@@ -221,7 +208,7 @@ namespace App3.Droid
 			Toast.MakeText (context, "Nedlastning Klar", ToastLength.Short).Show ();
 
 			Intent intent1 = new Intent();
-			intent1.SetAction (Android.Content.Intent.ActionView);
+			intent1.SetAction (Intent.ActionView);
 			intent1.SetDataAndType (dm.GetUriForDownloadedFile (id), mime);
 			context.StartActivity (intent1);
 

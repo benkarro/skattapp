@@ -9,12 +9,10 @@
 
 
   <style name="Theme.Splash" parent="android:Theme" >
-   <!--- <item name="android:windowBackground">@drawable/icon</item>
-    <item name="android:colorBackground">@android:color/white</item>-->
+   <item name="android:windowBackground">@drawable/icon</item>
+    <item name="android:colorBackground">@android:color/white</item>
     <item name="android:windowNoTitle">true</item>
 
-    <item name="android:background">#FFFFFF</item>
-    <item name="android:windowBackground">@drawable/icon</item>
   </style>
 
   <style name="MyTheme" parent="MyTheme.Base">

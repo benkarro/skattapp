@@ -89,7 +89,9 @@
     <Compile Include="SMSreader.cs" />
     <Compile Include="SMSreciver.cs" />
     <Compile Include="MessageAdapter.cs" />
-    <Compile Include="SingleMessageView.cs" />
+    <Compile Include="SingleMessageView.cs">
+      <LogicalName>attachmentIMG</LogicalName>
+    </Compile>
     <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +107,8 @@
     <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
     <AndroidResource Include="Resources\Drawable\attachment.png" />
+    <None Include="Images\attachment.png" />
+    <AndroidResource Include="Resources\layout\Splash.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
@@ -139,6 +143,7 @@
   </Target>
   <ItemGroup>
     <Folder Include="Resources\menu\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\attachment.png" />

@@ -5,6 +5,7 @@
     <item android:id="@+id/logout"
           
           android:title="Logg ut"
+          android:icon="@drawable/ic_action_logg_ut"
           android:showAsAction="always" />
 
 
