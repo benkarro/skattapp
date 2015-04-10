@@ -16,7 +16,7 @@ using Android.Graphics;
 
 namespace App3.Droid
 {
-	[Activity(Label = "SkatteInfo")]
+    [Activity(Label = "SkatteInfo", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)

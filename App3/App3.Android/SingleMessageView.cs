@@ -27,7 +27,7 @@ using Android.Support.V7.App;
 
 namespace App3.Droid
 {
-	[Activity ()]
+    [Activity(ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
 	public class SingleMessageView : Activity
 	{
 

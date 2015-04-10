@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace App3.Droid
 {
-    [Activity(Label = "Inbox")]
+    [Activity(Label = "Inbox", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
 	public class MessageView : ListActivity 
     {
         JSONparser JsonParser;
