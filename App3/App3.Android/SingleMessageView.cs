@@ -84,7 +84,7 @@ namespace App3.Droid
 
 		public async void getJsonStringandParse(HttpHelper2 http)
 		{
-
+            Console.Write(Json);
 			Json=  http.DownloadJson();
 			JsonString =await Json;
 			//Console.WriteLine ("Pokemon " + JsonString);
@@ -176,11 +176,15 @@ namespace App3.Droid
 		
 			Environment.GetExternalStoragePublicDirectory (Environment.DirectoryDownloads).Mkdirs ();
 
+
 			String filename = URLUtil.GuessFileName(url,
 				contentDisposition, mimetype).Replace(" ", "");
 
 
+
 			String mime= MimeTypeMap.GetFileExtensionFromUrl(filename);
+
+            Console.WriteLine("THIS MIME :" + mime);
 
 			DownloadManager dm =(DownloadManager)context.GetSystemService(Context.DownloadService);
 			DownloadManager.Request request = new DownloadManager.Request (Android.Net.Uri.Parse (url));
@@ -189,20 +193,63 @@ namespace App3.Droid
 
 			request.SetMimeType (mime);
 			Console.WriteLine("MIME: "+ mime);
-			request.SetDestinationInExternalPublicDir (Environment.DirectoryDownloads, filename);
 
-			long id= dm.Enqueue(request.SetNotificationVisibility(Android.App.DownloadVisibility.Visible));
+            if (mime == null || mime == "")
+            {
 
-			BroadcastReceiver onComplete = new SingleBroadcastReciver (filename, dm, mime,id);
+                
+                AlertDialog.Builder albuilder = new AlertDialog.Builder(context);
+                albuilder.SetTitle("Bekreftelse");
+                albuilder.SetMessage("Noe er galt med filen, vil du prøve å åpne den som en pdf? det vil kanskje ikke virke..");
+                albuilder.SetCancelable(false);
+                albuilder.SetPositiveButton("Ja", (object sender, DialogClickEventArgs e) =>
+                {
 
-			context.RegisterReceiver(onComplete, new IntentFilter(
-				DownloadManager.ActionDownloadComplete));
-			
-			}
+
+                    mime = "pdf";
+
+                    request.SetDestinationInExternalPublicDir(Environment.DirectoryDownloads, filename + ".pdf");
+
+                    long id = dm.Enqueue(request.SetNotificationVisibility(Android.App.DownloadVisibility.Visible));
+
+                    BroadcastReceiver onComplete = new SingleBroadcastReciver(filename + ".pdf", dm, mime, id);
+
+                    context.RegisterReceiver(onComplete, new IntentFilter(
+                        DownloadManager.ActionDownloadComplete));
 
 
+                });
 
-		}
+                albuilder.SetNegativeButton("Nei", (object sender, DialogClickEventArgs e) =>
+                {
+                    Toast.MakeText(context, "Operasjon kanselert..", ToastLength.Short).Show();
+                });
+
+
+                AlertDialog AlertBox = albuilder.Create();
+                AlertBox.Show();
+               
+
+
+            }
+            else 
+            {
+
+			    request.SetDestinationInExternalPublicDir (Environment.DirectoryDownloads, filename);
+
+			    long id= dm.Enqueue(request.SetNotificationVisibility(Android.App.DownloadVisibility.Visible));
+
+			    BroadcastReceiver onComplete = new SingleBroadcastReciver (filename, dm, mime,id);
+
+			    context.RegisterReceiver(onComplete, new IntentFilter(
+				    DownloadManager.ActionDownloadComplete));
+
+            }
+
+        }
+
+
+	}
 
 	public class SingleBroadcastReciver: BroadcastReceiver
 	{
@@ -219,14 +266,18 @@ namespace App3.Droid
 
 		public override void OnReceive (Context context, Intent intent)
 		{
-			Java.IO.File file = new Java.IO.File (Environment.GetExternalStoragePublicDirectory (Environment.DirectoryDownloads).AbsolutePath + "/" + filename);
-			Toast.MakeText (context, "Nedlastning Klar", ToastLength.Short).Show ();
+			
+         
+ 
+            
+            //{
+            Java.IO.File file = new Java.IO.File(Environment.GetExternalStoragePublicDirectory(Environment.DirectoryDownloads).AbsolutePath + "/" + filename);
+            Toast.MakeText(context, "Nedlastning Klar", ToastLength.Short).Show();
 
-			Intent intent1 = new Intent(Intent.ActionView);
-            Console.WriteLine("#############################################################");
-            Console.WriteLine("dm: " + dm.GetUriForDownloadedFile(id));
-            Console.WriteLine("mime: " + mime);
-            Console.WriteLine("#############################################################");
+            Intent intent1 = new Intent(Intent.ActionView);
+
+
+
             intent1.SetDataAndType(Uri.Parse(dm.GetUriForDownloadedFile(id).ToString()), "application/" +mime);
             //intent1.SetAction (Android.Content.Intent.ActionView);
 
@@ -236,9 +287,9 @@ namespace App3.Droid
             Xamarin.Forms.Forms.Context.StartActivity(intent1);
 			//context.StartActivity(intent1);
 
-
-
-		}
+            //}
+  
+        }
 
 	}
 
