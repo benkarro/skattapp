@@ -200,7 +200,7 @@ namespace App3.Droid
                 
                 AlertDialog.Builder albuilder = new AlertDialog.Builder(context);
                 albuilder.SetTitle("Bekreftelse");
-                albuilder.SetMessage("Noe er galt med filen, vil du prøve å åpne den som en pdf? det vil kanskje ikke virke..");
+                albuilder.SetMessage("Filen mangler filformat, vil du prøve å åpne den som en pdf? det vil kanskje ikke virke..");
                 albuilder.SetCancelable(false);
                 albuilder.SetPositiveButton("Ja", (object sender, DialogClickEventArgs e) =>
                 {
