@@ -11,4 +11,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/AltinnImageButton"
         android:clickable="true" />
+    <ImageButton
+        android:src="@drawable/ic_action_call"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+        android:id="@+id/CallImageButton"
+        android:clickable="true" />
 </LinearLayout>

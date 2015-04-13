@@ -4,4 +4,5 @@
 	<application android:label="Skatteetaten" android:icon="@drawable/icon" android:theme="@style/MyTheme"></application>
 	<uses-permission android:name="android.permission.READ_SMS" />
 	<uses-permission android:name="android.permission.RECEIVE_SMS" />
+  <uses-permission android:name="android.permission.CALL_PHONE" />
 </manifest>

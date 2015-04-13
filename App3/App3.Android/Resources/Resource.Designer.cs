@@ -1102,10 +1102,19 @@ namespace App3.Droid
 			public const int attachment = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int ic_action_logg_ut = 2130837556;
+			public const int circle = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int Icon = 2130837557;
+			public const int ic_action_call = 2130837557;
+			
+			// aapt resource value: 0x7f020036
+			public const int ic_action_logg_ut = 2130837558;
+			
+			// aapt resource value: 0x7f020037
+			public const int Icon = 2130837559;
+			
+			// aapt resource value: 0x7f020038
+			public const int roundcorners = 2130837560;
 			
 			static Drawable()
 			{
@@ -1122,6 +1131,9 @@ namespace App3.Droid
 			
 			// aapt resource value: 0x7f080041
 			public const int AltinnImageButton = 2131230785;
+			
+			// aapt resource value: 0x7f080042
+			public const int CallImageButton = 2131230786;
 			
 			// aapt resource value: 0x7f080031
 			public const int action_bar = 2131230769;
@@ -1225,8 +1237,8 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080025
 			public const int list_item = 2131230757;
 			
-			// aapt resource value: 0x7f080043
-			public const int logout = 2131230787;
+			// aapt resource value: 0x7f080044
+			public const int logout = 2131230788;
 			
 			// aapt resource value: 0x7f08003f
 			public const int main_content = 2131230783;
@@ -1294,8 +1306,8 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080011
 			public const int showTitle = 2131230737;
 			
-			// aapt resource value: 0x7f080042
-			public const int splashscreen = 2131230786;
+			// aapt resource value: 0x7f080043
+			public const int splashscreen = 2131230787;
 			
 			// aapt resource value: 0x7f080007
 			public const int split_action_bar = 2131230727;
