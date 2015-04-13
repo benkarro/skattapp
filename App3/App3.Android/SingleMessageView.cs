@@ -145,7 +145,12 @@ namespace App3.Droid
 
 			case Resource.Id.logout:
 				CookieManager.Instance.RemoveSessionCookie();
-				StartActivity(typeof(MainActivity));
+
+                Intent MainActivity_i = new Intent(this, typeof(MainActivity));
+                MainActivity_i.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+
+                StartActivity(MainActivity_i);
+				//StartActivity(typeof(MainActivity));
 				Finish();
 				return true;
 
