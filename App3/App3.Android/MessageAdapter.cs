@@ -48,7 +48,26 @@ namespace App3.Droid
 			view.FindViewById<TextView> (Android.Resource.Id.Text1).SetTextColor (Android.Graphics.Color.Black);
 				view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = items[position].Status;
 			view.FindViewById<TextView> (Android.Resource.Id.Text2).SetTextColor (Android.Graphics.Color.DarkGray);
-                //view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource();//7w/df7qe/f7we
+            
+            /*if (items[position].Status == "Ulest") 
+            {
+                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_unread);//7w/df7qe/f7we
+
+            } else if (items[position].Status == "Lest") {
+                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_read);
+            }
+            else if (items[position].Status == "Utfylling")
+            {
+                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_email);
+            }
+            else
+            {
+                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_call);
+            }*/
+
+
+
+
 			return view;
 		}
 	}

@@ -97,12 +97,12 @@ namespace App3.Droid
 			attachmentList = JsonParserSingle._links.attachment;
 			if (attachmentList != null) {
 				foreach (Attachment attachment in attachmentList) {
-					
 
-					attachmentString+= "<br/>" + String.Format("<a href=\" {0} \">{1}</a>", attachment.href,attachment.name);
+
+                    attachmentString += "<br/>" + String.Format("<div style=\"padding:5px; border-top:1px solid rgb(128, 128, 128) ; border-bottom:1px solid rgb(128, 128, 128); \"><a href=\" {0} \"><table><tr> <td><img style=\"margin:0; height:48px; width:48px;\" src=\"{1}\" /></td> <td style=\"vertical-align:middle;\"><h4 style=\"margin:0;\">{2}</h4></td> </tr></table></a></div>", attachment.href, "ic_action_attachment.png", attachment.name);
 
 					//String.Format("<a href=\" {0} \"><img src=\"{1}\" width=\"300\" height=\"200\" border=\"0\"/> </a>",attachment.href,"")+
-
+                    //128, 128, 128
 
 				}
 			}
@@ -115,7 +115,9 @@ namespace App3.Droid
 
 		
 
-						myWebView.LoadData(subject + "<br/>" + body + "<br/>"+ attachmentString , "text/html; charset=UTF-8", null);
+						//myWebView.LoadData(subject + "<br/>" + body + "<br/>"+ attachmentString , "text/html; charset=UTF-8", null);
+                        myWebView.LoadDataWithBaseURL("file:///android_asset/", subject + "<br/>" + body + "<br/>" + attachmentString, "text/html", "utf-8", null);
+            
            
 
 
@@ -145,7 +147,12 @@ namespace App3.Droid
 
 			case Resource.Id.logout:
 				CookieManager.Instance.RemoveSessionCookie();
-				StartActivity(typeof(MainActivity));
+
+                Intent MainActivity_i = new Intent(this, typeof(MainActivity));
+                MainActivity_i.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+
+                StartActivity(MainActivity_i);
+				//StartActivity(typeof(MainActivity));
 				Finish();
 				return true;
 

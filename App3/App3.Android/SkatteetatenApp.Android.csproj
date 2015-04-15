@@ -30,10 +30,18 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
     <MonoDroidExtraArgs>
     </MonoDroidExtraArgs>
-    <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <AndroidLinkSkip />
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <JavaMaximumHeapSize />
+    <JavaOptions />
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -114,17 +122,28 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
-    <AndroidResource Include="Resources\Drawable\attachment.png" />
     <None Include="Images\attachment.png" />
     <AndroidResource Include="Resources\layout\Splash.xml" />
     <AndroidResource Include="Resources\layout\Maps.axml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\ic_action_attachment.png" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\Drawable\Icon.png" />
     <AndroidResource Include="Resources\values-v21\styles.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\roundedges.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\color.xml" />
+    <AndroidResource Include="Resources\values\dimensions.xml" />
+    <AndroidResource Include="Resources\Drawable\ic_action_call.png" />
+    <AndroidResource Include="Resources\Drawable\ripple.xml" />
+    <AndroidResource Include="Resources\Drawable\ic_action_email.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_read.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_unread.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_attachment.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />
@@ -150,10 +169,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
   </Target>
-  <ItemGroup>
-    <Folder Include="Resources\menu\" />
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <AndroidAsset Include="Assets\attachment.png" />
   </ItemGroup>

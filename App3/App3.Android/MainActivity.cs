@@ -35,10 +35,20 @@ namespace App3.Droid
 
             SetContentView(Resource.Layout.Main);
             ImageButton inbox = FindViewById<ImageButton>(Resource.Id.AltinnImageButton);
-            inbox.Click += inbox_Click;
+            ImageButton call = FindViewById<ImageButton>(Resource.Id.CallImageButton);
+            //call.SetBackgroundColor(Android.Graphics.Color.Rgb(61, 147, 126));
 
+            inbox.Click += inbox_Click;
+call.Click += call_Click;
 			ImageButton maps = FindViewById<ImageButton>(Resource.Id.maps);
 			maps.Click += maps_Click;
+        }
+
+        void call_Click(object sender, EventArgs e)
+        {
+            var uri = Android.Net.Uri.Parse("tel:80080000");
+            var intent = new Intent(Intent.ActionView, uri);
+            StartActivity(intent);
         }
 
         void inbox_Click(object sender, EventArgs e)
