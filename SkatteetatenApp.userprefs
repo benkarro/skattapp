@@ -1,11 +1,10 @@
 ﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj" GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.b3f1cc5e" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\SingleMessageView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\MapsActivity.cs">
     <Files>
-      <File FileName="App3\App3.Android\Resources\menu\actionbar_buttons.xml" Line="8" Column="36" />
-      <File FileName="App3\App3.Android\Cookies_Android.cs" Line="1" Column="1" />
-      <File FileName="App3\App3.Android\MainActivity.cs" Line="1" Column="1" />
-      <File FileName="App3\App3.Android\SingleMessageView.cs" Line="94" Column="4" />
+      <File FileName="App3\App3.Android\MessageView.cs" Line="26" Column="43" />
+      <File FileName="App3\App3\HttpHelper2.cs" Line="1" Column="1" />
+      <File FileName="App3\App3.Android\MapsActivity.cs" Line="36" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

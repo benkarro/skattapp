@@ -36,12 +36,20 @@ namespace App3.Droid
             SetContentView(Resource.Layout.Main);
             ImageButton inbox = FindViewById<ImageButton>(Resource.Id.AltinnImageButton);
             inbox.Click += inbox_Click;
+
+			ImageButton maps = FindViewById<ImageButton>(Resource.Id.maps);
+			maps.Click += maps_Click;
         }
 
         void inbox_Click(object sender, EventArgs e)
         {
             StartActivity(typeof(AltinnActivity));
         }
+
+		void maps_Click(object sender, EventArgs e)
+		{
+			StartActivity(typeof(MapsActivity));
+		}
 
         
 
