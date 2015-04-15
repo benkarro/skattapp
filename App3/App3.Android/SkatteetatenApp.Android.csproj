@@ -20,6 +20,8 @@
     <NuGetPackageImportStamp>525366af</NuGetPackageImportStamp>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <AndroidStoreUncompressedFileExtensions />
+    <JavaOptions />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,15 +35,9 @@
     <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
     <MonoDroidExtraArgs>
     </MonoDroidExtraArgs>
-    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
-    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
-    <AndroidLinkSkip />
-    <BundleAssemblies>False</BundleAssemblies>
-    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
-    <AndroidStoreUncompressedFileExtensions />
-    <MandroidI18n />
+    <AndroidLinkSkip>
+    </AndroidLinkSkip>
     <JavaMaximumHeapSize />
-    <JavaOptions />
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -52,12 +48,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidStoreUncompressedFileExtensions>
-    </AndroidStoreUncompressedFileExtensions>
     <JavaMaximumHeapSize>
     </JavaMaximumHeapSize>
-    <JavaOptions>
-    </JavaOptions>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -125,6 +117,7 @@
     <None Include="Images\attachment.png" />
     <AndroidResource Include="Resources\layout\Splash.xml" />
     <AndroidResource Include="Resources\layout\Maps.axml" />
+    <AndroidResource Include="Resources\layout\MapPoint.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />

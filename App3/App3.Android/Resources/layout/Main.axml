@@ -12,8 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/AltinnImageButton"
         android:clickable="true" />
-		
-	<ImageButton
+    <ImageButton
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,7 +28,6 @@
         android:layout_marginBottom="16dp"
         android:elevation="1dp"
         android:padding="8dp"
-        android:background="@drawable/ripple"
         android:tint="@android:color/white"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter" />

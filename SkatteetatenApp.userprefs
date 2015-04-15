@@ -2,9 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.b3f1cc5e" />
   <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\MapsActivity.cs">
     <Files>
-      <File FileName="App3\App3.Android\MessageView.cs" Line="26" Column="43" />
-      <File FileName="App3\App3\HttpHelper2.cs" Line="1" Column="1" />
-      <File FileName="App3\App3.Android\MapsActivity.cs" Line="36" Column="22" />
+      <File FileName="App3\App3.Android\MapsActivity.cs" Line="84" Column="27" />
+      <File FileName="App3\App3.Android\MainActivity.cs" Line="53" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

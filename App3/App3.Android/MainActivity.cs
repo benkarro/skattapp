@@ -36,11 +36,13 @@ namespace App3.Droid
             SetContentView(Resource.Layout.Main);
             ImageButton inbox = FindViewById<ImageButton>(Resource.Id.AltinnImageButton);
             ImageButton call = FindViewById<ImageButton>(Resource.Id.CallImageButton);
+			ImageButton maps = FindViewById<ImageButton>(Resource.Id.maps);
             //call.SetBackgroundColor(Android.Graphics.Color.Rgb(61, 147, 126));
 
             inbox.Click += inbox_Click;
-call.Click += call_Click;
-			ImageButton maps = FindViewById<ImageButton>(Resource.Id.maps);
+			call.Click += call_Click;
+
+
 			maps.Click += maps_Click;
         }
 
