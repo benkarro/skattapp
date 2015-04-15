@@ -1521,6 +1521,9 @@ namespace App3.Droid
 			// aapt resource value: 0x7f020070
 			public const int Skatteetaten = 2130837616;
 			
+			// aapt resource value: 0x7f020071
+			public const int Skatteetaten_logo_svart = 2130837617;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

@@ -115,7 +115,9 @@
     <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
     <None Include="Images\attachment.png" />
-    <AndroidResource Include="Resources\layout\Splash.xml" />
+    <AndroidResource Include="Resources\layout\Splash.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\inboxiconlist.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -125,7 +127,6 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />
     <Content Include="Properties\AndroidManifest.xml" />
-    <AndroidResource Include="Resources\Drawable\Icon.png" />
     <AndroidResource Include="Resources\values-v21\styles.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -145,6 +146,8 @@
     <AndroidResource Include="Resources\Drawable\Nav.png" />
     <AndroidResource Include="Resources\Drawable\Skatteetaten.png" />
     <AndroidResource Include="Resources\Drawable\Lanekassen.png" />
+    <AndroidResource Include="Resources\Drawable\Skatteetaten_logo_svart.png" />
+    <AndroidResource Include="Resources\Drawable\Icon.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />
