@@ -41,29 +41,44 @@ namespace App3.Droid
 		{
 			View view = convertView; // re-use an existing view, if one is available
 			if (view == null) // otherwise create a new one
-				view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItemActivated2, null);
+				view = context.LayoutInflater.Inflate(Resource.Layout.inboxiconlist, null);
 
-
+            /*
 				view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = items[position].Subject;
 			view.FindViewById<TextView> (Android.Resource.Id.Text1).SetTextColor (Android.Graphics.Color.Black);
 				view.FindViewById<TextView>(Android.Resource.Id.Text2).Text = items[position].Status;
-			view.FindViewById<TextView> (Android.Resource.Id.Text2).SetTextColor (Android.Graphics.Color.DarkGray);
-            
-            /*if (items[position].Status == "Ulest") 
-            {
-                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_unread);//7w/df7qe/f7we
+			view.FindViewById<TextView> (Android.Resource.Id.Text2).SetTextColor (Android.Graphics.Color.DarkGray);*/
 
-            } else if (items[position].Status == "Lest") {
-                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_read);
-            }
-            else if (items[position].Status == "Utfylling")
+
+            view.FindViewById<TextView>(Resource.Id.inbox_item_text1).Text = items[position].Subject;
+            view.FindViewById<TextView>(Resource.Id.inbox_item_text1).SetTextColor(Android.Graphics.Color.Black);
+            view.FindViewById<TextView>(Resource.Id.inbox_item_text2).Text = items[position].Status;
+            view.FindViewById<TextView>(Resource.Id.inbox_item_text2).SetTextColor(Android.Graphics.Color.DarkGray);
+
+            if (items[position].ServiceOwner == "Skatteetaten" || items[position].ServiceOwner == "skatteetaten" || items[position].ServiceOwner == "SKATTEETATEN") 
             {
-                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_email);
+                view.FindViewById<ImageView>(Resource.Id.inbox_item_icon).SetImageResource(Resource.Drawable.Skatteetaten);//7w/df7qe/f7we
+
             }
+            else if (items[position].ServiceOwner == "Nav" || items[position].ServiceOwner == "nav" || items[position].ServiceOwner == "NAV")
+            {
+                view.FindViewById<ImageView>(Resource.Id.inbox_item_icon).SetImageResource(Resource.Drawable.Nav);
+            }
+            else if (items[position].ServiceOwner == "Altinn" || items[position].ServiceOwner == "altinn" || items[position].ServiceOwner == "ALTINN")
+            {
+                view.FindViewById<ImageView>(Resource.Id.inbox_item_icon).SetImageResource(Resource.Drawable.Altinn);
+            }
+            else if (items[position].ServiceOwner == "Lånekassen" || items[position].ServiceOwner == "lånekassen" || items[position].ServiceOwner == "LÅNEKASSEN" 
+                || items[position].ServiceOwner == "Lanekassen" || items[position].ServiceOwner == "lanekassen" || items[position].ServiceOwner == "LANEKASSEN" )
+            {
+                view.FindViewById<ImageView>(Resource.Id.inbox_item_icon).SetImageResource(Resource.Drawable.Lanekassen);
+            }
+
+
             else
             {
-                view.FindViewById<ImageView>(Android.Resource.Id.Icon).SetImageResource(Resource.Drawable.ic_action_call);
-            }*/
+                view.FindViewById<ImageView>(Resource.Id.inbox_item_icon).SetImageResource(Resource.Drawable.Altinn);
+            }
 
 
 

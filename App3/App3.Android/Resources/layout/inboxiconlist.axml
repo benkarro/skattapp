@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inbox_item_icon"
+        android:src="@drawable/ic_action_email"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="5dp"
+        android:maxWidth="56dp"
+        android:maxHeight="56dp"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Subject"
+        android:id="@+id/inbox_item_text1"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/inbox_item_icon"
+        android:layout_toEndOf="@+id/inbox_item_icon" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Status"
+        android:id="@+id/inbox_item_text2"
+        android:layout_below="@+id/inbox_item_text1"
+        android:layout_alignLeft="@+id/inbox_item_text1"
+        android:layout_alignStart="@+id/inbox_item_text1" />
+<!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginRight="5dp"
+        android:text="SSID"
+        android:id="@+id/item_NetworkName"
+        android:layout_alignBottom="@+id/item_txtComputername"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />-->
+</RelativeLayout>
