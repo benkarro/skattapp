@@ -116,6 +116,9 @@
     <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
     <None Include="Images\attachment.png" />
     <AndroidResource Include="Resources\layout\Splash.xml" />
+    <AndroidResource Include="Resources\layout\inboxiconlist.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\Maps.axml" />
     <AndroidResource Include="Resources\layout\MapPoint.axml" />
   </ItemGroup>
@@ -132,11 +135,16 @@
     <AndroidResource Include="Resources\values\color.xml" />
     <AndroidResource Include="Resources\values\dimensions.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_call.png" />
-    <AndroidResource Include="Resources\Drawable\ripple.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_email.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_read.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_unread.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_attachment.png" />
+    <AndroidResource Include="Resources\Drawable-v21\ripple.xml" />
+    <AndroidResource Include="Resources\Drawable\ripple.xml" />
+    <AndroidResource Include="Resources\Drawable\Altinn.png" />
+    <AndroidResource Include="Resources\Drawable\Nav.png" />
+    <AndroidResource Include="Resources\Drawable\Skatteetaten.png" />
+    <AndroidResource Include="Resources\Drawable\Lanekassen.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />

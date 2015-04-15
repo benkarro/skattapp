@@ -3,6 +3,7 @@
 
   <item name="accentColor" type="color" >#3D937E</item>
   <item name="accentColor2" type="color">#40c1ac</item>
+  <item name="accentColorLight" type="color">#99E9DC</item>
   
   <color name="primary">#3D937E</color>
   <!--Color primary dark 700 from palette colors -->
