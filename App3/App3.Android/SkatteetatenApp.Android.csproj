@@ -42,6 +42,7 @@
     <MandroidI18n />
     <JavaMaximumHeapSize />
     <JavaOptions />
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -84,6 +85,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.MediaRouter">
+      <HintPath>..\..\packages\Xamarin.Android.Support.v7.MediaRouter.21.0.3.0\lib\MonoAndroid403\Xamarin.Android.Support.v7.MediaRouter.dll</HintPath>
+    </Reference>
+    <Reference Include="GooglePlayServicesLib">
+      <HintPath>..\..\packages\Xamarin.GooglePlayServices.22.0.0.2\lib\MonoAndroid41\GooglePlayServicesLib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cookies_Android.cs" />
@@ -101,6 +108,7 @@
       <LogicalName>attachmentIMG</LogicalName>
     </Compile>
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="MapsActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -119,6 +127,7 @@
     <AndroidResource Include="Resources\layout\inboxiconlist.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\Maps.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />

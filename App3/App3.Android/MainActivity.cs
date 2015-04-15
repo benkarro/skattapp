@@ -39,7 +39,9 @@ namespace App3.Droid
             //call.SetBackgroundColor(Android.Graphics.Color.Rgb(61, 147, 126));
 
             inbox.Click += inbox_Click;
-            call.Click += call_Click;
+call.Click += call_Click;
+			ImageButton maps = FindViewById<ImageButton>(Resource.Id.maps);
+			maps.Click += maps_Click;
         }
 
         void call_Click(object sender, EventArgs e)
@@ -53,6 +55,11 @@ namespace App3.Droid
         {
             StartActivity(typeof(AltinnActivity));
         }
+
+		void maps_Click(object sender, EventArgs e)
+		{
+			StartActivity(typeof(MapsActivity));
+		}
 
         
 

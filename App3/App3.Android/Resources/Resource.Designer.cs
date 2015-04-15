@@ -1183,8 +1183,8 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080044
 			public const int AltinnImageButton = 2131230788;
 			
-			// aapt resource value: 0x7f080045
-			public const int CallImageButton = 2131230789;
+			// aapt resource value: 0x7f080046
+			public const int CallImageButton = 2131230790;
 			
 			// aapt resource value: 0x7f080031
 			public const int action_bar = 2131230769;
@@ -1297,11 +1297,17 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080025
 			public const int list_item = 2131230757;
 			
-			// aapt resource value: 0x7f080047
-			public const int logout = 2131230791;
+			// aapt resource value: 0x7f080049
+			public const int logout = 2131230793;
 			
 			// aapt resource value: 0x7f08003f
 			public const int main_content = 2131230783;
+			
+			// aapt resource value: 0x7f080047
+			public const int map = 2131230791;
+			
+			// aapt resource value: 0x7f080045
+			public const int maps = 2131230789;
 			
 			// aapt resource value: 0x7f080015
 			public const int middle = 2131230741;
@@ -1366,8 +1372,8 @@ namespace App3.Droid
 			// aapt resource value: 0x7f080011
 			public const int showTitle = 2131230737;
 			
-			// aapt resource value: 0x7f080046
-			public const int splashscreen = 2131230790;
+			// aapt resource value: 0x7f080048
+			public const int splashscreen = 2131230792;
 			
 			// aapt resource value: 0x7f080007
 			public const int split_action_bar = 2131230727;
@@ -1504,10 +1510,13 @@ namespace App3.Droid
 			public const int Main = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int Splash = 2130903066;
+			public const int Maps = 2130903066;
 			
 			// aapt resource value: 0x7f03001b
-			public const int support_simple_spinner_dropdown_item = 2130903067;
+			public const int Splash = 2130903067;
+			
+			// aapt resource value: 0x7f03001c
+			public const int support_simple_spinner_dropdown_item = 2130903068;
 			
 			static Layout()
 			{

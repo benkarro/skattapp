@@ -12,6 +12,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/AltinnImageButton"
         android:clickable="true" />
+		
+	<ImageButton
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/maps" />
     <ImageButton
         android:src="@drawable/ic_action_call"
         android:id="@+id/CallImageButton"
