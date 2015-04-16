@@ -1,10 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <resources>
 
+  <!--Green-->
   <item name="accentColor" type="color" >#3D937E</item>
-  <item name="accentColor2" type="color">#40c1ac</item>
+  <item name="accentColor2" type="color">#40c1ac</item> <!--backup; #40c1ac-->
   <item name="accentColorLight" type="color">#99E9DC</item>
   
+  <!--Primary Colors-->
+  <item name="Primary1" type="color">#481032</item>
+  <item name="Primary2" type="color">#a35788</item>
+  <item name="Primary3" type="color">#ff2ea1</item>
+  <item name="Primary4" type="color">#91ff96</item>
+  <item name="Primary5" type="color">#fabb9b</item>
+
+  <!--Secondary Colors-->
+  <item name="Secondary1" type="color">#279989</item>
+  <item name="Secondary2" type="color">#9cffed</item>
+  <item name="Secondary3" type="color">#ffd480</item>
+  <item name="Secondary4" type="color">#5e9cff</item>
+  <item name="Secondary5" type="color">#e3e685</item>
+
+
+
+
   <color name="primary">#3D937E</color>
   <!--Color primary dark 700 from palette colors -->
   <color name="primaryDark">#3D937E</color>

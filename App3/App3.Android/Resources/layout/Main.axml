@@ -16,7 +16,9 @@
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/maps" />
+        android:id="@+id/maps"
+        android:layout_below="@+id/AltinnImageButton"
+        android:layout_alignStart="@+id/AltinnImageButton" />
     <ImageButton
         android:src="@drawable/ic_action_call"
         android:id="@+id/CallImageButton"
