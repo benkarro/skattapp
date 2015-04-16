@@ -1511,6 +1511,7 @@ namespace App3.Droid
 			
 			// aapt resource value: 0x7f02006d
 			public const int powered_by_google_light = 2130837613;
+<<<<<<< HEAD
 			
 			// aapt resource value: 0x7f02006e
 			public const int ripple = 2130837614;
@@ -1520,6 +1521,20 @@ namespace App3.Droid
 			
 			// aapt resource value: 0x7f020070
 			public const int Skatteetaten = 2130837616;
+=======
+			
+			// aapt resource value: 0x7f02006e
+			public const int ripple = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int roundedges = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int Skatteetaten = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int Skatteetaten_logo_svart = 2130837617;
+>>>>>>> d07420bfc7b57bbfd38b4e645b97463945bd25eb
 			
 			static Drawable()
 			{
