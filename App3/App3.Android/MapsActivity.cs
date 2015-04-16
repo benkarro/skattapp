@@ -8,7 +8,7 @@ using Android.Content;
 namespace App3.Droid
 {
 	[Activity ()]			
-	public class MapsActivity : Activity, IOnMapReadyCallback, GoogleMap.IInfoWindowAdapter, GoogleMap.IOnInfoWindowClickListener
+	public class MapsActivity : Activity, IOnMapReadyCallback, GoogleMap.IOnInfoWindowClickListener
 	{
 
 		private GoogleMap mMap;
@@ -28,11 +28,15 @@ namespace App3.Droid
 		if (mMap == null){
 			FragmentManager.FindFragmentById<MapFragment> (Resource.Id.map).GetMapAsync(this);
 		}
-		}
+			}
+
+
 
 		public void OnMapReady(GoogleMap googleMap)
 		{
 			mMap = googleMap;
+			mMap.SetOnInfoWindowClickListener (this);
+
 			LatLng posission = new LatLng (40.776408, -73.970755);
 			LatLng posission2 = new LatLng (40, -73);
 
@@ -47,6 +51,8 @@ namespace App3.Droid
 				.SetPosition (posission)
 				.SetTitle("New york")
 				.SetSnippet("aka big town");
+
+
 			mMap.AddMarker (options);
 
 
@@ -58,7 +64,7 @@ namespace App3.Droid
 			);
 
 		
-			mMap.SetOnInfoWindowClickListener (this);
+
 
 
 
@@ -66,21 +72,13 @@ namespace App3.Droid
 
 		}
 
-		public Android.Views.View GetInfoContents (Marker marker)
-		{
-			return null;
-		}
-
-		public Android.Views.View GetInfoWindow (Marker marker)
-		{
-			View view = LayoutInflater.Inflate (Resource.Layout.MapPoint, null);
-			return view;
-		}
+	
 
 
 		public void OnInfoWindowClick (Marker marker)
 		{
-			var uri = Android.Net.Uri.Parse("tel:test");
+			var tlf = marker.Snippet;
+			var uri = Android.Net.Uri.Parse("tel:"+ tlf);
 			var intent = new Intent(Intent.ActionView, uri);
 			StartActivity(intent);
 		}
