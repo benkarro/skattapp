@@ -7,7 +7,9 @@ namespace App3.Droid
 	using Android.App;
 	using Android.OS;
 
-	[Activity(MainLauncher = true, NoHistory = true)]
+	[Activity(MainLauncher = true, NoHistory = true,
+        ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize,
+        Theme = "@android:style/Theme.Holo.Light.NoActionBar.Fullscreen")]
 	public class SplashActivity : Activity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -15,7 +17,7 @@ namespace App3.Droid
 			//base.OnCreate(savedInstanceState);
 			//Thread.Sleep(1000); // Simulate a long loading process on app startup.
 			//StartActivity(typeof(MainActivity));
-			ActionBar.Hide ();
+			//ActionBar.Hide ();
 			base.OnCreate(savedInstanceState);
 			SetContentView(Resource.Layout.Splash);
 
