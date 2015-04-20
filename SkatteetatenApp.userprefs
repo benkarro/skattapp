@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj" GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.b3f1cc5e" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\MapsActivity.cs">
     <Files>
-      <File FileName="App3\App3.Android\MapsActivity.cs" Line="49" Column="4" />
-      <File FileName="App3\App3.Android\MainActivity.cs" Line="1" Column="1" />
+      <File FileName="App3\App3.Android\MapsActivity.cs" Line="99" Column="5" />
+      <File FileName="App3\App3.Android\Properties\AndroidManifest.xml" Line="34" Column="79" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
