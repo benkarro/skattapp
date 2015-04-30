@@ -111,7 +111,6 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\Altinn.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -126,7 +125,6 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Maps.axml" />
-    <AndroidResource Include="Resources\layout\MapPoint.axml" />
     <AndroidResource Include="Resources\layout\rssListView.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -139,6 +137,7 @@
     <AndroidResource Include="Resources\layout\Settings.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\Main.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />
