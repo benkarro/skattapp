@@ -45,7 +45,7 @@ namespace App3.Droid
 			mMap.MoveCamera (camera);
 
 
-			mMap.SetInfoWindowAdapter (this);
+			//mMap.SetInfoWindowAdapter (this);
 
 			MarkerOptions options = new MarkerOptions ()
 				.SetPosition (posission)

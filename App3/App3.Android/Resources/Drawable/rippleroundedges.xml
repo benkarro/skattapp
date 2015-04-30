@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_pressed="true">
+    <layer-list>
+    
+
+      <!-- Blue button pressed -->
+      <item>
+        <shape android:shape="rectangle"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+          <gradient
+            android:startColor="@color/accentColorLight"
+            android:endColor="@color/accentColorLight"
+            android:angle="90">
+          </gradient>
+
+          <corners android:radius="28dp" />
+
+          <stroke
+            android:width="1px"
+            android:color="@color/accentColorLight" />
+        </shape>
+      </item>
+    </layer-list>
+  </item>
+
+  <item android:state_enabled="true">
+
+    <layer-list>
+   
+
+      <!-- Blue button -->
+      <item>
+        <shape android:shape="rectangle"
+xmlns:android="http://schemas.android.com/apk/res/android">
+
+          <gradient
+            android:startColor="@color/accentColor2"
+            android:endColor="@color/accentColor2"
+            android:angle="90">
+          </gradient>
+
+          <corners android:radius="28dp" />
+
+          <stroke
+            android:width="1px"
+            android:color="@color/accentColor2" />
+        </shape>
+      </item>
+    </layer-list>
+
+  </item>
+
+</selector>
