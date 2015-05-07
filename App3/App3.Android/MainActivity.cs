@@ -29,7 +29,7 @@ namespace App3.Droid
     {
         private XMLroot[] _items;
         public ListView ls;
-        rssAdapter adapter;
+        FeedAdapter adapter;
 
         ImageButton inbox;
         ImageButton call;
@@ -134,7 +134,7 @@ namespace App3.Droid
                               }).ToArray();
                     //_items.Reverse();
                     Array.Reverse(_items);
-                    adapter = new rssAdapter(this, _items);
+                    adapter = new FeedAdapter(this, _items);
                     ls.SetAdapter(adapter);
                     //ls = new rssAdapter(this, _items);
                 }

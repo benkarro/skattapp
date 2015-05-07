@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="CalendarActivity.cs" />
     <Compile Include="Cookies_Android.cs" />
+    <Compile Include="FeedAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MyApplication.cs" />
     <Compile Include="CustomWebClient.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="calendarAdapter.cs" />
-    <Compile Include="rssAdapter.cs" />
     <Compile Include="SettingsActivity.cs" />
     <Compile Include="SMSreader.cs" />
     <Compile Include="SMSreciver.cs" />
