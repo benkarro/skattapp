@@ -32,6 +32,16 @@ namespace App3.Droid
             RSSselector = FindViewById<Spinner>(Resource.Id.spinner1);
 
 
+            //IF Android version is lower than Lollipop
+            if (((int)Android.OS.Build.VERSION.SdkInt) < 21)
+            {
+                //setSwitchColor();'
+
+                SMSswitch.SetThumbResource(Resource.Drawable.switch_thumb);
+            }
+
+
+
             SMSswitch.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs e)
             {
                 var toast = Toast.MakeText(this, "SMS reader is " + SMSswitch.Checked.ToString() + "/" + (e.IsChecked.ToString()), ToastLength.Short);
@@ -79,19 +89,50 @@ namespace App3.Droid
 
         public void setSwitchColor()
         {
-            string On = Application.Context.GetString(Resource.Color.Primary4);
-            string Off = Application.Context.GetString(Resource.Color.Secondary4);
+            StateListDrawable drawable = new StateListDrawable();
+
+        #region Switch State = TRUE // Green
+            string StateON = Application.Context.GetString(Resource.Color.Secondary1);
+            Android.Graphics.Color Color_ON = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(StateON));
+    #endregion
+
+        #region Switch State Dragged // Blue
+
+            string stateDragg = Application.Context.GetString(Resource.Color.Secondary4);
+            Android.Graphics.Color color_DRAGG = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(stateDragg));
+            drawable.AddState(new int[] {Android.Resource.Attribute.StatePressed}, new ColorDrawable(color_DRAGG));
+            //drawable.AddState(new int[] { Android.Resource.Attribute.StateLongPressable }, new ColorDrawable(color_DRAGG));
+        #endregion
+
+        #region Switch State = FALSE // Red
+
+            string stateOFF = Application.Context.GetString(Resource.Color.Primary3);
+            Android.Graphics.Color color_OFF = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(stateOFF));
+            drawable.AddState(new int[] {}, new ColorDrawable(color_OFF));
+
+
+        #endregion
+
+
+            /*
+            string On = Application.Context.GetString(Resource.Color.Secondary1);
+            string Off = Application.Context.GetString(Resource.Color.Primary3);
             string Disabled = Application.Context.GetString(Resource.Color.Primary1);
+            string Dragg = Application.Context.GetString(Resource.Color.Secondary4);
 
 
             Android.Graphics.Color colorOn = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(On));
             Android.Graphics.Color colorOff = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Off));
             Android.Graphics.Color colorDisabled = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Disabled));
+            Android.Graphics.Color colorDragg = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Dragg));
 
-            StateListDrawable drawable = new StateListDrawable();
+            
             drawable.AddState(new int[] { Android.Resource.Attribute.StateChecked }, new ColorDrawable(colorOn));
             drawable.AddState(new int[] { Android.Resource.Attribute.StateEnabled }, new ColorDrawable(colorDisabled));
+            //drawable.AddState(new int[] { Android.Resource.Attribute.StatePressed }, new ColorDrawable(colorDragg));
+            drawable.AddState(new int[] { Android.Resource.Attribute.StateHovered }, new ColorDrawable(colorDragg));
             drawable.AddState(new int[] { }, new ColorDrawable(colorOff));
+            */
 
             SMSswitch.ThumbDrawable = drawable;
             

@@ -13,8 +13,7 @@
         android:textOff="Av"
         android:text="Les SMS engangskoder"
         android:checked="true"
-        android:layout_margin="8dp"
-        android:visibility="gone" />
+        android:layout_margin="8dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
