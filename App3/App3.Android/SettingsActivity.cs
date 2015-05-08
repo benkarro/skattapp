@@ -16,7 +16,7 @@ namespace App3.Droid
     [Activity(Label = "Innstillinger", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
     public class SettingsActivity : Activity
     {
-
+        public Android.Content.Res.Resources res;
         Switch SMSswitch;
         Spinner RSSselector;
 
@@ -30,6 +30,15 @@ namespace App3.Droid
 
             SMSswitch = FindViewById<Switch>(Resource.Id.switch1);
             RSSselector = FindViewById<Spinner>(Resource.Id.spinner1);
+
+
+            //IF Android version is lower than Lollipop
+            if (((int)Android.OS.Build.VERSION.SdkInt) < 21)
+            {
+                setSwitchColor();
+            }
+
+
 
 
             SMSswitch.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs e)
@@ -59,7 +68,7 @@ namespace App3.Droid
 
 
             retrieveset();
-            //setSwitchColor();
+            
 
 
         }
@@ -79,19 +88,19 @@ namespace App3.Droid
 
         public void setSwitchColor()
         {
-            string On = Application.Context.GetString(Resource.Color.Primary4);
-            //string Off = Application.Context.GetString(Resource.Color.Secondary4);
-            string Disabled = Application.Context.GetString(Resource.Color.Primary1);
+            string On = Application.Context.GetString(Resource.Color.Secondary4);
+            string Off = Application.Context.GetString(Resource.Color.Secondary1);
+            string Disabled = Application.Context.GetString(Resource.Color.Primary3);
 
 
             Android.Graphics.Color colorOn = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(On));
-            //Android.Graphics.Color colorOff = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Off));
+            Android.Graphics.Color colorOff = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Off));
             Android.Graphics.Color colorDisabled = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Disabled));
 
             StateListDrawable drawable = new StateListDrawable();
             drawable.AddState(new int[] { Android.Resource.Attribute.StateChecked }, new ColorDrawable(colorOn));
             drawable.AddState(new int[] { Android.Resource.Attribute.StateEnabled }, new ColorDrawable(colorDisabled));
-            //drawable.AddState(new int[] { }, new ColorDrawable(colorOff));
+            drawable.AddState(new int[] { }, new ColorDrawable(colorOff));
 
             SMSswitch.ThumbDrawable = drawable;
             
@@ -143,6 +152,8 @@ namespace App3.Droid
             base.OnPause();
             saveset();
         }
+
+
 
     }
 
