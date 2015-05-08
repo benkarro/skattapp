@@ -52,9 +52,24 @@ namespace App3
             }
             
         }
-			
+
+        public async Task<String> DownloadXML()
+        {
+            HttpWebRequest requestDoc = (HttpWebRequest)WebRequest.Create(new Uri(Url));
+
+            requestDoc.Method = WebRequestMethods.Http.Get;
 
 
+            HttpWebResponse response = (HttpWebResponse)await requestDoc.GetResponseAsync();
+
+            using (var sr = new StreamReader(response.GetResponseStream()))
+            {
+                resultString = sr.ReadToEnd();
+                Console.WriteLine(resultString);
+                return resultString;
+            }
+
+        }
         
 
         

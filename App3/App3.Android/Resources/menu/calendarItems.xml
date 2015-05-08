@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="skattekalender_array">
+    <item>For personer</item>
+    <item>For bedrifter og organisasjoner</item>
+  </string-array>
+</resources>

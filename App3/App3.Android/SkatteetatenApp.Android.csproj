@@ -85,7 +85,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalendarActivity.cs" />
     <Compile Include="Cookies_Android.cs" />
+    <Compile Include="FeedAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MyApplication.cs" />
     <Compile Include="CustomWebClient.cs" />
@@ -93,6 +95,8 @@
     <Compile Include="MessageView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="calendarAdapter.cs" />
+    <Compile Include="SettingsActivity.cs" />
     <Compile Include="SMSreader.cs" />
     <Compile Include="SMSreciver.cs" />
     <Compile Include="MessageAdapter.cs" />
@@ -121,10 +125,19 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Maps.axml" />
-    <AndroidResource Include="Resources\Drawable\ic_action_map.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <AndroidResource Include="Resources\layout\rssListView.axml">
+      <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\Main.xml" />
+    <AndroidResource Include="Resources\layout\calendar.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\calendarListView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Settings.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Main.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />
@@ -132,10 +145,12 @@
     <AndroidResource Include="Resources\values-v21\styles.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Drawable\roundedges.xml">
+    <AndroidResource Include="Resources\Drawable\rippleroundedges.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\values\color.xml" />
+    <AndroidResource Include="Resources\values\color.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\values\dimensions.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_call.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_email.png" />
@@ -150,6 +165,23 @@
     <AndroidResource Include="Resources\Drawable\Lanekassen.png" />
     <AndroidResource Include="Resources\Drawable\Skatteetaten_logo_svart.png" />
     <AndroidResource Include="Resources\Drawable\Icon.png" />
+    <AndroidResource Include="Resources\menu\actionbar_buttons_Main.xml" />
+    <AndroidResource Include="Resources\Drawable\ic_action_go_to_today.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_settings.png" />
+    <AndroidResource Include="Resources\Drawable\square.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\menu\contextmenuCalendar.xml" />
+    <AndroidResource Include="Resources\menu\calendarItems.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\Drawable-v21\rippleroundedges.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\ic_action_place.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_map.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_location_found.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />

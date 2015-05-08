@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+  <item android:id="@+id/calendar"
+          
+        android:title="Calendar"
+        android:icon="@drawable/ic_action_go_to_today"
+        android:showAsAction="always" />
+  <item android:id="@+id/settings"
+        android:icon="@drawable/ic_action_settings"
+        android:showAsAction="always" />
+
+</menu>

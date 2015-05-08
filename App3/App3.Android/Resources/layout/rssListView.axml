@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rss_icon"
+        android:src="@drawable/Skatteetaten"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="5dp"
+        android:maxWidth="56dp"
+        android:maxHeight="56dp"
+        android:adjustViewBounds="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Pressemeldinger"
+        android:id="@+id/rss_publisher"
+        android:layout_toRightOf="@+id/rss_icon"
+        android:layout_toEndOf="@+id/rss_icon"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Title Text"
+        android:id="@+id/rss_head"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/rss_icon"
+        android:layout_alignStart="@+id/rss_publisher"
+        android:layout_toEndOf="@+id/rss_icon"
+        android:layout_toStartOf="@+id/rss_icon"
+        android:layout_alignParentStart="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Description Text"
+        android:id="@+id/rss_text"
+        android:layout_below="@+id/rss_head"
+        android:layout_alignStart="@+id/rss_head" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="2015-02-05T08:54:00+01:00"
+        android:id="@+id/rss_date"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

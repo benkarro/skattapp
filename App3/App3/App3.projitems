@@ -21,6 +21,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Portalview.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Print.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Self.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser_xml\XMLparser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Parser_xml\XMLroot.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Strings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Attachment.cs" />
   </ItemGroup>
