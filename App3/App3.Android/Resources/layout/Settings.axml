@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <Switch
+    <android.support.v7.widget.SwitchCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/switch1"
@@ -13,8 +13,7 @@
         android:textOff="Av"
         android:text="Les SMS engangskoder"
         android:checked="true"
-        android:layout_margin="8dp"
-        android:visibility="gone" />
+        android:layout_margin="8dp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

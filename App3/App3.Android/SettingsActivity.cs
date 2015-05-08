@@ -80,18 +80,18 @@ namespace App3.Droid
         public void setSwitchColor()
         {
             string On = Application.Context.GetString(Resource.Color.Primary4);
-            string Off = Application.Context.GetString(Resource.Color.Secondary4);
+            //string Off = Application.Context.GetString(Resource.Color.Secondary4);
             string Disabled = Application.Context.GetString(Resource.Color.Primary1);
 
 
             Android.Graphics.Color colorOn = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(On));
-            Android.Graphics.Color colorOff = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Off));
+            //Android.Graphics.Color colorOff = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Off));
             Android.Graphics.Color colorDisabled = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Disabled));
 
             StateListDrawable drawable = new StateListDrawable();
             drawable.AddState(new int[] { Android.Resource.Attribute.StateChecked }, new ColorDrawable(colorOn));
             drawable.AddState(new int[] { Android.Resource.Attribute.StateEnabled }, new ColorDrawable(colorDisabled));
-            drawable.AddState(new int[] { }, new ColorDrawable(colorOff));
+            //drawable.AddState(new int[] { }, new ColorDrawable(colorOff));
 
             SMSswitch.ThumbDrawable = drawable;
             

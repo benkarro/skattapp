@@ -89,10 +89,19 @@ namespace App3.Droid
             var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
             string CalendarSettings = prefs.GetString("Selected Calendar int", "");
 
-            CalendarChoice = (int.Parse(CalendarSettings));
+            
             /*Xml = http.DownloadXML();
             XmlString = await Xml;
             XmlParser = new XMLparser(XmlString);*/
+            int choice;
+            bool res = int.TryParse(CalendarSettings, out choice);
+            if (res == true)
+            {
+                CalendarChoice = (int.Parse(CalendarSettings));
+            }
+            else { CalendarChoice = 0; }
+
+
             using (var client = new HttpClient())
             {
                 var xmlFeed = "";
@@ -208,17 +217,21 @@ namespace App3.Droid
                         DateTime DateVerify = XmlConvert.ToDateTime(_items[info.Position].date);
 
                         string VerifyText = _items[info.Position].title;
-                        string TitleString;
+                        string TitleString = "";
+
+
+                        string alternativeVerify = DateVerify.Day + "." + DateVerify.Month + "." + DateVerify.Year;
 
                         if (VerifyText.Substring(0, 11).Contains(DateVerify.Date.ToShortDateString()))
                         {
                             TitleString = _items[info.Position].title.Replace(DateVerify.Date.ToShortDateString(), "").TrimStart();
-                        }
-                        else if (VerifyText.Substring(0, 25).Contains(DateVerify.ToString())) //If text contains date + time format.
+                        } 
+                        if (VerifyText.Substring(0, 11).Contains(alternativeVerify))
                         {
-                            TitleString = _items[info.Position].title;
+                            TitleString = _items[info.Position].title.Replace(alternativeVerify, "").TrimStart();
                         }
-                        else
+                        
+                        if (TitleString == null || TitleString == "")
                         {
                             TitleString = _items[info.Position].title;
                         }

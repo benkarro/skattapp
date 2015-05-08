@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:minHeight="64dp"
+        android:maxHeight="128dp" />
     <ListView
         android:id="@+id/cListView"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:orientation="horizontal"
+        android:minHeight="128dp"
         android:layout_above="@+id/AltinnImageButton" />
+<!--android:layout_below="@+id/viewPager"-->
     <ImageButton
         android:src="@drawable/ic_action_place"
         android:layout_width="56dp"
