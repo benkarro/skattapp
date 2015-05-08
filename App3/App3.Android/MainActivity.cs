@@ -19,7 +19,6 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Net;
 using Android.Net;
-using Android.Support.V4.View;
 
 
 
@@ -36,7 +35,8 @@ namespace App3.Droid
         ImageButton call;
         ImageButton maps;
 
-        private ViewPager _viewPager;
+
+        public List<App3.Parser_xml.XMLroot> rssItems;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -57,11 +57,6 @@ namespace App3.Droid
             //var listviewAdapter = FindViewById(Resource.Id.cListView);
 
             ls = (ListView)FindViewById(Resource.Id.cListView);
-            _viewPager = FindViewById<ViewPager>(Resource.Id.viewPager);
-            //_viewPager.Adapter = new calendarAdapter;
-            //_viewPager.Adapter = new calendarAdapter(this, _items);
-
-
 
             ls.ItemClick += ls_ItemClick;
 
