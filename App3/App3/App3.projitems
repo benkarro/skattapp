@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Parser_xml\XMLparser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser_xml\XMLroot.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser\Attachment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Resources\Kontorer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Strings.cs" />
   </ItemGroup>
 </Project>

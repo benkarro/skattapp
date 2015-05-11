@@ -188,7 +188,17 @@ namespace App3.Droid
             var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
             string CalendarSettings = prefs.GetString("Selected Calendar int", "");
 
-            CalendarChoice = (int.Parse(CalendarSettings));
+
+            int output;
+            bool result = int.TryParse(CalendarSettings, out output);
+            if (result)
+            {
+                CalendarChoice = output;
+            }
+
+            //CalendarChoice = (int.Parse(CalendarSettings));
+
+
             /*Xml = http.DownloadXML();
             XmlString = await Xml;
             XmlParser = new XMLparser(XmlString);*/

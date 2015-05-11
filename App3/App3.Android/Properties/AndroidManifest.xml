@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
 	<uses-sdk android:targetSdkVersion="21" android:minSdkVersion="15" />
 	<application android:label="Skatteetaten" android:icon="@drawable/icon" android:theme="@style/MyTheme">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCsdWwrVYLZPifxQYpa8rcQnia6kyqFUt8" />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBZx4rvJgT8Ka7df9z1E0WmMH3d8_H-YOE" />
+    <!--Brages API Nøkkel for MAPS: AIzaSyBZx4rvJgT8Ka7df9z1E0WmMH3d8_H-YOE-->
+    <!--Amins API Nøkkel for MAPS: AIzaSyCsdWwrVYLZPifxQYpa8rcQnia6kyqFUt8-->
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
 
