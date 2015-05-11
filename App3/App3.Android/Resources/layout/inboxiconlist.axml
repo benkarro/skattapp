@@ -9,7 +9,7 @@
         android:src="@drawable/ic_action_email"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_margin="5dp"
+        android:layout_margin="4dp"
         android:maxWidth="56dp"
         android:maxHeight="56dp"
         android:layout_centerVertical="true"
