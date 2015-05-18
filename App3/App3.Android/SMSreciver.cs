@@ -9,6 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Views.InputMethods;
+
+
 
 namespace App3.Droid
 {
@@ -37,6 +40,9 @@ namespace App3.Droid
                 toast.Show();
                 String pass = intent.GetStringExtra("pass");
                 webView.EvaluateJavascript("javascript:document.getElementById(\"input_ONETIMECODE_IDPORTEN\").value = '" + pass + "';", null);
+			InputMethodManager inputManager = 
+				(InputMethodManager) context.GetSystemService(Context.InputMethodService); 
+			inputManager.HideSoftInputFromWindow (webView.ApplicationWindowToken,0);
 
            
         }

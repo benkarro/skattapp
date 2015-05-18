@@ -20,13 +20,19 @@ namespace App3.Droid
         private const string SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
         private String pass;
 
+
+
         public String getPass()
         {
             return pass;
         }
 
+
         public override void OnReceive(Context context, Intent intent)
         {
+
+			var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
+			var SMSsettings = prefs.GetString("ReadSMS", "");
             Bundle bundle =  intent.Extras;
 
             if (bundle != null) {
@@ -48,13 +54,14 @@ namespace App3.Droid
 				// apply sms filter
 				if (PhoneNumberUtils.Compare("26999", sender)  || 
 				    PhoneNumberUtils.Compare ("26998", sender)
-					&& AltinnActivity.active) {
+					&& AltinnActivity.active && bool.TrueString == SMSsettings) {
 
 					pass = message.Substring(0, 5);
 					// System.out.println(pass);
 					Intent newintent = new Intent("SmsMessage.intent.MAIN").PutExtra("pass", pass);
 					context.SendBroadcast(newintent);
-					
+
+
 				
 
 				}
