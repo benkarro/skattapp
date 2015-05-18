@@ -33,11 +33,18 @@ namespace App3.Droid
     {
         private XMLroot[] _items;
         public ListView ls;
-        FeedAdapter adapter;
+        //FeedAdapter adapter;
 
         ImageButton inbox;
         ImageButton call;
         ImageButton maps;
+
+        RelativeLayout OfflineView;
+        ImageView OfflineImage;
+        TextView OfflineText1;
+        TextView OfflineText2;
+
+
         int CalendarChoice;
 
         private ViewPager _viewPager;
@@ -47,6 +54,49 @@ namespace App3.Droid
 
 
         public List<App3.Parser_xml.XMLroot> rssItems;
+
+
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            var connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
+
+            var activeConnection = connectivityManager.ActiveNetworkInfo;
+            if ((activeConnection != null) && activeConnection.IsConnected)
+            {
+                OfflineView.Visibility = ViewStates.Gone;
+                _viewPager.Visibility = ViewStates.Visible;
+                _viewPager_RSS.Visibility = ViewStates.Visible;
+
+                getxmlStringandParse();
+                getxmlStringandParse2();
+
+            }
+            else
+            {
+                OfflineView.Visibility = ViewStates.Visible;
+                _viewPager.Visibility = ViewStates.Gone;
+                _viewPager_RSS.Visibility = ViewStates.Gone;
+
+                OfflineText1.Text = "Kunne ikke opprette en tilkobling"; 
+                OfflineText2.Text = "Vennligs kontroller at du har en internett tilkobling.";
+
+                AlertDialog.Builder albuilder = new AlertDialog.Builder(this);
+                albuilder.SetTitle("Nettverk");
+                albuilder.SetMessage("Kunne ikke koble til internet");
+                albuilder.SetCancelable(false);
+                albuilder.SetPositiveButton("Ok", (object sender, DialogClickEventArgs e) =>
+                { /* //Add a acton on ok button pressed//  */   });
+
+                AlertDialog AlertBox = albuilder.Create();
+                AlertBox.Show();
+
+            }
+
+        }
+
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -72,7 +122,10 @@ namespace App3.Droid
             //ls = (ListView)FindViewById(Resource.Id.cListView);
 
             //ls.ItemClick += ls_ItemClick;
-
+            OfflineView = FindViewById<RelativeLayout>(Resource.Id.OfflineView);
+            OfflineImage = FindViewById<ImageView>(Resource.Id.OfflineImage);
+            OfflineText1 = FindViewById<TextView>(Resource.Id.OfflineText1);
+            OfflineText2 = FindViewById<TextView>(Resource.Id.OfflineText2);
              inbox = FindViewById<ImageButton>(Resource.Id.AltinnImageButton);
              call = FindViewById<ImageButton>(Resource.Id.CallImageButton);
 			 maps = FindViewById<ImageButton>(Resource.Id.maps);
@@ -81,11 +134,6 @@ namespace App3.Droid
             inbox.Click += inbox_Click;
 			call.Click += call_Click;
 			maps.Click += maps_Click;
-
-            getxmlStringandParse();
-            getxmlStringandParse2();
-            
-
 
         }
 
@@ -120,11 +168,7 @@ namespace App3.Droid
         public async void getxmlStringandParse()
         {
 
-            var connectivityManager = (ConnectivityManager)GetSystemService(ConnectivityService);
 
-            var activeConnection = connectivityManager.ActiveNetworkInfo;
-            if ((activeConnection != null) && activeConnection.IsConnected)
-            {
                 
             
                 /*Xml = http.DownloadXML();
@@ -161,25 +205,7 @@ namespace App3.Droid
                     //ls = new rssAdapter(this, _items);
                 }
 
-            }
-            else
-            {
-                AlertDialog.Builder albuilder = new AlertDialog.Builder(this);
-                albuilder.SetTitle("Nettverk");
-                albuilder.SetMessage("Kunne ikke koble til internet");
-                albuilder.SetCancelable(false);
-                albuilder.SetPositiveButton("Ok", (object sender, DialogClickEventArgs e) =>
-                {
-
-
-                 
-
-                });
-
-                AlertDialog AlertBox = albuilder.Create();
-                AlertBox.Show();
-
-            }
+            
 
         }
 
@@ -234,35 +260,73 @@ namespace App3.Droid
                           }).ToArray();
                 //_items.Reverse();
 
-
-                /*for (int i = 0; i < _temp.Count(); i++)
+                List<XMLroot> futureEvents = new List<XMLroot>();
+                #region Finding Not Expired
+                for (int i = 0; i < _temp.Count(); i++)
                 {
-                    XMLroot[] _con;
-                    DateTime thisdate = XmlConvert.ToDateTime(_temp[i].date);
+                    #region Date Handling
+                    DateTime contentdate = XmlConvert.ToDateTime(_temp[i].date);
                     DateTime currentdate = DateTime.Now;
                     int Day = currentdate.Day;
                     int Month = currentdate.Month;
                     int Year = currentdate.Year;
+                    #endregion
 
 
+                    //Console.WriteLine("********************************************************************************************************");
 
 
-                    if (thisdate.Day > Day)
+                    if (contentdate.Year == Year)
                     {
-                        
+                        if (contentdate.Month > Month)
+                        {
+                            //Add to not expired
+                            //Console.WriteLine("NOT EXPIRED: [i] = " + i + " ITEM: " + _temp[i].title + "/" + _temp[i].link + "/" + _temp[i].date);
+                            futureEvents.Add(new XMLroot { title = _temp[i].title, link = _temp[i].link, date = _temp[i].date });
+
+                        }
+                        else if (contentdate.Month == Month)
+                        {
+                            if (contentdate.Day > Day)
+                            {
+                                //Add to not expired
+                                //Console.WriteLine("NOT EXPIRED: [i] = " + i + " ITEM: " + _temp[i].title + "/" + _temp[i].link + "/" + _temp[i].date);
+                                futureEvents.Add(new XMLroot { title = _temp[i].title, link = _temp[i].link, date = _temp[i].date });
+                            }
+                            else if (contentdate.Day == Day)
+                            {
+                                //Add to not expired
+                                //Console.WriteLine("NOT EXPIRED: [i] = " + i + " ITEM: " + _temp[i].title + "/" +  _temp[i].link + "/" + _temp[i].date);
+                                futureEvents.Add(new XMLroot { title = _temp[i].title, link = _temp[i].link, date = _temp[i].date });
+                            }
+                        }
+
                     }
+                    //Console.WriteLine("********************************************************************************************************");
+                }
+                #endregion
+
+                //_temp.Reverse();
+
+                
+                XMLroot[] _green = futureEvents.ToArray();
+                List<XMLroot> endlist = new List<XMLroot>();
+                for (int i = 0; i < 4; i++)
+                {
+                    endlist.Add(new XMLroot { title = _green[i].title, link = _green[i].link, date = _green[i].date });
+                }
 
 
 
-                }*/
 
-                CalendarFragmentAdapter._calendarItems = _temp;
+
+                CalendarFragmentAdapter._calendarItems = endlist.ToArray();
 
 
 
                 if (CalendarFragmentAdapter._calendarItems != null || CalendarFragmentAdapter._calendarItems.Length != 0)
                 {
-                    Array.Reverse(CalendarFragmentAdapter._calendarItems);
+                    //Array.Reverse(CalendarFragmentAdapter._calendarItems);
                     _viewPager.Adapter = new CalendarFragmentAdapter(SupportFragmentManager);
                 }
                 //ls = new rssAdapter(this, _items);
@@ -539,6 +603,9 @@ namespace App3.Droid
 
 
 
+
+
+
             DateTime th = XmlConvert.ToDateTime(RSSFragmentAdapter._RSSitems[RSSFragmentAdapter._pos].date);
 
             if (RSSFragmentAdapter._RSSitems[RSSFragmentAdapter._pos].title == null || RSSFragmentAdapter._RSSitems[RSSFragmentAdapter._pos].title == "")
@@ -601,6 +668,8 @@ namespace App3.Droid
 
         public override Android.Support.V4.App.Fragment GetItem(int position)
         {
+
+            Console.WriteLine(position);
             return new RSSFragment();
         }
 

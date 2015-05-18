@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/OfficeCheckList"
+          
+          android:title="Synlige Kontorer"
+          android:icon="@drawable/ic_action_sort_by_size"
+          android:showAsAction="always" />
+
+
+</menu>

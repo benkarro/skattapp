@@ -141,6 +141,9 @@
     <AndroidResource Include="Resources\layout\calendarFragment.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\KontorValg.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />
@@ -189,6 +192,9 @@
     <AndroidResource Include="Resources\Drawable-v21\switch_thumb.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\Drawable\ic_action_sort_by_size.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_network_wifi.png" />
+    <AndroidResource Include="Resources\menu\actionbar_buttons_Maps.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />

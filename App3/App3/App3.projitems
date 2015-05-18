@@ -27,4 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Kontorer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Resources\Strings.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Kontorer.txt" />
+  </ItemGroup>
 </Project>
