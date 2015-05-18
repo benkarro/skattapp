@@ -47,8 +47,8 @@ namespace App3.Droid
 				String message = sb.ToString();
 				// apply sms filter
 				if (PhoneNumberUtils.Compare("26999", sender)  || 
-                    PhoneNumberUtils.Compare("26998",sender)
-						&& MyApplication.isActivityVisible() == true) {
+				    PhoneNumberUtils.Compare ("26998", sender)
+					&& AltinnActivity.active) {
 
 					pass = message.Substring(0, 5);
 					// System.out.println(pass);

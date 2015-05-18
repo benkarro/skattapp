@@ -20,6 +20,7 @@ namespace App3.Droid
     {
         BroadcastReceiver mIntentReciver;
         WebView webView;
+		public static Boolean active =false;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             
@@ -91,18 +92,18 @@ namespace App3.Droid
 
     protected override void OnPause(){
 		base.OnPause();
-		MyApplication.activityPaused();
 
 		CookieSyncManager.Instance.Sync();
         UnregisterReceiver(mIntentReciver);
+			active = false;
         
     }
 
     protected override void OnResume()
     {
         base.OnResume();
-        MyApplication.activityResumed();
         CookieSyncManager.Instance.StopSync();
+			active = true;
 
         //Ta imot og behandle kode fra SMS
         IntentFilter intentFilter = new IntentFilter("SmsMessage.intent.MAIN");
@@ -110,6 +111,18 @@ namespace App3.Droid
         RegisterReceiver(mIntentReciver, intentFilter);
 
     }
+
+		protected override void OnStop ()
+		{
+			base.OnStop ();
+			active = false;
+		}
+
+		protected override void OnStart ()
+		{
+			base.OnStart ();
+			active = true;
+		}
 			
 
 

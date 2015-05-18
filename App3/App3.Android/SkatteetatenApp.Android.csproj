@@ -89,7 +89,6 @@
     <Compile Include="Cookies_Android.cs" />
     <Compile Include="FeedAdapter.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="MyApplication.cs" />
     <Compile Include="CustomWebClient.cs" />
     <Compile Include="AltinnActivity.cs" />
     <Compile Include="MessageView.cs" />
