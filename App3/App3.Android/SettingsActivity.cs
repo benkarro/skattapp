@@ -42,11 +42,7 @@ namespace App3.Droid
 
 
 
-            SMSswitch.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs e)
-            {
-                var toast = Toast.MakeText(this, "SMS reader is " + SMSswitch.Checked.ToString() + "/" + (e.IsChecked.ToString()), ToastLength.Short);
-                toast.Show();
-            };
+		
 
             _thisItems.Add("For personer");
             _thisItems.Add("For bedrifter og organisasjoner"); 
@@ -101,7 +97,7 @@ namespace App3.Droid
 
             var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
             var prefEdityor = prefs.Edit();
-            prefEdityor.PutString("ReadSMS", SMSswitch.Checked.ToString());
+			prefEdityor.PutString("ReadSMS", SMSswitch.Checked.ToString());
             prefEdityor.PutString("Selected Calendar int", Calendar.SelectedItemPosition.ToString());
             prefEdityor.PutString("Selected Calendar string", Calendar.SelectedItem.ToString());
             prefEdityor.Commit();
@@ -133,6 +129,13 @@ namespace App3.Droid
             base.OnPause();
             saveset();
         }
+
+		protected override void OnStop ()
+		{
+			base.OnStop ();
+			saveset();
+
+		}
 
     }
 
