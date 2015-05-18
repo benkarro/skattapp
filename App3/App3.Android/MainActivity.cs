@@ -102,6 +102,13 @@ namespace App3.Droid
         {
             base.OnCreate(bundle);
 
+
+
+
+
+
+
+
             //Superlys..
             //ColorDrawable cab = new ColorDrawable(Android.Graphics.Color.Rgb(141, 217, 181));
             

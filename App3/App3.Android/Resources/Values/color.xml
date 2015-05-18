@@ -6,6 +6,8 @@
   <item name="accentColor2" type="color">#40c1ac</item> <!--backup; #40c1ac-->
   <item name="accentColorLight" type="color">#99E9DC</item>
   
+  <item name="backgroundcolor" type="color">#FFFFFF</item>
+  
   <!--Primary Colors-->
   <item name="Primary1" type="color">#481032</item> <!--Dark Purple-->
   <item name="Primary2" type="color">#a35788</item> <!--Light Purple-->

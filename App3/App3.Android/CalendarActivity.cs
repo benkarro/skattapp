@@ -28,6 +28,9 @@ namespace App3.Droid
             base.OnCreate(bundle);
             Xamarin.Forms.Forms.Init(this, bundle);
 
+            //
+            
+            
 
             ActionBar.SetDisplayHomeAsUpEnabled(true);
 

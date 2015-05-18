@@ -51,9 +51,22 @@ namespace App3.Droid
 
             
             
+            
             SetUpMap ();
 
 		}
+
+        public override bool OnKeyUp(Keycode keyCode, KeyEvent e)
+        {
+
+            if (keyCode == Keycode.Menu)
+            {
+                showSelection();
+                return true;
+            }
+
+            return base.OnKeyUp(keyCode, e);
+        }
 
 
 		private void SetUpMap (){
@@ -200,7 +213,7 @@ namespace App3.Droid
 
 
             _builder.SetView(inputView);
-            _builder.SetCancelable(false);
+            _builder.SetCancelable(true);
             _builder.SetPositiveButton("Ok", OkClicked);
 
 
@@ -218,6 +231,21 @@ namespace App3.Droid
             Servicepartner = DialogView.FindViewById<Switch>(Resource.Id.map_Switch8);
             SITSBrukersenter = DialogView.FindViewById<Switch>(Resource.Id.map_Switch9);
             Registerinfo = DialogView.FindViewById<Switch>(Resource.Id.map_Switch10);
+
+            if (((int)Android.OS.Build.VERSION.SdkInt) < 21)
+            {
+                //setSwitchColor();'
+                Kemnern.SetThumbResource(Resource.Drawable.switch_thumb);
+                Skatteoppkrever.SetThumbResource(Resource.Drawable.switch_thumb);
+                Kommunekasserer.SetThumbResource(Resource.Drawable.switch_thumb);
+                Skattekontorer.SetThumbResource(Resource.Drawable.switch_thumb);
+                Sentralskattekontoret.SetThumbResource(Resource.Drawable.switch_thumb);
+                Oljeskattekontoret.SetThumbResource(Resource.Drawable.switch_thumb);
+                Skattedirektoratet.SetThumbResource(Resource.Drawable.switch_thumb);
+                Servicepartner.SetThumbResource(Resource.Drawable.switch_thumb);
+                SITSBrukersenter.SetThumbResource(Resource.Drawable.switch_thumb);
+                Registerinfo.SetThumbResource(Resource.Drawable.switch_thumb);
+            }
 
 
             if (ValgteSwitcher.Count != 0)
