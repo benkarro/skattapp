@@ -4,11 +4,12 @@
 
   <item android:id="@+id/calendar"
           
-        android:title="Calendar"
+        android:title="Kalender"
         android:icon="@drawable/ic_action_go_to_today"
         android:showAsAction="always" />
   <item android:id="@+id/settings"
         android:icon="@drawable/ic_action_settings"
-        android:showAsAction="always" />
+        android:showAsAction="always"
+        android:title="Innstillinger"/>
 
 </menu>

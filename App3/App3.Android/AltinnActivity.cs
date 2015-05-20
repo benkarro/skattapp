@@ -23,6 +23,10 @@ namespace App3.Droid
 		public static Boolean active =false;
         protected override void OnCreate(Bundle savedInstanceState)
         {
+			if (((int)Android.OS.Build.VERSION.SdkInt) < 21) {
+				SetTheme (Resource.Style.MyThemeNormal); // For deactivation of translucent theme for this activity/layout
+			}
+
             
             RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
@@ -39,6 +43,8 @@ namespace App3.Droid
             webView = FindViewById<WebView>(Resource.Id.webView);
             webView.SetWebViewClient(new CustomWebClient(this));
             
+
+
 
 
             if (savedInstanceState != null)

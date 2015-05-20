@@ -136,6 +136,30 @@ namespace App3.Droid
 		}
 
 
+		public void SignOut() 
+		{
+			AlertDialog.Builder builder = new AlertDialog.Builder (this);
+			builder.SetTitle ("Bekreftelse");
+			builder.SetMessage ("Er du sikker på at du vil logge ut?");
+			builder.SetCancelable (false);
+			builder.SetPositiveButton("Ja", (object sender, DialogClickEventArgs e) => {
+				CookieManager.Instance.RemoveSessionCookie();
+				Intent MainActivity_i = new Intent(this, typeof(MainActivity));
+				MainActivity_i.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+
+				StartActivity(MainActivity_i);
+				//StartActivity(typeof(MainActivity));
+				Finish();
+			});
+
+			builder.SetNegativeButton ("Nei", (object sender, DialogClickEventArgs e) => {
+				Toast.MakeText(this, "Avbrutt", ToastLength.Short).Show();
+			});
+			AlertDialog Alertbox = builder.Create ();
+			Alertbox.Show ();
+		}
+
+
 		public override bool OnOptionsItemSelected (IMenuItem item)
 		{
 
@@ -146,14 +170,8 @@ namespace App3.Droid
 				return true;
 
 			case Resource.Id.logout:
-				CookieManager.Instance.RemoveSessionCookie();
+				SignOut ();
 
-                Intent MainActivity_i = new Intent(this, typeof(MainActivity));
-                MainActivity_i.AddFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
-
-                StartActivity(MainActivity_i);
-				//StartActivity(typeof(MainActivity));
-				Finish();
 				return true;
 
 			default:

@@ -1,10 +1,21 @@
 ﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.SelectDevice" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5_API_21_x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\MessageView.cs">
     <Files>
-      <File FileName="App3\App3.Android\MainActivity.cs" Line="1" Column="1" />
-      <File FileName="App3\App3\Resources\Strings.cs" Line="10" Column="1" />
+      <File FileName="App3\App3.Android\MainActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\calendarAdapter.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\AltinnActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\MessageView.cs" Line="95" Column="23" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\menu\actionbar_buttons.xml" Line="11" Column="2" NotebookId="1" />
+      <File FileName="App3\App3.Android\SingleMessageView.cs" Line="155" Column="1" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="0" Y="0" Width="1350" Height="689">
+        <Files>
+          <File FileName="App3\App3.Android\MapsActivity.cs" Line="366" Column="1" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -142,7 +142,11 @@ namespace App3.Droid
 			call.Click += call_Click;
 			maps.Click += maps_Click;
 
+            
+
         }
+
+
 
         void ls_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
@@ -183,8 +187,6 @@ namespace App3.Droid
                 XmlParser = new XMLparser(XmlString);*/
                 using (var client = new HttpClient()) { 
                     var xmlFeed = await client.GetStringAsync("http://www.skatteetaten.no/no/Stottemenyer/RSS-feeder/Pressemeldinger/");
-                    //var xmlFeed = await client.GetStringAsync("http://www.skatteetaten.no/no/Stottemenyer/RSS-feeder/Kalender-for-bedrifter-og-organisasjoner/");
-                    //
 
                     var DOC = XDocument.Parse(xmlFeed);
                     XNamespace dc = "http://purl.org/dc/elements/1.1/";
@@ -197,7 +199,6 @@ namespace App3.Droid
                                   description = item.Element("description").Value,
                                   date = item.Element(dc + "date").Value
                               }).ToArray();
-                    //_items.Reverse();
                     Array.Reverse(_items);
 
                     RSSFragmentAdapter._RSSitems = _items;
@@ -216,6 +217,13 @@ namespace App3.Droid
 
         }
 
+        #region Calendar RSS FEED
+
+        /// <summary>
+        /// This Void will retrieve the rss feed from skatteetaten.no,
+        /// depending on user selection.
+        /// </summary>
+
         public async void getxmlStringandParse2()
         {
             var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
@@ -229,12 +237,6 @@ namespace App3.Droid
                 CalendarChoice = output;
             }
 
-            //CalendarChoice = (int.Parse(CalendarSettings));
-
-
-            /*Xml = http.DownloadXML();
-            XmlString = await Xml;
-            XmlParser = new XMLparser(XmlString);*/
             using (var client = new HttpClient())
             {
                 var xmlFeed = "";
@@ -272,15 +274,21 @@ namespace App3.Droid
                 for (int i = 0; i < _temp.Count(); i++)
                 {
                     #region Date Handling
-                    DateTime contentdate = XmlConvert.ToDateTime(_temp[i].date);
+                    
+					DateTime contentdate = XmlConvert.ToDateTime(_temp[i].date);
+                    
                     DateTime currentdate = DateTime.Now;
                     int Day = currentdate.Day;
                     int Month = currentdate.Month;
                     int Year = currentdate.Year;
+
+	
+
                     #endregion
 
 
                     //Console.WriteLine("********************************************************************************************************");
+										
 
 
                     if (contentdate.Year == Year)
@@ -343,8 +351,20 @@ namespace App3.Droid
 
         }
 
+        #endregion
+
+
+        #region Bottom Buttons
+
+
+        /// <summary>
+        /// These are the click events for the bottom buttons.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         void call_Click(object sender, EventArgs e)
-        {
+        {         
             var uri = Android.Net.Uri.Parse("tel:" + App3.Resources.Strings.SkatteopplysningenTLF);
             var intent = new Intent(Intent.ActionView, uri);
             StartActivity(intent);
@@ -378,6 +398,10 @@ namespace App3.Droid
 			StartActivity(typeof(MapsActivity));
 		}
 
+        #endregion
+
+
+        
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
@@ -439,6 +463,12 @@ namespace App3.Droid
     }
 
 
+    #region Sliding View Classes
+
+
+
+
+
     public class CalendarFragmentAdapter : FragmentPagerAdapter
     {
         public static XMLroot[] _calendarItems;
@@ -453,6 +483,10 @@ namespace App3.Droid
 
         public override Android.Support.V4.App.Fragment GetItem(int position)
         {
+
+
+
+
              return new CalendarFragment();
         }
 
@@ -690,5 +724,5 @@ namespace App3.Droid
     }
 
 
-
+#endregion
 }

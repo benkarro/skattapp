@@ -159,21 +159,27 @@ namespace App3.Droid
 
 
             DateTime DateVerify = XmlConvert.ToDateTime(_items[position].date);
+			//string cDateVerify = DateVerify.Day + "." + DateVerify.Month + "." + DateVerify.Year;
 
             string HeadText = _items[position].title;
 
-            if (HeadText.Substring(0, 11).Contains(DateVerify.Date.ToShortDateString()))
-            {
-                Head.Text = _items[position].title.Replace(DateVerify.Date.ToShortDateString(), "").TrimStart();
-            }
-            else if (HeadText.Substring(0, 25).Contains(DateVerify.ToString())) //If text contains date + time format.
-            {
-                Head.Text = _items[position].title;
-            }
-            else
-            {
-                Head.Text = _items[position].title;
-            }
+			/*if (HeadText.Substring (0, 11).Contains (DateVerify.Date.ToShortDateString ())) {
+				Head.Text = _items [position].title.Replace (DateVerify.Date.ToShortDateString (), "").TrimStart ();
+			} */
+
+
+			string DateTimeCheck = HeadText.Substring (0, 11);
+			DateTime ParseResult;
+
+			bool res = DateTime.TryParse(DateTimeCheck, out ParseResult);
+			if (res) {
+				Head.Text = _items [position].title.Replace (DateTimeCheck, "").TrimStart ();
+			} else {
+				Head.Text = _items [position].title;
+			}
+
+
+
 
 
 

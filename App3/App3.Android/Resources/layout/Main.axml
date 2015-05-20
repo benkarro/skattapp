@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="@bool/fitsSystemWindows">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,22 +54,20 @@
             android:id="@+id/border"
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:background="@color/Secondary4"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_below="@+id/viewPager"
-            android:layout_alignStart="@+id/viewPager"
-            android:layout_toEndOf="@+id/viewPager" />
+            android:background="#d3d3d3"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_below="@+id/viewPager" />
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPagerRSS"
             android:layout_height="256dp"
             android:layout_width="fill_parent"
             android:layout_below="@+id/border"
-            android:layout_alignStart="@+id/border"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_toEndOf="@+id/border" />
+            android:layout_gravity="center_vertical" />
     </RelativeLayout>
 <!--<ListView
         android:id="@+id/cListView"

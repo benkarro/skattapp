@@ -113,7 +113,9 @@
     <AndroidResource Include="Resources\layout\Altinn.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values\styles.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
     <None Include="Images\attachment.png" />
@@ -127,9 +129,6 @@
     <AndroidResource Include="Resources\layout\rssListView.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\calendar.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\calendarListView.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
@@ -141,6 +140,17 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\KontorValg.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Inbox.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Calendar.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\values\boolean.xml" />
+    <AndroidResource Include="Resources\values-v21\boolean.xml" />
+    <AndroidResource Include="Resources\layout\Inbox_Menu.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -194,6 +204,9 @@
     <AndroidResource Include="Resources\Drawable\ic_action_sort_by_size.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_network_wifi.png" />
     <AndroidResource Include="Resources\menu\actionbar_buttons_Maps.xml" />
+    <AndroidResource Include="Resources\Drawable\translucentstyle.xml" />
+    <AndroidResource Include="Resources\Drawable\ic_action_overflow.png" />
+    <AndroidResource Include="Resources\Drawable\ic_action_signout.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />

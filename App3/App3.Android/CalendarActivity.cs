@@ -19,14 +19,23 @@ using Java.Util;
 namespace App3.Droid
 {
     [Activity(Label = "Skatte Kalender", ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]
-    public class CalendarActivity : ListActivity
+    public class CalendarActivity : Activity
     {
         private XMLroot[] _items;
         int CalendarChoice;
+		bool ShowExpiredEvents = true;
+
+		ListView CalendarList;
+		calendarAdapter CalendarAdapter;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             Xamarin.Forms.Forms.Init(this, bundle);
+
+			SetContentView (Resource.Layout.Calendar);
+
+			CalendarList = FindViewById<ListView> (Resource.Id.CalendarList);
 
             //
             
@@ -39,36 +48,37 @@ namespace App3.Droid
 
             retrieveset();
 
-            RegisterForContextMenu(this.ListView);
+			RegisterForContextMenu(this.CalendarList);
+
+			CalendarList.ItemClick += CalendarList_ItemClick;
 
         }
 
-        protected override void OnListItemClick(ListView l, View v, int position, long id)
+        void CalendarList_ItemClick (object sender, AdapterView.ItemClickEventArgs e)
         {
-            string title;
-            string link;
-            string subject;
+			string title;
+			string link;
+			string subject;
 
-            if (_items[position].title != null) 
-            { title = _items[position].title.ToString(); }
+			if (_items[e.Position].title != null) 
+			{ title = _items[e.Position].title.ToString(); }
 
-            if (_items[position].link != null)  
-            { link = _items[position].link.ToString();} else 
-            { return; }
+			if (_items[e.Position].link != null)  
+			{ link = _items[e.Position].link.ToString();} else 
+			{ return; }
 
-            if (_items[position].description != null) 
-            { subject = _items[position].description.ToString(); }
-            
-            Android.Net.Uri uri = Android.Net.Uri.Parse(link);
+			if (_items[e.Position].description != null) 
+			{ subject = _items[e.Position].description.ToString(); }
 
-            Intent intent = new Intent(Intent.ActionView);
-            intent.SetData(uri);
-            Intent chooser = Intent.CreateChooser(intent, "Åpne linken med");
+			Android.Net.Uri uri = Android.Net.Uri.Parse(link);
 
-            this.StartActivity(chooser);
+			Intent intent = new Intent(Intent.ActionView);
+			intent.SetData(uri);
+			Intent chooser = Intent.CreateChooser(intent, "Åpne linken med");
 
-
+			this.StartActivity(chooser); 
         }
+
 
         public override void OnCreateContextMenu(IContextMenu menu, View v, IContextMenuContextMenuInfo menuInfo)
         {
@@ -91,6 +101,10 @@ namespace App3.Droid
         {
             var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
             string CalendarSettings = prefs.GetString("Selected Calendar int", "");
+			string Datosettings = prefs.GetString ("DateEx", ""); 
+			if (bool.TrueString == Datosettings) 
+			{ ShowExpiredEvents = true; } else 
+			{ ShowExpiredEvents = false; }
 
 
             int output;
@@ -126,17 +140,83 @@ namespace App3.Droid
                 var DOC = XDocument.Parse(xmlFeed);
                 XNamespace dc = "http://purl.org/dc/elements/1.1/";
 
-                _items = (from item in DOC.Descendants("item")
-                          select new XMLroot
-                          {
-                              title = item.Element("title").Value,
-                              link = item.Element("link").Value,
-                              date = item.Element(dc + "date").Value
-                          }).ToArray();
                 //_items.Reverse();
-                Array.Reverse(_items);
+                //Array.Reverse(_items);
 
-                ListAdapter = new calendarAdapter(this, _items);
+
+				if (ShowExpiredEvents == true) {
+
+					_items = (from item in DOC.Descendants ("item")
+					          select new XMLroot {
+						title = item.Element ("title").Value,
+						link = item.Element ("link").Value,
+						date = item.Element (dc + "date").Value
+					}).ToArray ();
+
+				} else {
+
+					XMLroot[] _temp;
+
+
+					_temp = (from item in DOC.Descendants("item")
+						select new XMLroot
+						{
+							title = item.Element("title").Value,
+							link = item.Element("link").Value,
+							date = item.Element(dc + "date").Value
+						}).ToArray();
+
+
+					#region Finding Not Expired
+					List<XMLroot> futureEvents = new List<XMLroot> ();
+					for (int i = 0; i < _temp.Count (); i++) {
+						#region Date Handling
+						DateTime contentdate = XmlConvert.ToDateTime (_temp [i].date);
+						DateTime currentdate = DateTime.Now;
+						int Day = currentdate.Day;
+						int Month = currentdate.Month;
+						int Year = currentdate.Year;
+						#endregion
+
+
+						//Console.WriteLine("********************************************************************************************************");
+
+
+						if (contentdate.Year == Year) {
+							if (contentdate.Month > Month) {
+								//Add to not expired
+								//Console.WriteLine("NOT EXPIRED: [i] = " + i + " ITEM: " + _temp[i].title + "/" + _temp[i].link + "/" + _temp[i].date);
+								futureEvents.Add (new XMLroot { title = _temp [i].title, link = _temp [i].link, date = _temp [i].date });
+
+							} else if (contentdate.Month == Month) {
+								if (contentdate.Day > Day) {
+									//Add to not expired
+									//Console.WriteLine("NOT EXPIRED: [i] = " + i + " ITEM: " + _temp[i].title + "/" + _temp[i].link + "/" + _temp[i].date);
+									futureEvents.Add (new XMLroot { title = _temp [i].title, link = _temp [i].link, date = _temp [i].date });
+								} else if (contentdate.Day == Day) {
+									//Add to not expired
+									//Console.WriteLine("NOT EXPIRED: [i] = " + i + " ITEM: " + _temp[i].title + "/" +  _temp[i].link + "/" + _temp[i].date);
+									futureEvents.Add (new XMLroot { title = _temp [i].title, link = _temp [i].link, date = _temp [i].date });
+								}
+							}
+
+						}
+						//Console.WriteLine("********************************************************************************************************");
+					}
+					#endregion
+					_items = futureEvents.ToArray ();
+
+				}
+
+
+
+
+
+
+
+				CalendarAdapter = new calendarAdapter(this, _items);
+				CalendarList.SetAdapter(CalendarAdapter);
+                //ListAdapter = new calendarAdapter(this, _items);
                 //ls = new rssAdapter(this, _items);
             }
 
@@ -220,7 +300,7 @@ namespace App3.Droid
                         string VerifyText = _items[info.Position].title;
                         string TitleString;
 
-                        if (VerifyText.Substring(0, 11).Contains(DateVerify.Date.ToShortDateString()))
+                        /*if (VerifyText.Substring(0, 11).Contains(DateVerify.Date.ToShortDateString()))
                         {
                             TitleString = _items[info.Position].title.Replace(DateVerify.Date.ToShortDateString(), "").TrimStart();
                         }
@@ -232,7 +312,19 @@ namespace App3.Droid
                         {
                             TitleString = _items[info.Position].title;
                         }
+					*/
 
+
+
+					string DateTimeCheck = VerifyText.Substring (0, 11);
+					DateTime ParseResult;
+
+					bool res = DateTime.TryParse(DateTimeCheck, out ParseResult);
+					if (res) {
+						TitleString = _items [info.Position].title.Replace (DateTimeCheck, "").TrimStart ();
+					} else {
+						TitleString = _items [info.Position].title;
+					}
 
 
 

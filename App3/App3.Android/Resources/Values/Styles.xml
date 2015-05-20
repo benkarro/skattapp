@@ -3,6 +3,7 @@
    <style name="MyActionBar"
            parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">#3D937E</item>
+     <item name="android:height">48dip</item>
     </style>
 
 <color name="windowBackground">#ffffff</color>
@@ -15,19 +16,25 @@
 
   </style>
 
-  <style name="MyTheme" parent="MyTheme.Base">
-  </style>
 
 
-  <style name="MyTheme.Base" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-    <item name="android:windowTranslucentStatus">true</item>
+  <style name="MyTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+  <item name="android:windowTranslucentStatus">true</item>
     <item name="android:windowTranslucentNavigation">true</item>
    <item name="android:actionBarStyle">@style/MyActionBar</item>
    <item name="android:windowBackground">@color/accentColor</item>
    <item name="android:icon">@android:color/transparent</item>
-    <item name="android:fitsSystemWindows">true</item>
+
   </style>
 
+  <style name="MyThemeNormal" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+  <item name="android:windowTranslucentStatus">false</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+   <item name="android:actionBarStyle">@style/MyActionBar</item>
+   <item name="android:windowBackground">@color/backgroundcolor</item>
+   <item name="android:icon">@android:color/transparent</item>
+
+  </style>
 
 
 
