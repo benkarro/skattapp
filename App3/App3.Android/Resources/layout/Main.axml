@@ -44,7 +44,7 @@
     <RelativeLayout
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:layout_above="@+id/AltinnImageButton">
+        android:layout_above="@+id/border2">
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
@@ -62,13 +62,24 @@
             android:layout_below="@+id/viewPager" />
         <android.support.v4.view.ViewPager
             android:id="@+id/viewPagerRSS"
-            android:layout_height="256dp"
             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/border"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:layout_gravity="center_vertical" />
+    <!--RSS android:layout_height="256dp"-->
     </RelativeLayout>
+    <View
+        android:id="@+id/border2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#d3d3d3"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_above="@+id/AltinnImageButton" />
 <!--<ListView
         android:id="@+id/cListView"
         android:layout_height="wrap_content"

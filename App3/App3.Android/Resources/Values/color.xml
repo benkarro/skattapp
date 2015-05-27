@@ -15,6 +15,15 @@
   <item name="Primary4" type="color">#91ff96</item> <!--Light Green-->
   <item name="Primary5" type="color">#fabb9b</item> <!--Salamon ??-->
 
+
+  <!--Darker Primary Colors -->
+  <item name="dPrimary1" type="color">#400e2d</item><!--Dark Purple-->
+  <item name="dPrimary2" type="color">#895b89</item> <!--Light Purple-->
+  <item name="dPrimary3" type="color">#c83f57</item> <!--Red-->
+  <item name="dPrimary4" type="color">#82e587</item> <!--Light Green-->
+  <item name="dPrimary5" type="color">#e1a88b</item> <!--Salamon ??-->
+
+
   <!--Secondary Colors-->
   <item name="Secondary1" type="color">#279989</item> <!--Dark Green-->
   <item name="Secondary2" type="color">#9cffed</item> <!--Light Blue-->
@@ -22,6 +31,14 @@
   <item name="Secondary4" type="color">#5e9cff</item> <!--Blue-->
   <item name="Secondary5" type="color">#e3e685</item> <!--Yellow-->
 
+
+
+   <!--Darker Secondary Colors-->
+  <item name="dSecondary1" type="color">#23897b</item> <!--Dark Green-->
+  <item name="dSecondary2" type="color">#8ce5d5</item> <!--Light Blue-->
+  <item name="dSecondary3" type="color">#e5be73</item> <!--Yellow/ORange-->
+  <item name="dSecondary4" type="color">#548ce5</item> <!--Blue-->
+  <item name="dSecondary5" type="color">#cccf77</item> <!--Yellow-->
 
 
 

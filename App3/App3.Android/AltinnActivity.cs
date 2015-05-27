@@ -25,6 +25,7 @@ namespace App3.Droid
         {
 			if (((int)Android.OS.Build.VERSION.SdkInt) < 21) {
 				SetTheme (Resource.Style.MyThemeNormal); // For deactivation of translucent theme for this activity/layout
+
 			}
 
             

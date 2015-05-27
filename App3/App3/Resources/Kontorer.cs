@@ -55,7 +55,7 @@ namespace App3.Resources
 
             #endregion
             //Index 2
-            #region Postkode??
+            #region Plass?
 
             hld = new Holding();
 
@@ -103,7 +103,7 @@ namespace App3.Resources
 
             hld = new Holding();
 
-            hld.Start = 152;
+            hld.Start = 142;
             hld.Lenght = 36;
 
             indexes.Add(hld);
@@ -220,8 +220,12 @@ namespace App3.Resources
 
                         int res0;
 
+						string Postboks = "";
+						string Postkode = "";
+
                         string Kontor = "";
-                        string Postboks = "";
+						string Postkode2 = "";
+                        
                         string Addresse = "";
 
                         string Number1 = ""; int Nummer1 = 0;
@@ -246,10 +250,22 @@ namespace App3.Resources
                             Postboks = t.Substring(index[4].Start, index[4].Lenght).TrimEnd();
                         }
 
+						if (t.Length > index[6].Start + index[6].Lenght) 
+						{
+							Postkode = t.Substring(index[6].Start, index[6].Lenght).TrimEnd();
+						}
+
                         if (t.Length > index[7].Start + index[7].Lenght) 
                         {
                             Addresse = t.Substring(index[7].Start, index[7].Lenght).TrimEnd();
                         }
+
+
+						if (t.Length > index[8].Start + index[8].Lenght) 
+						{
+							Postkode2 = t.Substring(index[8].Start, index[8].Lenght).TrimEnd();
+						}
+
 
                         if (t.Length > index[9].Start + index[9].Lenght) 
                         {
@@ -362,9 +378,12 @@ namespace App3.Resources
                                     {
                                         Console.WriteLine(">>> " + Kontor);
                                         Kontorinf.Add(new KontorInfo
-                                        {
+										{
+											Postboks = Postboks,
+											Postkode1 = Postkode,
                                             Kontor = Kontor,
-                                            Postboks = Postboks,
+											PostKode2 = Postkode2,
+                                            
                                             Addresse = Addresse,
                                             Nummer1 = Nummer1,
                                             Nummer2 = Nummer2,
@@ -407,7 +426,8 @@ namespace App3.Resources
         public  String Åpent { get; set; }
         public String Addresse { get; set; }
         public String Postboks { get; set; }
-        public String PostAddresse { get; set; }
+		public String Postkode1 { get; set; }
+        public String PostKode2 { get; set; }
         public int Nummer1 { get; set; }
         public int Nummer2 { get; set; }
         public String Epost { get; set; }

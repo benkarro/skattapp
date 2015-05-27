@@ -104,6 +104,8 @@
     </Compile>
     <Compile Include="SplashActivity.cs" />
     <Compile Include="MapsActivity.cs" />
+    <Compile Include="MainActivity_Fragment.cs" />
+    <Compile Include="KontorActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -150,9 +152,8 @@
     </AndroidResource>
     <AndroidResource Include="Resources\values\boolean.xml" />
     <AndroidResource Include="Resources\values-v21\boolean.xml" />
-    <AndroidResource Include="Resources\layout\Inbox_Menu.axml">
-      <SubType>AndroidResource</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\CustomMarkerWindow.axml" />
+    <AndroidResource Include="Resources\layout\Kontor.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\ic_action_attachment.png" />
@@ -190,7 +191,9 @@
     <AndroidResource Include="Resources\menu\calendarItems.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\Drawable-v21\rippleroundedges.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -204,7 +207,6 @@
     <AndroidResource Include="Resources\Drawable\ic_action_sort_by_size.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_network_wifi.png" />
     <AndroidResource Include="Resources\menu\actionbar_buttons_Maps.xml" />
-    <AndroidResource Include="Resources\Drawable\translucentstyle.xml" />
     <AndroidResource Include="Resources\Drawable\ic_action_overflow.png" />
     <AndroidResource Include="Resources\Drawable\ic_action_signout.png" />
   </ItemGroup>
