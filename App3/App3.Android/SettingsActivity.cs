@@ -19,6 +19,7 @@ namespace App3.Droid
 
         Switch SMSswitch;
 		Switch Datoswitch;
+		Switch Markerswitch;
         Spinner RSSselector;
 
         List<string> _thisItems = new List<string>();
@@ -31,6 +32,7 @@ namespace App3.Droid
 
             SMSswitch = FindViewById<Switch>(Resource.Id.switch1);
 			Datoswitch = FindViewById<Switch> (Resource.Id.switch2);
+			Markerswitch = FindViewById<Switch> (Resource.Id.switch3);
             RSSselector = FindViewById<Spinner>(Resource.Id.spinner1);
 
 
@@ -102,6 +104,7 @@ namespace App3.Droid
             var prefEdityor = prefs.Edit();
 			prefEdityor.PutString("ReadSMS", SMSswitch.Checked.ToString());
 			prefEdityor.PutString ("DateEx", Datoswitch.Checked.ToString ());
+			prefEdityor.PutString ("KunSkatt", Markerswitch.Checked.ToString ());
             prefEdityor.PutString("Selected Calendar int", Calendar.SelectedItemPosition.ToString());
             prefEdityor.PutString("Selected Calendar string", Calendar.SelectedItem.ToString());
             prefEdityor.Commit();
@@ -113,6 +116,7 @@ namespace App3.Droid
             var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
             var SMSsettings = prefs.GetString("ReadSMS", "");
 			var Datosettings = prefs.GetString ("DateEx", "");
+			var KunSkattsettings = prefs.GetString ("KunSkatt", "");
             string CalendarSettings = prefs.GetString("Selected Calendar int", "0");
 
             if (bool.TrueString == SMSsettings) 
@@ -122,6 +126,10 @@ namespace App3.Droid
 			if (bool.TrueString == Datosettings) 
 			{ Datoswitch.Checked = true; } else 
 			{ Datoswitch.Checked = false; }
+
+			if (bool.TrueString == KunSkattsettings) 
+			{ Markerswitch.Checked = true; } else 
+			{ Markerswitch.Checked = false; }
 
 
             RSSselector.SetSelection(int.Parse(CalendarSettings));

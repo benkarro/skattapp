@@ -30,6 +30,47 @@
             android:layout_margin="8dp"
             android:layout_below="@+id/switch1" />
         <TextView
+            android:id="@+id/Settings_textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maps innstillinger"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_below="@+id/switch2" />
+        <LinearLayout
+            android:id="@+id/Settings_Maps_Options"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/Settings_textView2">
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d3d3d3"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch3"
+                android:textOn="På"
+                android:textOff="Av"
+                android:text="Vis Kun Skatt"
+                android:checked="true"
+                android:layout_margin="8dp" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#d3d3d3"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp" />
+        </LinearLayout>
+        <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +78,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_below="@+id/switch2" />
+            android:layout_below="@+id/Settings_Maps_Options" />
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

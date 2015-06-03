@@ -205,8 +205,21 @@ namespace App3.Resources
 
             index = indexes.ToArray();
             #region Read File
+
+
+			#if __IOS__
+			var resourcePrefix = "App3.iOS.";
+			#endif
+			#if __ANDROID__
+			var resourcePrefix = "App3.Droid.";
+			#endif
+			#if WINDOWS_PHONE
+			var resourcePrefix = "App3.WinPhone.";
+			#endif
+
+
             var assembly = typeof(Kontorer).GetTypeInfo().Assembly;
-            Stream stream = assembly.GetManifestResourceStream("App3.Droid.Kontorer.txt");
+			Stream stream = assembly.GetManifestResourceStream(resourcePrefix +"Kontorer.txt");
 
 
             using (var reader = new StreamReader(stream))
@@ -408,6 +421,7 @@ namespace App3.Resources
                     Console.WriteLine(e);
                 }
             }
+			stream.Close();
             #endregion
 
 

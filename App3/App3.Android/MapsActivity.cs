@@ -9,6 +9,9 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using App3.Resources;
+using System.Threading.Tasks;
+using System.Threading;
+using System.Linq;
 
 
 namespace App3.Droid
@@ -24,6 +27,8 @@ namespace App3.Droid
         public static List<string> ValgteKontorer = new List<string>();
         public static List<string> ValgteSwitcher = new List<string>();
 
+		public static Boolean KunSkatt = false;
+
 
         Switch Kemnern;
         Switch Skatteoppkrever;
@@ -35,6 +40,13 @@ namespace App3.Droid
         Switch Servicepartner;
         Switch SITSBrukersenter;
         Switch Registerinfo;
+
+		Switch Skattekontorer_Nord;
+		Switch Skattekontorer_Midt;
+		Switch Skattekontorer_Øst;
+		Switch Skattekontorer_Vest;
+		Switch Skattekontorer_Sør;
+		LinearLayout map_Switch_KontorHolder;
 
 
 		public String Oljeskattekontoret_color = Application.Context.GetString (Resource.Color.Primary1);
@@ -90,10 +102,26 @@ namespace App3.Droid
 			SetContentView (Resource.Layout.Maps);
 
 
-            
+			GetSettings ();
             
             
             SetUpMap ();
+
+		}
+
+
+		public void GetSettings() 
+		{
+
+
+			var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
+
+			var KunSkattsettings = prefs.GetString ("KunSkatt", "");
+
+			if (bool.TrueString == KunSkattsettings) 
+			{ KunSkatt = true; } else 
+			{ KunSkatt = false; }
+
 
 		}
 
@@ -138,215 +166,217 @@ namespace App3.Droid
 			mMap.MoveCamera (camera);
 
 
-
-			//foreach(string element in kontorer){
-			//	mMap.AddMarker (new MarkerOptions ()
-			//		.SetPosition (posission2)
-			//		.SetTitle ("yo")
-			//		.SetSnippet("aka big town")
-			//	);
-				
-			//}
-
-
-            /*MarkerOptions hq = new MarkerOptions();
-            hq.SetPosition(new LatLng (59.9145366, 10.802480599999967));
-            hq.SetTitle("Skattedirektoratet og SITS");
-            hq.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueCyan));
-            mMap.AddMarker(hq);*/
-
-
-            //mMap.Clear();
-
-            SetMarkers();
+            //SetMarkers();
 		}
-
-
-        public void SetMarkers()
+			
+		public async void SetMarkers()
         {
             mMap.Clear();
         
             KontorInformasjon = Kontorer.getKontorer(ValgteKontorer).ToArray();
             //Console.WriteLine(KontorInformasjon.Length);
 
-            for (int i = 0; i < KontorInformasjon.Length; i++)
-            {
-                MarkerOptions offices = new MarkerOptions();
-                offices.SetPosition(new LatLng(KontorInformasjon[i].Latitude, KontorInformasjon[i].Longitude));
-                offices.SetTitle(KontorInformasjon[i].Kontor);
-                Console.WriteLine("> Kontor ADDED: " + KontorInformasjon[i].Kontor + ";");
+			await Task.Run (() => {
 
 
-
-                string KontorTittel = KontorInformasjon[i].Kontor;
-
-
-				string selectedColor = "";
-
-				Android.Graphics.Color ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontorer_color));
-
-                if (KontorTittel.Contains("Skattedirektoratet"))
-                {
-					selectedColor = Skattedirektoratet_color_id;
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattedirektoratet_color));
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("Skatteetatens IT- og servicepartner"))
-                {
-					selectedColor = Servicepartner_color_id;
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Servicepartner_color));
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("SITS Brukersenter"))
-                {
-					selectedColor = SITSBrukersenter_color_id;
-
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(SITSBrukersenter_color));
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("Oljeskattekontoret"))
-                {
-					selectedColor = Oljeskattekontoret_color_id;
-
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Oljeskattekontoret_color));
-
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("Sentralskattekontoret"))
-                {
-					selectedColor = Sentralskattekontoret_color_id;
-
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Sentralskattekontoret_color));
-
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("Registerinfo"))
-                {
-					selectedColor = Registerinfo_color_id;
-
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Registerinfo_color));
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-
-
-                if (KontorTittel.Contains("Kemnern") || KontorTittel.Contains("kemnerkontor"))
-                {
-					selectedColor = Kemnern_color_id;
-
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Kemnern_color));
-
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("kommunekassererkontor") || KontorTittel.Contains("kommunekasserarkontor"))
-                {
-					selectedColor = Kommunekasserer_color_id;
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Kommunekasserer_color));
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-                else if (KontorTittel.Contains("skatteoppkreverkontor") || KontorTittel.Contains("skatteoppkreverktr.") || KontorTittel.Contains("Skatteoppkreveren") || KontorTittel.Contains("Skatteoppkrevjaren") || KontorTittel.Contains("skatteoppkrevjarkontor") || KontorTittel.Contains("skatteoppkreverktr"))
-                {
-					selectedColor = Skatteoppkrever_color_id;
-
-					ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skatteoppkrever_color));
-					var hue = ths.GetHue ();
-					offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-                }
-
-				if (ValgteSwitcher.Contains("Skattekontorer")) 
+				for (int i = 0; i < KontorInformasjon.Length; i++)
 				{
-					if (ValgteSwitcher.Count == 1) {
-						if (KontorTittel.Contains ("Skatt øst") || KontorTittel.Contains ("Skatt Øst")) 
-						{
-
-							selectedColor = Skattekontor_Øst_color_id;
-
-							ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Øst_color));
-							var hue = ths.GetHue ();
-							offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-						} 
-						else if (KontorTittel.Contains ("Skatt vest") || KontorTittel.Contains ("Skatt Vest")) 
-						{
-							selectedColor = Skattekontor_Vest_color_id;
-
-							ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Vest_color));
-
-							var hue = ths.GetHue ();
-							offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-						} 
-						else if (KontorTittel.Contains ("Skatt sør") || KontorTittel.Contains ("Skatt Sør")) 
-						{
-							selectedColor = Skattekontor_Sør_color_id;
-
-							ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Sør_color));
-
-							var hue = ths.GetHue ();
-							offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-						} 
-						else if (KontorTittel.Contains ("Skatt Midt-Norge")) 
-						{
-							selectedColor = Skattekontor_Midt_color_id;
-
-							ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Midt_color));
-
-							var hue = ths.GetHue ();
-							offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-						} 
-						else if (KontorTittel.Contains ("Skatt nord") || KontorTittel.Contains ("Skatt Nord")) 
-						{
-							selectedColor = Skattekontor_Nord_color_id;
+					MarkerOptions offices = new MarkerOptions();
+					offices.SetPosition(new LatLng(KontorInformasjon[i].Latitude, KontorInformasjon[i].Longitude));
+					offices.SetTitle(KontorInformasjon[i].Kontor);
+					Console.WriteLine("> Kontor ADDED: " + KontorInformasjon[i].Kontor + ";");
 
 
-							ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Nord_color));
 
-							var hue = ths.GetHue ();
-							offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
-						}
-					} 
-					else if (KontorTittel.Contains ("Skatt øst") || KontorTittel.Contains ("Skatt Øst") || 
-						KontorTittel.Contains ("Skatt vest") || KontorTittel.Contains ("Skatt Vest") || 
-						KontorTittel.Contains ("Skatt sør") || KontorTittel.Contains ("Skatt Sør") || 
-						KontorTittel.Contains ("Skatt nord") || KontorTittel.Contains ("Skatt Nord") ||
-						KontorTittel.Contains ("Skatt Midt-Norge") 
-					)
+					string KontorTittel = KontorInformasjon[i].Kontor;
+
+
+					string selectedColor = "";
+
+					Android.Graphics.Color ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontorer_color));
+
+					if (KontorTittel.Contains("Skattedirektoratet"))
 					{
-						selectedColor = Skattekontorer_color_id;
+						selectedColor = Skattedirektoratet_color_id;
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattedirektoratet_color));
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+					else if (KontorTittel.Contains("Skatteetatens IT- og servicepartner"))
+					{
+						selectedColor = Servicepartner_color_id;
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Servicepartner_color));
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+					else if (KontorTittel.Contains("SITS Brukersenter"))
+					{
+						selectedColor = SITSBrukersenter_color_id;
 
 
-						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontorer_color));
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(SITSBrukersenter_color));
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+					else if (KontorTittel.Contains("Oljeskattekontoret"))
+					{
+						selectedColor = Oljeskattekontoret_color_id;
+
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Oljeskattekontoret_color));
 
 						var hue = ths.GetHue ();
 						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
 					}
+					else if (KontorTittel.Contains("Sentralskattekontoret"))
+					{
+						selectedColor = Sentralskattekontoret_color_id;
+
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Sentralskattekontoret_color));
+
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+					else if (KontorTittel.Contains("Registerinfo"))
+					{
+						selectedColor = Registerinfo_color_id;
+
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Registerinfo_color));
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+
+
+					if (KontorTittel.Contains("Kemnern") || KontorTittel.Contains("kemnerkontor"))
+					{
+						selectedColor = Kemnern_color_id;
+
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Kemnern_color));
+
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+					else if (KontorTittel.Contains("kommunekassererkontor") || KontorTittel.Contains("kommunekasserarkontor"))
+					{
+						selectedColor = Kommunekasserer_color_id;
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Kommunekasserer_color));
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+					else if (KontorTittel.Contains("skatteoppkreverkontor") || KontorTittel.Contains("skatteoppkreverktr.") || KontorTittel.Contains("Skatteoppkreveren") || KontorTittel.Contains("Skatteoppkrevjaren") || KontorTittel.Contains("skatteoppkrevjarkontor") || KontorTittel.Contains("skatteoppkreverktr"))
+					{
+						selectedColor = Skatteoppkrever_color_id;
+
+						ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skatteoppkrever_color));
+						var hue = ths.GetHue ();
+						offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+					}
+
+					if (ValgteSwitcher.Contains("Skattekontorer")) 
+					{
+
+						List<String> Verify = new List<string>();
+						Verify.AddRange(SkattekontorerL);
+						Verify.Add("Skattekontorer");
+
+						List<String> Filter = new List<String>();
+
+
+                        Filter.AddRange(ValgteKontorer.Where(x => !Verify.Contains(x)));
+
+
+
+
+						if (Filter.Count == 0) {
+							if (KontorTittel.Contains ("Skatt øst") || KontorTittel.Contains ("Skatt Øst")) 
+							{
+
+								selectedColor = Skattekontor_Øst_color_id;
+
+								ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Øst_color));
+								var hue = ths.GetHue ();
+								offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+							} 
+							else if (KontorTittel.Contains ("Skatt vest") || KontorTittel.Contains ("Skatt Vest")) 
+							{
+								selectedColor = Skattekontor_Vest_color_id;
+
+								ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Vest_color));
+
+								var hue = ths.GetHue ();
+								offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+							} 
+							else if (KontorTittel.Contains ("Skatt sør") || KontorTittel.Contains ("Skatt Sør")) 
+							{
+								selectedColor = Skattekontor_Sør_color_id;
+
+								ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Sør_color));
+
+								var hue = ths.GetHue ();
+								offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+							} 
+							else if (KontorTittel.Contains ("Skatt Midt-Norge")) 
+							{
+								selectedColor = Skattekontor_Midt_color_id;
+
+								ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Midt_color));
+
+								var hue = ths.GetHue ();
+								offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+							} 
+							else if (KontorTittel.Contains ("Skatt nord") || KontorTittel.Contains ("Skatt Nord")) 
+							{
+								selectedColor = Skattekontor_Nord_color_id;
+
+
+								ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontor_Nord_color));
+
+								var hue = ths.GetHue ();
+								offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+							}
+						} 
+						else if (KontorTittel.Contains ("Skatt øst") || KontorTittel.Contains ("Skatt Øst") || 
+							KontorTittel.Contains ("Skatt vest") || KontorTittel.Contains ("Skatt Vest") || 
+							KontorTittel.Contains ("Skatt sør") || KontorTittel.Contains ("Skatt Sør") || 
+							KontorTittel.Contains ("Skatt nord") || KontorTittel.Contains ("Skatt Nord") ||
+							KontorTittel.Contains ("Skatt Midt-Norge") 
+						)
+						{
+							selectedColor = Skattekontorer_color_id;
+
+
+							ths = new Android.Graphics.Color(Android.Graphics.Color.ParseColor(Skattekontorer_color));
+
+							var hue = ths.GetHue ();
+							offices.InvokeIcon(BitmapDescriptorFactory.DefaultMarker(hue));
+						}
+					}
+
+
+
+
+
+
+
+					offices.SetSnippet (i.ToString() + ";" + selectedColor);
+
+					RunOnUiThread(() => {
+						mMap.AddMarker(offices);
+					});
 				}
+				RunOnUiThread(() => {
+				mMap.SetInfoWindowAdapter(new CustomMarkerPopupAdapter(LayoutInflater));
+				});
+
+			});
 
 
-                
-
-
-
-
-				offices.SetSnippet (i.ToString() + ";" + selectedColor);
-                
-                mMap.AddMarker(offices);
-            
-            }
-			mMap.SetInfoWindowAdapter(new CustomMarkerPopupAdapter(LayoutInflater));
             ValgteKontorer.Clear();
             
             
@@ -381,6 +411,9 @@ namespace App3.Droid
 						intent.PutExtra ("Postkode1", KontorInformasjon [nint].Postkode1);
 						intent.PutExtra ("Postkode2", KontorInformasjon [nint].PostKode2);
 						intent.PutExtra ("Epost", KontorInformasjon [nint].Epost);
+
+                        intent.PutExtra("Latitude", KontorInformasjon[nint].Latitude.ToString());
+                        intent.PutExtra("Longitude", KontorInformasjon[nint].Longitude.ToString());
 
 
 					}
@@ -462,9 +495,6 @@ namespace App3.Droid
             return base.OnCreateOptionsMenu(menu);
         }
 
-        
-
-
         public void showSelection()
         {
             
@@ -477,9 +507,37 @@ namespace App3.Droid
             _builder.SetPositiveButton("Ok", OkClicked);
 
 
+
             
+
+
+
             AlertDialog DialogView = _builder.Create();
+
+
             DialogView.Show();
+			Skattekontorer = DialogView.FindViewById<Switch> (Resource.Id.map_Switch4);
+
+			Skattekontorer_Nord = DialogView.FindViewById<Switch> (Resource.Id.map_Switch4_1);
+			Skattekontorer_Midt = DialogView.FindViewById<Switch> (Resource.Id.map_Switch4_2);
+			Skattekontorer_Øst = DialogView.FindViewById<Switch> (Resource.Id.map_Switch4_3);
+			Skattekontorer_Vest = DialogView.FindViewById<Switch> (Resource.Id.map_Switch4_4);
+			Skattekontorer_Sør = DialogView.FindViewById<Switch> (Resource.Id.map_Switch4_5);
+
+			map_Switch_KontorHolder = DialogView.FindViewById<LinearLayout> (Resource.Id.map_Switch_KontorHolder);
+
+
+			Skattekontorer.CheckedChange += (sender, e) => {
+				
+				if (Skattekontorer.Checked == true) {
+					map_Switch_KontorHolder.Visibility = ViewStates.Visible;
+
+				} 
+				else 
+				{
+					map_Switch_KontorHolder.Visibility = ViewStates.Gone;
+				}
+			};
 
             Kemnern = DialogView.FindViewById<Switch>(Resource.Id.map_Switch1);
             Skatteoppkrever = DialogView.FindViewById<Switch>(Resource.Id.map_Switch2);
@@ -491,6 +549,20 @@ namespace App3.Droid
             Servicepartner = DialogView.FindViewById<Switch>(Resource.Id.map_Switch8);
             SITSBrukersenter = DialogView.FindViewById<Switch>(Resource.Id.map_Switch9);
             Registerinfo = DialogView.FindViewById<Switch>(Resource.Id.map_Switch10);
+
+
+			if (KunSkatt == true) 
+			{
+				Kemnern.Visibility = ViewStates.Gone;
+				Kommunekasserer.Visibility = ViewStates.Gone;
+				Registerinfo.Visibility = ViewStates.Gone;
+			}
+
+
+
+
+
+			map_Switch_KontorHolder = DialogView.FindViewById<LinearLayout> (Resource.Id.map_Switch_KontorHolder);
 
             if (((int)Android.OS.Build.VERSION.SdkInt) < 21)
             {
@@ -505,6 +577,12 @@ namespace App3.Droid
                 Servicepartner.SetThumbResource(Resource.Drawable.switch_thumb);
                 SITSBrukersenter.SetThumbResource(Resource.Drawable.switch_thumb);
                 Registerinfo.SetThumbResource(Resource.Drawable.switch_thumb);
+
+				Skattekontorer_Nord.SetThumbResource(Resource.Drawable.switch_thumb);
+				Skattekontorer_Midt.SetThumbResource(Resource.Drawable.switch_thumb);
+				Skattekontorer_Øst.SetThumbResource(Resource.Drawable.switch_thumb);
+				Skattekontorer_Vest.SetThumbResource(Resource.Drawable.switch_thumb);
+				Skattekontorer_Sør.SetThumbResource(Resource.Drawable.switch_thumb);
             }
 
 
@@ -524,7 +602,21 @@ namespace App3.Droid
                 { Kommunekasserer.Checked = true; }
 
                 if (ValgteSwitcher.Contains("Skattekontorer"))
-                { Skattekontorer.Checked = true; }
+                { 
+					Skattekontorer.Checked = true; 
+
+					if (ValgteSwitcher.Count == 1) 
+					{
+						map_Switch_KontorHolder.Visibility = ViewStates.Visible;
+					}
+
+					if (ValgteSwitcher.Contains ("Skattekontorer_Nord")) {Skattekontorer_Nord.Checked = true;}
+					if (ValgteSwitcher.Contains ("Skattekontorer_Midt")) {Skattekontorer_Midt.Checked = true;}
+					if (ValgteSwitcher.Contains ("Skattekontorer_Øst")) {Skattekontorer_Øst.Checked = true;}
+					if (ValgteSwitcher.Contains ("Skattekontorer_Vest")) {Skattekontorer_Vest.Checked = true;}
+					if (ValgteSwitcher.Contains ("Skattekontorer_Sør")) {Skattekontorer_Sør.Checked = true;}
+
+				}
 
                 if (ValgteSwitcher.Contains("Sentralskattekontoret"))
                 { Sentralskattekontoret.Checked = true; }
@@ -553,10 +645,16 @@ namespace App3.Droid
             ValgteSwitcher.Clear();
         }
 
+
         string[] KemnernL = { "Kemnern", "kemnerkontor" };
         string[] SkatteoppkreverL = { "skatteoppkreverkontor", "skatteoppkreverktr.", "Skatteoppkreveren", "Skatteoppkrevjaren", "skatteoppkrevjarkontor", "skatteoppkreverktr" };
         string[] KommunekassererL = { "kommunekassererkontor", "kommunekasserarkontor" };
-        string[] SkattekontorerL = { "Skatt øst", "Skatt sør" , "Skatt vest", "Skatt Midt-Norge" , "Skatt nord", "Skatt Nord" };
+		string[] SkattekontorerL = { "Skatt nord", "Skatt Nord" , "Skatt Midt-Norge", "Skatt midt-norge" , "Skatt Vest", "Skatt vest" , "Skatt Øst", "Skatt øst" , "Skatt Sør", "Skatt sør" };
+		string[] Skattekontor_Nord = {"Skatt nord", "Skatt Nord"};
+		string [] Skattekontor_Midt = {"Skatt Midt-Norge", "Skatt midt-norge"};
+		string [] Skattekontor_Vest = {"Skatt Vest", "Skatt vest"};
+		string [] Skattekontor_Øst = {"Skatt Øst", "Skatt øst"};
+		string [] Skattekontor_Sør = {"Skatt Sør", "Skatt sør"};
 
 
         private void OkClicked(object sender, DialogClickEventArgs args)
@@ -578,9 +676,13 @@ namespace App3.Droid
 
 
 
+			Skattekontorer_Nord = dialog.FindViewById<Switch> (Resource.Id.map_Switch4_1);
+			Skattekontorer_Midt = dialog.FindViewById<Switch> (Resource.Id.map_Switch4_2);
+			Skattekontorer_Øst = dialog.FindViewById<Switch> (Resource.Id.map_Switch4_3);
+			Skattekontorer_Vest = dialog.FindViewById<Switch> (Resource.Id.map_Switch4_4);
+			Skattekontorer_Sør = dialog.FindViewById<Switch> (Resource.Id.map_Switch4_5);
 
-
-
+			map_Switch_KontorHolder = dialog.FindViewById<LinearLayout> (Resource.Id.map_Switch_KontorHolder);
 
 
 
@@ -602,7 +704,24 @@ namespace App3.Droid
             if (Kommunekasserer.Checked == true)
             { ValgteSwitcher.Add("Kommunekasserer"); ValgteKontorer.AddRange(KommunekassererL); }
             if (Skattekontorer.Checked == true)
-            { ValgteSwitcher.Add("Skattekontorer"); ValgteKontorer.AddRange(SkattekontorerL); }
+            { 
+				ValgteSwitcher.Add("Skattekontorer"); 
+
+				if (map_Switch_KontorHolder.Visibility == ViewStates.Visible) 
+				{
+					if (Skattekontorer_Nord.Checked == true) { ValgteSwitcher.Add ("Skattekontorer_Nord"); ValgteKontorer.AddRange (Skattekontor_Nord); }
+					if (Skattekontorer_Midt.Checked == true) { ValgteSwitcher.Add ("Skattekontorer_Midt"); ValgteKontorer.AddRange (Skattekontor_Midt); }
+					if (Skattekontorer_Vest.Checked == true) { ValgteSwitcher.Add ("Skattekontorer_Vest"); ValgteKontorer.AddRange (Skattekontor_Vest); }
+					if (Skattekontorer_Øst.Checked == true) { ValgteSwitcher.Add ("Skattekontorer_Øst"); ValgteKontorer.AddRange (Skattekontor_Øst); }
+					if (Skattekontorer_Sør.Checked == true) { ValgteSwitcher.Add ("Skattekontorer_Sør"); ValgteKontorer.AddRange ( Skattekontor_Sør); }
+				} 
+				else 
+				{
+					ValgteKontorer.AddRange(SkattekontorerL);
+				}
+
+				 
+			}
             if (Sentralskattekontoret.Checked == true)
             { ValgteSwitcher.Add("Sentralskattekontoret"); ValgteKontorer.Add("Sentralskattekontoret"); }
             if (Oljeskattekontoret.Checked == true)
@@ -615,10 +734,14 @@ namespace App3.Droid
             { ValgteSwitcher.Add("SITS Brukersenter"); ValgteKontorer.Add("SITS Brukersenter"); }
             if (Registerinfo.Checked == true)
             { ValgteSwitcher.Add("Registerinfo"); ValgteKontorer.Add("Registerinfo"); }
+				
 
 
             SetMarkers();
         }
+
+
+
 
 
 
@@ -684,17 +807,25 @@ namespace App3.Droid
 						
 				} 
 
-
-
-				/*var snippetTextView = customPopup.FindViewById<TextView>(Resource.Id.custom_marker_popup_snippet);
-				if (snippetTextView != null)
-				{
-					snippetTextView.Text = marker.Snippet;
-				}*/
-
 				return customPopup;
 			}
 		}
+
+
+
+		protected override void OnDestroy ()
+		{
+			base.OnDestroy ();
+
+			//this.Dispose ();
+
+			
+			Finish ();
+
+            GC.Collect(GC.MaxGeneration);
+
+		}
+
 
 	}
 }

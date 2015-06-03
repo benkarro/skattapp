@@ -1,97 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <TextView
-        android:layout_margin="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Velg hvilke kontorer som skal vises ved å skru av og på bryteren" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="vertical"
-        android:layout_height="fill_parent"
         android:layout_width="fill_parent"
-        android:layout_margin="8dp">
-        <Switch
+        android:layout_height="fill_parent">
+        <TextView
+            android:layout_margin="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/map_Switch1"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:layout_margin="4dp"
-            android:text="Kemneren" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch2"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Skatteoppkrever"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch3"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Kommunekasserer"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch4"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Skattekontorer"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch5"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Sentralskattekontoret"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch6"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Oljeskattekontoret"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch7"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Skattedirektoratet"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch8"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Servicepartner"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch9"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="SITS Brukersenter"
-            android:layout_margin="4dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_Switch10"
-            android:textOn="Vis"
-            android:textOff="Skjul"
-            android:text="Registerinfo"
-            android:layout_margin="4dp" />
+            android:text="Velg hvilke kontorer som skal vises ved å skru av og på bryteren" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_margin="8dp">
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch1"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:layout_margin="4dp"
+                android:text="Kemneren" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch2"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Skatteoppkrever"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch3"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Kommunekasserer"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch4"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Skattekontorer"
+                android:layout_margin="4dp" />
+            <LinearLayout
+                android:id="@+id/map_Switch_KontorHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#d3d3d3"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/map_Switch4_1"
+                    android:textOn="Vis"
+                    android:textOff="Skjul"
+                    android:text="Skatt Nord"
+                    android:layout_margin="4dp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/map_Switch4_2"
+                    android:textOn="Vis"
+                    android:textOff="Skjul"
+                    android:text="Skatt Midt-Norge"
+                    android:layout_margin="4dp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/map_Switch4_3"
+                    android:textOn="Vis"
+                    android:textOff="Skjul"
+                    android:text="Skatt Øst"
+                    android:layout_margin="4dp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/map_Switch4_4"
+                    android:textOn="Vis"
+                    android:textOff="Skjul"
+                    android:text="Skatt Vest"
+                    android:layout_margin="4dp" />
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/map_Switch4_5"
+                    android:textOn="Vis"
+                    android:textOff="Skjul"
+                    android:text="Skatt Sør"
+                    android:layout_margin="4dp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#d3d3d3"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp" />
+            </LinearLayout>
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch5"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Sentralskattekontoret"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch6"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Oljeskattekontoret"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch7"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Skattedirektoratet"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch8"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Servicepartner"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch9"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="SITS Brukersenter"
+                android:layout_margin="4dp" />
+            <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_Switch10"
+                android:textOn="Vis"
+                android:textOff="Skjul"
+                android:text="Registerinfo"
+                android:layout_margin="4dp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

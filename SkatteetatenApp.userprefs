@@ -1,43 +1,32 @@
 ﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.2ad1b204" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\Properties\AndroidManifest.xml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.43007c9098966165" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\KontorActivity.cs">
     <Files>
-      <File FileName="App3\App3.Android\KontorActivity.cs" Line="164" Column="4" NotebookId="2" />
-      <File FileName="App3\App3.Android\Resources\values-v21\styles.xml" Line="19" Column="57" NotebookId="2" />
-      <File FileName="App3\App3.Android\SettingsActivity.cs" Line="1" Column="1" NotebookId="2" />
-      <File FileName="App3\App3.Android\Resources\values\styles.xml" Line="32" Column="53" NotebookId="2" />
-      <File FileName="App3\App3\Resources\Kontorer.txt" Line="1" Column="1" NotebookId="2" />
-      <File FileName="App3\App3.Android\MainActivity.cs" Line="110" Column="7" NotebookId="2" />
-      <File FileName="App3\App3.Android\MapsActivity.cs" Line="49" Column="3" NotebookId="2" />
-      <File FileName="App3\App3.Android\AltinnActivity.cs" Line="1" Column="1" NotebookId="2" />
-      <File FileName="App3\App3.Android\Resources\Resource.Designer.cs" Line="1" Column="1" NotebookId="2" />
-      <File FileName="App3\App3.Android\Resources\AboutResources.txt" Line="1" Column="1" NotebookId="2" />
-      <File FileName="App3\App3.Android\Resources\values\strings.xml" Line="1" Column="1" NotebookId="2" />
-      <File FileName="App3\App3.Android\SplashActivity.cs" Line="30" Column="18" NotebookId="2" />
-      <File FileName="App3\App3.Android\Properties\AndroidManifest.xml" Line="1" Column="1" NotebookId="2" />
+      <File FileName="App3\App3.Android\KontorActivity.cs" Line="109" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\SettingsActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\values\styles.xml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\MapsActivity.cs" Line="812" Column="4" NotebookId="1" />
+      <File FileName="App3\App3.Android\AltinnActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\Resource.Designer.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\AboutResources.txt" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\values\strings.xml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\SplashActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3\SkatteetatenXML.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3\Resources\Kontorer.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="0" Y="0" Width="1350" Height="689">
+      <FloatingWindow WindowId="1" X="0" Y="0" Width="1350" Height="705">
         <Files>
-          <File FileName="App3\App3\Resources\Kontorer.cs" Line="385" Column="34" />
-        </Files>
-      </FloatingWindow>
-      <FloatingWindow WindowId="2" X="0" Y="0" Width="1350" Height="689">
-        <Files>
-          <File FileName="App3\App3.Android\Resources\values\color.xml" Line="21" Column="73" NotebookId="1" />
+          <File FileName="App3\App3.Android\MainActivity.cs" Line="298" Column="1" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3\Resources\Kontorer.txt" line="866" column="46" />
-      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\MapsActivity.cs" line="355" column="1" />
+      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\MapsActivity.cs" line="385" column="1" />
+      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\KontorActivity.cs" line="109" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

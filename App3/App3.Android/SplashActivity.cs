@@ -30,9 +30,16 @@ namespace App3.Droid
 			timer.Elapsed += (object sender, ElapsedEventArgs e) =>
 			{
 				StartActivity(typeof(MainActivity));
+				timer.Stop();
+				timer.Dispose();
+				Finish();
 			};
 			timer.Start();
 		}
+			
+
 	}
+
+
 }
 

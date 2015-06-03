@@ -79,12 +79,12 @@
    	<item name="android:icon">@android:color/transparent</item>
   </style>
 
-<style name="sPrimary4_Bar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+<style name="sPrimary4_Bar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
 	<item name="android:background">@color/Primary4</item>
     <item name="android:height">48dip</item>
 </style>
 
-  <style name="sPrimary4" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+  <style name="sPrimary4" parent="@android:style/Theme.Holo.Light">
   	<item name="android:windowTranslucentStatus">true</item>
     <item name="android:windowTranslucentNavigation">true</item>
    	<item name="android:actionBarStyle">@style/sPrimary4_Bar</item>
@@ -135,12 +135,12 @@
    	<item name="android:icon">@android:color/transparent</item>
   </style>
 
-<style name="sSecondary2_Bar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+<style name="sSecondary2_Bar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
 	<item name="android:background">@color/Secondary2</item>
     <item name="android:height">48dip</item>
 </style>
 
-  <style name="sSecondary2" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+  <style name="sSecondary2" parent="@android:style/Theme.Holo.Light">
   	<item name="android:windowTranslucentStatus">true</item>
     <item name="android:windowTranslucentNavigation">true</item>
    	<item name="android:actionBarStyle">@style/sSecondary2_Bar</item>
@@ -174,12 +174,12 @@
    	<item name="android:icon">@android:color/transparent</item>
   </style>
 
-<style name="sSecondary5_Bar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-	<item name="android:background">@color/Primary5</item>
+<style name="sSecondary5_Bar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+	<item name="android:background">@color/Secondary5</item>
     <item name="android:height">48dip</item>
 </style>
 
-  <style name="sSecondary5" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+  <style name="sSecondary5" parent="@android:style/Theme.Holo.Light">
   	<item name="android:windowTranslucentStatus">true</item>
     <item name="android:windowTranslucentNavigation">true</item>
    	<item name="android:actionBarStyle">@style/sSecondary5_Bar</item>

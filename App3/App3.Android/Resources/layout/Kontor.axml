@@ -17,56 +17,15 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent">
                 <RelativeLayout
-                    android:id="@+id/kontor_tid_holder"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_margin="8dp">
-                    <TextView
-                        android:id="@+id/kontor_tid_textview1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Åpningstid: "
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_margin="8dp" />
-                    <View
-                        android:id="@+id/kontor_border_1"
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:background="#d3d3d3"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_below="@+id/kontor_tid_textview1" />
-                    <TextView
-                        android:id="@+id/kontor_tid_textview2"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Åpent??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_below="@+id/kontor_border_1" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/kontor_telefon_holder"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_margin="8dp">
-                    <TextView
-                        android:id="@+id/kontor_telefon_textview1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Telefon: "
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_margin="8dp" />
+                    android:layout_width="wrap_content">
                     <ImageButton
-                        android:src="@drawable/ic_action_call"
-                        android:id="@+id/kontor_telefon_button"
+                        android:src="@drawable/ic_action_time"
+                        android:id="@+id/kontor_tid_button"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="24dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="8dp"
                         android:elevation="1dp"
                         android:padding="8dp"
                         android:background="@drawable/ripple"
@@ -74,27 +33,92 @@
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
                         android:layout_gravity="right"
-                        android:layout_below="@+id/kontor_tid_textview2" />
-                    <View
-                        android:id="@+id/kontor_border_2"
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:background="#d3d3d3"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_below="@+id/kontor_telefon_textview1" />
-                    <TextView
-                        android:id="@+id/kontor_telefon_textview2"
+                        android:layout_centerVertical="true" />
+                    <RelativeLayout
+                        android:layout_toRightOf="@+id/kontor_tid_button"
+                        android:id="@+id/kontor_tid_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Nummer??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_below="@+id/kontor_border_2" />
+                        android:layout_margin="8dp">
+                        <TextView
+                            android:id="@+id/kontor_tid_textview1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Åpningstid: "
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_margin="8dp" />
+                        <View
+                            android:id="@+id/kontor_border_1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#d3d3d3"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_below="@+id/kontor_tid_textview1" />
+                        <TextView
+                            android:id="@+id/kontor_tid_textview2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Åpent??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_below="@+id/kontor_border_1" />
+                    </RelativeLayout>
                 </RelativeLayout>
                 <RelativeLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/ic_action_call"
+                        android:id="@+id/kontor_telefon_button"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="8dp"
+                        android:elevation="1dp"
+                        android:padding="8dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="right"
+                        android:layout_centerVertical="true" />
+                    <RelativeLayout
+                        android:id="@+id/kontor_telefon_holder"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_toRightOf="@+id/kontor_telefon_button">
+                        <TextView
+                            android:id="@+id/kontor_telefon_textview1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Telefon: "
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_margin="8dp" />
+                        <View
+                            android:id="@+id/kontor_border_2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#d3d3d3"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_below="@+id/kontor_telefon_textview1" />
+                        <TextView
+                            android:id="@+id/kontor_telefon_textview2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Nummer??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_below="@+id/kontor_border_2" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            <!--<RelativeLayout
                     android:id="@+id/kontor_telefaks_holder"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
@@ -124,120 +148,180 @@
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:layout_margin="8dp"
                         android:layout_below="@+id/kontor_border_3" />
+                </RelativeLayout>-->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/ic_action_directions"
+                        android:id="@+id/kontor_adresse_button"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="8dp"
+                        android:elevation="1dp"
+                        android:padding="8dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="right"
+                        android:layout_centerVertical="true" />
+                    <RelativeLayout
+                        android:layout_toRightOf="@+id/kontor_adresse_button"
+                        android:id="@+id/kontor_adresse_holder"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="8dp">
+                        <TextView
+                            android:id="@+id/kontor_adresse_textview1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Besøksadresse: "
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_margin="8dp" />
+                        <View
+                            android:id="@+id/kontor_border_4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#d3d3d3"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_below="@+id/kontor_adresse_textview1" />
+                        <TextView
+                            android:id="@+id/kontor_adresse_textview2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Nummer??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_below="@+id/kontor_border_4" />
+                        <TextView
+                            android:id="@+id/kontor_adresse_textview3"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Nummer??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_below="@+id/kontor_adresse_textview2" />
+                    </RelativeLayout>
                 </RelativeLayout>
                 <RelativeLayout
-                    android:id="@+id/kontor_adresse_holder"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:layout_margin="8dp">
-                    <TextView
-                        android:id="@+id/kontor_adresse_textview1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Besøksadresse: "
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_margin="8dp" />
-                    <View
-                        android:id="@+id/kontor_border_4"
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:background="#d3d3d3"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/ic_action_labels"
+                        android:id="@+id/kontor_postboks_button"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_alignParentLeft="true"
                         android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_below="@+id/kontor_adresse_textview1" />
-                    <TextView
-                        android:id="@+id/kontor_adresse_textview2"
+                        android:elevation="1dp"
+                        android:padding="8dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="right"
+                        android:layout_centerVertical="true" />
+                    <RelativeLayout
+                        android:layout_toRightOf="@+id/kontor_postboks_button"
+                        android:id="@+id/kontor_postboks_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Nummer??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_below="@+id/kontor_border_4" />
-                    <TextView
-                        android:id="@+id/kontor_adresse_textview3"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Nummer??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_below="@+id/kontor_adresse_textview2" />
+                        android:layout_margin="8dp">
+                        <TextView
+                            android:id="@+id/kontor_postboks_textview1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Postboks: "
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_margin="8dp" />
+                        <View
+                            android:id="@+id/kontor_border_5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#d3d3d3"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_below="@+id/kontor_postboks_textview1" />
+                        <TextView
+                            android:id="@+id/kontor_postboks_textview2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Nummer??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_below="@+id/kontor_border_5" />
+                        <TextView
+                            android:id="@+id/kontor_postboks_textview3"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Nummer??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_below="@+id/kontor_postboks_textview2" />
+                    </RelativeLayout>
                 </RelativeLayout>
                 <RelativeLayout
-                    android:id="@+id/kontor_postboks_holder"
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_margin="8dp">
-                    <TextView
-                        android:id="@+id/kontor_postboks_textview1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Postboks: "
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_margin="8dp" />
-                    <View
-                        android:id="@+id/kontor_border_5"
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:background="#d3d3d3"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
+                    android:layout_width="wrap_content">
+                    <ImageButton
+                        android:src="@drawable/ic_action_email"
+                        android:id="@+id/kontor_epost_button"
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_alignParentLeft="true"
                         android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_below="@+id/kontor_postboks_textview1" />
-                    <TextView
-                        android:id="@+id/kontor_postboks_textview2"
+                        android:elevation="1dp"
+                        android:padding="8dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:layout_gravity="right"
+                        android:layout_centerVertical="true" />
+                    <RelativeLayout
+                        android:layout_toRightOf="@+id/kontor_epost_button"
+                        android:id="@+id/kontor_epost_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Nummer??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_below="@+id/kontor_border_5" />
-                    <TextView
-                        android:id="@+id/kontor_postboks_textview3"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Nummer??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_below="@+id/kontor_postboks_textview2" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:id="@+id/kontor_epost_holder"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:layout_margin="8dp">
-                    <TextView
-                        android:id="@+id/kontor_epost_textview1"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Epost: "
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:layout_margin="8dp" />
-                    <View
-                        android:id="@+id/kontor_border_6"
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:background="#d3d3d3"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_below="@+id/kontor_epost_textview1" />
-                    <TextView
-                        android:id="@+id/kontor_epost_textview2"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:text="Nummer??"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:layout_margin="8dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_below="@+id/kontor_border_6" />
+                        android:layout_margin="8dp">
+                        <TextView
+                            android:id="@+id/kontor_epost_textview1"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Epost: "
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:layout_margin="8dp" />
+                        <View
+                            android:id="@+id/kontor_border_6"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dp"
+                            android:background="#d3d3d3"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_below="@+id/kontor_epost_textview1" />
+                        <TextView
+                            android:id="@+id/kontor_epost_textview2"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="Nummer??"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:layout_margin="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_below="@+id/kontor_border_6" />
+                    </RelativeLayout>
                 </RelativeLayout>
             </LinearLayout>
         </ScrollView>
