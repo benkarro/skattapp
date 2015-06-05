@@ -21,7 +21,7 @@
         android:layout_gravity="center">
         <ImageView
             android:id="@+id/OfflineImage"
-            android:src="@drawable/ic_action_network_wifi"
+            android:src="@drawable/ic_wifi_black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -88,7 +88,7 @@
         android:layout_above="@+id/AltinnImageButton"
         android:layout_below="@+id/viewPager" />-->
     <ImageButton
-        android:src="@drawable/ic_action_place"
+        android:src="@drawable/ic_map"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:id="@+id/maps"
@@ -98,7 +98,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:elevation="1dp"
-        android:padding="8dp"
+        android:padding="10dp"
         android:background="@drawable/ripple"
         android:tint="@android:color/white"
         android:adjustViewBounds="true"
@@ -107,7 +107,7 @@
         android:gravity="right" />
     <ImageButton
         android:background="@drawable/rippleroundedges"
-        android:src="@drawable/ic_action_email"
+        android:src="@drawable/ic_email"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:id="@+id/AltinnImageButton"
@@ -116,6 +116,7 @@
         android:layout_alignParentRight="false"
         android:layout_centerHorizontal="true"
         android:maxHeight="56dp"
+        android:padding="4dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
@@ -126,7 +127,7 @@
         android:layout_toLeftOf="@+id/CallImageButton"
         android:layout_toRightOf="@+id/maps" />
     <ImageButton
-        android:src="@drawable/ic_action_call"
+        android:src="@drawable/ic_call"
         android:id="@+id/CallImageButton"
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -136,7 +137,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:elevation="1dp"
-        android:padding="8dp"
+        android:padding="10dp"
         android:background="@drawable/ripple"
         android:tint="@android:color/white"
         android:adjustViewBounds="true"

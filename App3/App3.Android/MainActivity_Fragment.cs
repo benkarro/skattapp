@@ -273,22 +273,24 @@ namespace App3.Droid
                 Icon2.Text = Day.ToString();
 
 
-                DateTime DateVerify = XmlConvert.ToDateTime(_itemsEvents[position].date);
 
-                string HeadText = _itemsEvents[position].title;
 
-                if (HeadText.Substring(0, 11).Contains(DateVerify.Date.ToShortDateString()))
-                {
-                    Head.Text = _itemsEvents[position].title.Replace(DateVerify.Date.ToShortDateString(), "").TrimStart();
-                }
-                else if (HeadText.Substring(0, 25).Contains(DateVerify.ToString())) //If text contains date + time format.
-                {
-                    Head.Text = _itemsEvents[position].title;
-                }
-                else
-                {
-                    Head.Text = _itemsEvents[position].title;
-                }
+
+
+				string HeadText = _itemsEvents[position].title;
+				string DateTimeCheck = HeadText.Substring (0, 11);
+				DateTime ParseResult;
+
+				bool res = DateTime.TryParse(DateTimeCheck, out ParseResult);
+				if (res) {
+					Head.Text = _itemsEvents [position].title.Replace (DateTimeCheck, "").TrimStart ();
+				} else {
+					Head.Text = _itemsEvents [position].title;
+				}
+
+
+
+                
 
 
 

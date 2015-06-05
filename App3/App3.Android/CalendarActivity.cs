@@ -121,50 +121,24 @@ namespace App3.Droid
             {
                 var xmlFeed = "";
                 if (CalendarChoice == 0) 
-                { 
-                    xmlFeed= await client.GetStringAsync("http://www.skatteetaten.no/no/Stottemenyer/RSS-feeder/Skattekalender-for-personer/");
-                }
-                else if (CalendarChoice == 1)
-                {
-                    xmlFeed = await client.GetStringAsync("http://www.skatteetaten.no/no/Stottemenyer/RSS-feeder/Kalender-for-bedrifter-og-organisasjoner/");
-                }
-                else
-                {
-                    xmlFeed = await client.GetStringAsync("http://www.skatteetaten.no/no/Stottemenyer/RSS-feeder/Skattekalender-for-personer/");
-                }
+				{ xmlFeed = SkatteetatenXML.Skattekalender_Personer; }
+				else if (CalendarChoice == 1)
+				{ xmlFeed = SkatteetatenXML.Skattekalender_Bedrifter; }
+				else
+				{ xmlFeed = SkatteetatenXML.Skattekalender_Personer; }
 
                  
-                //var xmlFeed = await client.GetStringAsync("http://www.skatteetaten.no/no/Stottemenyer/RSS-feeder/Kalender-for-bedrifter-og-organisasjoner/");
-                //
-
-                var DOC = XDocument.Parse(xmlFeed);
-                XNamespace dc = "http://purl.org/dc/elements/1.1/";
-
-                //_items.Reverse();
-                //Array.Reverse(_items);
-
 
 				if (ShowExpiredEvents == true) {
 
-					_items = (from item in DOC.Descendants ("item")
-					          select new XMLroot {
-						title = item.Element ("title").Value,
-						link = item.Element ("link").Value,
-						date = item.Element (dc + "date").Value
-					}).ToArray ();
+					_items = await SkatteetatenXML.XMLmain(xmlFeed);
 
 				} else {
 
 					XMLroot[] _temp;
 
 
-					_temp = (from item in DOC.Descendants("item")
-						select new XMLroot
-						{
-							title = item.Element("title").Value,
-							link = item.Element("link").Value,
-							date = item.Element(dc + "date").Value
-						}).ToArray();
+					_temp = await SkatteetatenXML.XMLmain(xmlFeed);
 
 
 					#region Finding Not Expired

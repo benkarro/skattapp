@@ -12,6 +12,7 @@ using App3.Resources;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Linq;
+using System.Text;
 
 
 namespace App3.Droid
@@ -28,6 +29,7 @@ namespace App3.Droid
         public static List<string> ValgteSwitcher = new List<string>();
 
 		public static Boolean KunSkatt = false;
+		public static Boolean RememberOffices = false;
 
 
         Switch Kemnern;
@@ -109,6 +111,43 @@ namespace App3.Droid
 
 		}
 
+		protected override void OnStop ()
+		{
+			base.OnStop ();
+			saveset ();
+		}
+
+
+		protected void saveset()
+		{
+		
+
+
+			var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
+			var prefEdityor = prefs.Edit();
+
+
+
+			if (RememberOffices == true) {
+
+
+				StringBuilder Strb = new StringBuilder ();
+
+				foreach (string kontor in ValgteSwitcher) 
+				{
+					Strb.Append (kontor + ";");
+				}
+				Console.WriteLine ("Saved Offices: " + Strb.ToString ());
+				prefEdityor.PutString("Selected Markers", Strb.ToString());
+			}
+
+
+
+			prefEdityor.Commit();
+
+		}
+
+
 
 		public void GetSettings() 
 		{
@@ -117,11 +156,34 @@ namespace App3.Droid
 			var prefs = Application.Context.GetSharedPreferences("Skatteetaten.perferences", FileCreationMode.Private);
 
 			var KunSkattsettings = prefs.GetString ("KunSkatt", "");
+			var RememberOfficesSettings = prefs.GetString ("Remember Markers", "");
+
 
 			if (bool.TrueString == KunSkattsettings) 
 			{ KunSkatt = true; } else 
 			{ KunSkatt = false; }
 
+			if (bool.TrueString == RememberOfficesSettings) 
+			{ RememberOffices = true; } else
+			{ RememberOffices = false; }
+
+
+			if (RememberOffices == true) 
+			{
+				string GetSelectedMarkers = prefs.GetString ("Selected Markers", "");
+				//Du stuff
+				string[] sChar = {";"};
+				string[] splitter = GetSelectedMarkers.Split (sChar, StringSplitOptions.RemoveEmptyEntries);
+
+				foreach (string rMarker in splitter) 
+				{
+					ValgteSwitcher.Add (rMarker);
+				}
+
+
+
+
+			}
 
 		}
 
@@ -167,6 +229,12 @@ namespace App3.Droid
 
 
             //SetMarkers();
+
+			if (ValgteKontorer.Count != 0) 
+			{
+				SetMarkers ();
+			}
+
 		}
 			
 		public async void SetMarkers()

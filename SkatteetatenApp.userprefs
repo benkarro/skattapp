@@ -1,23 +1,30 @@
 ﻿<Properties StartupItem="App3\App3.Android\SkatteetatenApp.Android.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.43007c9098966165" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="App3\App3.Android\KontorActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.2ad1b204" />
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="App3\App3.Android\KontorActivity.cs" Line="109" Column="1" NotebookId="1" />
-      <File FileName="App3\App3.Android\SettingsActivity.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="App3\App3.Android\Resources\values\styles.xml" Line="1" Column="1" NotebookId="1" />
-      <File FileName="App3\App3.Android\MapsActivity.cs" Line="812" Column="4" NotebookId="1" />
-      <File FileName="App3\App3.Android\AltinnActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\KontorActivity.cs" Line="140" Column="49" NotebookId="1" />
+      <File FileName="App3\App3.Android\SettingsActivity.cs" Line="51" Column="71" NotebookId="1" />
+      <File FileName="App3\App3.Android\MapsActivity.cs" Line="233" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\AltinnActivity.cs" Line="40" Column="35" NotebookId="1" />
       <File FileName="App3\App3.Android\Resources\Resource.Designer.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="App3\App3.Android\Resources\AboutResources.txt" Line="1" Column="1" NotebookId="1" />
       <File FileName="App3\App3.Android\Resources\values\strings.xml" Line="1" Column="1" NotebookId="1" />
       <File FileName="App3\App3.Android\SplashActivity.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="App3\App3\SkatteetatenXML.cs" Line="1" Column="1" NotebookId="1" />
       <File FileName="App3\App3\Resources\Kontorer.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\calendarAdapter.cs" Line="181" Column="4" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\menu\actionbar_buttons_Maps.xml" Line="12" Column="8" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\menu\actionbar_buttons_Main.xml" Line="12" Column="38" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\Drawable\square.xml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\Resources\Drawable\switch_thumb.xml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\MessageView.cs" Line="77" Column="4" NotebookId="1" />
+      <File FileName="App3\App3\Parser\JSONparser.cs" Line="49" Column="1" NotebookId="1" />
+      <File FileName="App3\App3.Android\MainActivity_Fragment.cs" Line="293" Column="17" NotebookId="1" />
     </Files>
     <FloatingWindows>
-      <FloatingWindow WindowId="1" X="0" Y="0" Width="1350" Height="705">
+      <FloatingWindow WindowId="1" X="1912" Y="424" Width="1366" Height="705">
         <Files>
-          <File FileName="App3\App3.Android\MainActivity.cs" Line="298" Column="1" />
+          <File FileName="App3\App3.Android\MainActivity.cs" Line="237" Column="62" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -25,10 +32,12 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3\Resources\Kontorer.txt" line="866" column="46" />
-      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\MapsActivity.cs" line="385" column="1" />
-      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\KontorActivity.cs" line="109" column="1" />
+      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\MapsActivity.cs" line="453" column="1" />
+      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3.Android\MessageView.cs" line="54" column="1" />
+      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3\Parser\JSONparser.cs" line="44" column="1" />
+      <Breakpoint file="C:\Users\Brage\Source\Repos\skattapp\App3\App3\Parser\JSONparser.cs" line="49" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.SkatteetatenApp.Android AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.SkatteetatenApp.Android AndroidDesignerPreferredDevice="Nexus 5" />
 </Properties>

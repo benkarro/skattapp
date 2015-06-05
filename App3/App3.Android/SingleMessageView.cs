@@ -99,7 +99,7 @@ namespace App3.Droid
 				foreach (Attachment attachment in attachmentList) {
 
 
-                    attachmentString += "<br/>" + String.Format("<div style=\"padding:5px; border-top:1px solid rgb(128, 128, 128) ; border-bottom:1px solid rgb(128, 128, 128); \"><a href=\" {0} \"><table><tr> <td><img style=\"margin:0; height:48px; width:48px;\" src=\"{1}\" /></td> <td style=\"vertical-align:middle;\"><h4 style=\"margin:0;\">{2}</h4></td> </tr></table></a></div>", attachment.href, "ic_action_attachment.png", attachment.name);
+                    attachmentString += "<br/>" + String.Format("<div style=\"padding:5px; border-top:1px solid rgb(128, 128, 128) ; border-bottom:1px solid rgb(128, 128, 128); \"><a href=\" {0} \"><table><tr> <td><img style=\"margin:0; height:48px; width:48px;\" src=\"{1}\" /></td> <td style=\"vertical-align:middle;\"><h4 style=\"margin:0;\">{2}</h4></td> </tr></table></a></div>", attachment.href, "ic_attachment_black.png", attachment.name);
 
 					//String.Format("<a href=\" {0} \"><img src=\"{1}\" width=\"300\" height=\"200\" border=\"0\"/> </a>",attachment.href,"")+
                     //128, 128, 128

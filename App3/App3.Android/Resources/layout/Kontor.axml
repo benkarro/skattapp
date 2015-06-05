@@ -20,7 +20,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <ImageButton
-                        android:src="@drawable/ic_action_time"
+                        android:src="@drawable/ic_access_time"
                         android:id="@+id/kontor_tid_button"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -71,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <ImageButton
-                        android:src="@drawable/ic_action_call"
+                        android:src="@drawable/ic_call"
                         android:id="@+id/kontor_telefon_button"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -153,7 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
-                        android:src="@drawable/ic_action_directions"
+                        android:src="@drawable/ic_directions"
                         android:id="@+id/kontor_adresse_button"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -214,7 +214,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageButton
-                        android:src="@drawable/ic_action_labels"
+                        android:src="@drawable/ic_local_offer"
                         android:id="@+id/kontor_postboks_button"
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -275,7 +275,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content">
                     <ImageButton
-                        android:src="@drawable/ic_action_email"
+                        android:src="@drawable/ic_email"
                         android:id="@+id/kontor_epost_button"
                         android:layout_width="56dp"
                         android:layout_height="56dp"

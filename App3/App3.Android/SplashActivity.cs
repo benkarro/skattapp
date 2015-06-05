@@ -1,4 +1,5 @@
 ﻿using System.Timers;
+using System;
 
 namespace App3.Droid
 {
@@ -37,6 +38,12 @@ namespace App3.Droid
 			timer.Start();
 		}
 			
+
+		protected override void OnDestroy ()
+		{
+			base.OnDestroy ();
+			GC.Collect(GC.MaxGeneration);
+		}
 
 	}
 

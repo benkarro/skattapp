@@ -6,84 +6,255 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:fitsSystemWindows="@bool/fitsSystemWindows">
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundcolor">
-        <Switch
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/switch1"
-            android:textOn="På"
-            android:textOff="Av"
-            android:text="Les SMS engangskoder"
-            android:checked="true"
-            android:layout_margin="8dp" />
-        <Switch
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/switch2"
-            android:textOn="På"
-            android:textOff="Av"
-            android:text="Vis Utgåtte Datoer"
-            android:checked="true"
-            android:layout_margin="8dp"
-            android:layout_below="@+id/switch1" />
-        <TextView
-            android:id="@+id/Settings_textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Maps innstillinger"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_below="@+id/switch2" />
-        <LinearLayout
-            android:id="@+id/Settings_Maps_Options"
-            android:orientation="vertical"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/Settings_textView2">
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#d3d3d3"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp" />
-            <Switch
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/switch3"
-                android:textOn="På"
-                android:textOff="Av"
-                android:text="Vis Kun Skatt"
-                android:checked="true"
-                android:layout_margin="8dp" />
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:background="#d3d3d3"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp" />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Velg kalender type"
-            android:layout_marginTop="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_below="@+id/Settings_Maps_Options" />
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner1"
-            android:layout_margin="8dp"
-            android:layout_below="@+id/textView1" />
-    </RelativeLayout>
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="4dp">
+                    <ImageView
+                        android:id="@+id/settings_overall_selector"
+                        android:src="@drawable/ic_today"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentLeft="true"
+                        android:elevation="1dp"
+                        android:padding="4dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:scaleType="fitCenter"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp" />
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_centerVertical="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/settings_overall_selector">
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Velg kalender type"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_below="@+id/Settings_Maps_Options" />
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/spinner1"
+                            android:layout_margin="8dp"
+                            android:layout_below="@+id/textView1" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#d3d3d3"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp" />
+                <RelativeLayout
+                    android:layout_margin="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                    <ImageView
+                        android:id="@+id/settings_overall_switch1"
+                        android:src="@drawable/ic_message"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentLeft="true"
+                        android:elevation="1dp"
+                        android:padding="6dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:scaleType="fitCenter"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp" />
+                    <RelativeLayout
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/settings_overall_switch1">
+                        <Switch
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/switch1"
+                            android:textOn="På"
+                            android:textOff="Av"
+                            android:text="Les SMS engangskoder"
+                            android:checked="true"
+                            android:layout_margin="8dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="#d3d3d3"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp" />
+                <RelativeLayout
+                    android:layout_margin="4dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+                    <ImageView
+                        android:id="@+id/settings_overall_switch2"
+                        android:src="@drawable/ic_today"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentLeft="true"
+                        android:elevation="1dp"
+                        android:padding="4dp"
+                        android:background="@drawable/ripple"
+                        android:tint="@android:color/white"
+                        android:scaleType="fitCenter"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="12dp" />
+                    <RelativeLayout
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/settings_overall_switch2">
+                        <Switch
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/switch2"
+                            android:textOn="På"
+                            android:textOff="Av"
+                            android:text="Vis Utgåtte Datoer"
+                            android:checked="true"
+                            android:layout_margin="8dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/Settings_textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Maps innstillinger"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_below="@+id/switch2" />
+                <LinearLayout
+                    android:id="@+id/Settings_Maps_Options"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@+id/Settings_textView2">
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#d3d3d3"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp" />
+                    <RelativeLayout
+                        android:layout_margin="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+                        <ImageView
+                            android:id="@+id/settings_place_switch"
+                            android:src="@drawable/ic_place"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentLeft="true"
+                            android:elevation="1dp"
+                            android:padding="4dp"
+                            android:background="@drawable/ripple"
+                            android:tint="@android:color/white"
+                            android:scaleType="fitCenter"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp" />
+                        <RelativeLayout
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/settings_place_switch">
+                            <Switch
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/switch3"
+                                android:textOn="På"
+                                android:textOff="Av"
+                                android:text="Vis Kun Skatt"
+                                android:checked="true"
+                                android:layout_margin="8dp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#d3d3d3"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp" />
+                    <RelativeLayout
+                        android:layout_margin="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content">
+                        <ImageView
+                            android:id="@+id/settings_place_switch2"
+                            android:src="@drawable/ic_place"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentLeft="true"
+                            android:elevation="1dp"
+                            android:padding="4dp"
+                            android:background="@drawable/ripple"
+                            android:tint="@android:color/white"
+                            android:scaleType="fitCenter"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="12dp" />
+                        <RelativeLayout
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/settings_place_switch2">
+                            <Switch
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/switch4"
+                                android:textOn="På"
+                                android:textOff="Av"
+                                android:text="Husk Valgte Kontorer"
+                                android:checked="true"
+                                android:layout_margin="8dp" />
+                            <TextView
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:id="@+id/switch4_textview1"
+                                android:layout_height="wrap_content"
+                                android:layout_width="wrap_content"
+                                android:layout_margin="8dp"
+                                android:text="På bakgrunn av innlastnings tiden, vil markørene ikke bli lastet automatisk inn på kartet. Valgene vil i stedet være markert i menyen når du åpner den. "
+                                android:layout_below="@+id/switch4" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="#d3d3d3"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 </LinearLayout>

@@ -36,7 +36,6 @@
     <JavaMaximumHeapSize />
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
-    <AndroidUseSharedRuntime>true</AndroidUseSharedRuntime>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -121,7 +120,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\menu\actionbar_buttons.xml" />
-    <AndroidResource Include="Resources\Drawable\ic_action_logg_ut.png" />
     <None Include="Images\attachment.png" />
     <AndroidResource Include="Resources\layout\Splash.xml">
       <SubType>Designer</SubType>
@@ -156,10 +154,21 @@
     <AndroidResource Include="Resources\values-v21\boolean.xml" />
     <AndroidResource Include="Resources\layout\CustomMarkerWindow.axml" />
     <AndroidResource Include="Resources\layout\Kontor.axml" />
-    <AndroidResource Include="Resources\Drawable\ic_action_directions.png" />
+    <AndroidResource Include="Resources\Drawable\ic_message.png" />
+    <AndroidResource Include="Resources\Drawable\ic_directions.png" />
+    <AndroidResource Include="Resources\Drawable\ic_map.png" />
+    <AndroidResource Include="Resources\Drawable\ic_menu.png" />
+    <AndroidResource Include="Resources\Drawable\ic_wifi_black.png" />
+    <AndroidResource Include="Resources\Drawable\ic_exit_to_app.png" />
+    <AndroidResource Include="Resources\Drawable\ic_settings.png" />
+    <AndroidResource Include="Resources\Drawable\ic_local_offer.png" />
+    <AndroidResource Include="Resources\Drawable\ic_access_time.png" />
+    <AndroidResource Include="Resources\Drawable\ic_email.png" />
+    <AndroidResource Include="Resources\Drawable\ic_call.png" />
+    <AndroidResource Include="Resources\Drawable\ic_today.png" />
+    <AndroidResource Include="Resources\Drawable\ic_place.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\ic_action_attachment.png" />
     <Content Include="Properties\AndroidManifest.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml">
       <SubType>Designer</SubType>
@@ -171,11 +180,6 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\values\dimensions.xml" />
-    <AndroidResource Include="Resources\Drawable\ic_action_call.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_email.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_read.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_unread.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_attachment.png" />
     <AndroidResource Include="Resources\Drawable-v21\ripple.xml" />
     <AndroidResource Include="Resources\Drawable\ripple.xml" />
     <AndroidResource Include="Resources\Drawable\Altinn.png" />
@@ -185,8 +189,6 @@
     <AndroidResource Include="Resources\Drawable\Skatteetaten_logo_svart.png" />
     <AndroidResource Include="Resources\Drawable\Icon.png" />
     <AndroidResource Include="Resources\menu\actionbar_buttons_Main.xml" />
-    <AndroidResource Include="Resources\Drawable\ic_action_go_to_today.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_settings.png" />
     <AndroidResource Include="Resources\Drawable\square.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -200,20 +202,8 @@
     <AndroidResource Include="Resources\Drawable-v21\rippleroundedges.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\Drawable\ic_action_place.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_map.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_location_found.png" />
     <AndroidResource Include="Resources\Drawable\switch_thumb.xml" />
-    <AndroidResource Include="Resources\Drawable-v21\switch_thumb.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\Drawable\ic_action_sort_by_size.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_network_wifi.png" />
     <AndroidResource Include="Resources\menu\actionbar_buttons_Maps.xml" />
-    <AndroidResource Include="Resources\Drawable\ic_action_overflow.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_signout.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_time.png" />
-    <AndroidResource Include="Resources\Drawable\ic_action_labels.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="..\App3\App3.projitems" Label="Shared" Condition="Exists('..\App3\App3.projitems')" />
@@ -242,5 +232,6 @@
   <ItemGroup />
   <ItemGroup>
     <AndroidAsset Include="Assets\attachment.png" />
+    <AndroidAsset Include="Assets\ic_attachment_black.png" />
   </ItemGroup>
 </Project>

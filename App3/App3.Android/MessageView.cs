@@ -89,6 +89,11 @@ namespace App3.Droid
 
 
 			//ListAdapter = new MessageAdapter(this, messages);
+			if (messages.Count == 0) { 
+				TextView ContentMessage = FindViewById<TextView> (Resource.Id.Inbox_Textview1);
+				ContentMessage.Visibility = ViewStates.Visible;
+				InboxList.Visibility = ViewStates.Gone;
+			}
 
 		}
 

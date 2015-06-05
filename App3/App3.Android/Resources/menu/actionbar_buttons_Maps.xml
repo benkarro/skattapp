@@ -5,7 +5,7 @@
     <item android:id="@+id/OfficeCheckList"
           
           android:title="Synlige Kontorer"
-          android:icon="@drawable/ic_action_sort_by_size"
+          android:icon="@drawable/ic_menu"
           android:showAsAction="always" />
 
 

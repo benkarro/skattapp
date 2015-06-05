@@ -57,7 +57,7 @@
                 android:orientation="vertical"
                 android:visibility="gone">
                 <View
-                    android:layout_width="fill_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="1dp"
                     android:background="#d3d3d3"
                     android:layout_marginTop="4dp"
@@ -105,7 +105,7 @@
                     android:text="Skatt Sør"
                     android:layout_margin="4dp" />
                 <View
-                    android:layout_width="fill_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="1dp"
                     android:background="#d3d3d3"
                     android:layout_marginTop="4dp"

@@ -20,7 +20,9 @@ namespace App3.Droid
         Switch SMSswitch;
 		Switch Datoswitch;
 		Switch Markerswitch;
+		Switch RememberOffices;
         Spinner RSSselector;
+
 
         List<string> _thisItems = new List<string>();
         protected override void OnCreate(Bundle bundle)
@@ -33,6 +35,8 @@ namespace App3.Droid
             SMSswitch = FindViewById<Switch>(Resource.Id.switch1);
 			Datoswitch = FindViewById<Switch> (Resource.Id.switch2);
 			Markerswitch = FindViewById<Switch> (Resource.Id.switch3);
+			RememberOffices = FindViewById<Switch> (Resource.Id.switch4);
+		
             RSSselector = FindViewById<Spinner>(Resource.Id.spinner1);
 
 
@@ -43,6 +47,8 @@ namespace App3.Droid
 
                 SMSswitch.SetThumbResource(Resource.Drawable.switch_thumb);
 				Datoswitch.SetThumbResource (Resource.Drawable.switch_thumb);
+				Markerswitch.SetThumbResource (Resource.Drawable.switch_thumb);
+				RememberOffices.SetThumbResource (Resource.Drawable.switch_thumb);
             }
 
 
@@ -107,6 +113,7 @@ namespace App3.Droid
 			prefEdityor.PutString ("KunSkatt", Markerswitch.Checked.ToString ());
             prefEdityor.PutString("Selected Calendar int", Calendar.SelectedItemPosition.ToString());
             prefEdityor.PutString("Selected Calendar string", Calendar.SelectedItem.ToString());
+			prefEdityor.PutString("Remember Markers", RememberOffices.Checked.ToString());
             prefEdityor.Commit();
 
         }
@@ -117,6 +124,7 @@ namespace App3.Droid
             var SMSsettings = prefs.GetString("ReadSMS", "");
 			var Datosettings = prefs.GetString ("DateEx", "");
 			var KunSkattsettings = prefs.GetString ("KunSkatt", "");
+			var RememberedOfficesSettings = prefs.GetString("Remember Markers", "");
             string CalendarSettings = prefs.GetString("Selected Calendar int", "0");
 
             if (bool.TrueString == SMSsettings) 
@@ -130,6 +138,10 @@ namespace App3.Droid
 			if (bool.TrueString == KunSkattsettings) 
 			{ Markerswitch.Checked = true; } else 
 			{ Markerswitch.Checked = false; }
+
+			if (bool.TrueString == RememberedOfficesSettings) 
+			{ RememberOffices.Checked = true; } else
+			{ RememberOffices.Checked = false; }
 
 
             RSSselector.SetSelection(int.Parse(CalendarSettings));
