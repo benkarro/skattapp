@@ -861,13 +861,37 @@ namespace App3.Droid
 							int Tlf = KontorInformasjon[nint].Nummer1;
 							string Adr = KontorInformasjon[nint].Addresse;
 
+                            TextView Åpningsitd_Static = customPopup.FindViewById<TextView>(Resource.Id.CMW_time_textView1);
+                            TextView Telefon_Static = customPopup.FindViewById<TextView>(Resource.Id.CMW_telefon_textView1);
+                            TextView Adresse_Static = customPopup.FindViewById<TextView>(Resource.Id.CMW_adresse_textView1);
+
 							TextView Åpningsitd = customPopup.FindViewById<TextView>(Resource.Id.CMW_time_textView2);
 							TextView Telefon = customPopup.FindViewById<TextView>(Resource.Id.CMW_telefon_textView2);
 							TextView Adresse = customPopup.FindViewById<TextView>(Resource.Id.CMW_adresse_textView2);
 
-							Åpningsitd.Text = Åpent;
+
+							/*Åpningsitd.Text = Åpent;
 							Telefon.Text = Tlf.ToString();
-							Adresse.Text = Adr;
+							Adresse.Text = Adr;*/
+
+                            if (Åpent != "")
+                            {
+                                Åpningsitd.Text = Åpent;
+                            }
+                            else { Åpningsitd_Static.Visibility = ViewStates.Gone; Åpningsitd.Visibility = ViewStates.Gone; }
+
+                            if (Tlf.ToString() != "")
+                            {
+                                Telefon.Text = Tlf.ToString();
+                            }
+                            else { Telefon_Static.Visibility = ViewStates.Gone; Telefon.Visibility = ViewStates.Gone; }
+
+                            if (Adr != "")
+                            {
+                                Adresse.Text = Adr;
+                            }
+                            else { Adresse_Static.Visibility = ViewStates.Gone; Adresse.Visibility = ViewStates.Gone; }
+
 
 
 						}

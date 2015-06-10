@@ -214,7 +214,7 @@ namespace App3.Droid
 			TextView Epost = FindViewById<TextView> (Resource.Id.kontor_epost_textview2);
 
 
-			if (_Åpningstid != "" || _Åpningstid != null) 
+			if (_Åpningstid != "" ) 
 			{
 				Åpningstid.Text = _Åpningstid;
 			}
@@ -222,7 +222,7 @@ namespace App3.Droid
 
 
 
-			if (_Telefon != "" || _Telefon != null) 
+			if (_Telefon != "" ) 
 			{
 				Telefon.Text = _Telefon;
 			}
@@ -238,14 +238,14 @@ namespace App3.Droid
 
 
 
-			if (_Adresse != "" || _Adresse != null) 
+			if (_Adresse != "" ) 
 			{
 				Adresse.Text = _Adresse;
 			}
 			else { AdresseLayout.Visibility = ViewStates.Gone; }
 
 
-			if (_Postkode2 != "" || _Postkode2 != null) 
+			if (_Postkode2 != "") 
 			{
 				Adresse_Kode.Text = _Postkode2;
 			}
@@ -253,13 +253,13 @@ namespace App3.Droid
 
 
 
-			if (_Postboks != "" || _Postboks != null) 
+			if (_Postboks != "" ) 
 			{
 				Postboks.Text = _Postboks;
 			}
 			else { PostboksLayout.Visibility = ViewStates.Gone; }
 
-			if (_Postkode1 != "" || _Postkode1 != null) 
+			if (_Postkode1 != "") 
 			{
 				Postboks_Kode.Text = _Postkode1;
 			}
@@ -267,7 +267,7 @@ namespace App3.Droid
 
 
 
-			if (_Epost != "" || _Epost != null) 
+			if (_Epost != "") 
 			{
 				Epost.Text = _Epost;
 			}

@@ -18,7 +18,8 @@
                 android:layout_width="match_parent">
                 <RelativeLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
+                    android:layout_width="wrap_content"
+                    android:id="@+id/kontor_tid_holder">
                     <ImageButton
                         android:src="@drawable/ic_access_time"
                         android:id="@+id/kontor_tid_button"
@@ -36,7 +37,6 @@
                         android:layout_centerVertical="true" />
                     <RelativeLayout
                         android:layout_toRightOf="@+id/kontor_tid_button"
-                        android:id="@+id/kontor_tid_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:layout_margin="8dp">
@@ -69,7 +69,8 @@
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
+                    android:layout_width="wrap_content"
+                    android:id="@+id/kontor_telefon_holder">
                     <ImageButton
                         android:src="@drawable/ic_call"
                         android:id="@+id/kontor_telefon_button"
@@ -86,7 +87,6 @@
                         android:layout_gravity="right"
                         android:layout_centerVertical="true" />
                     <RelativeLayout
-                        android:id="@+id/kontor_telefon_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:layout_margin="8dp"
@@ -151,7 +151,8 @@
                 </RelativeLayout>-->
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kontor_adresse_holder">
                     <ImageButton
                         android:src="@drawable/ic_directions"
                         android:id="@+id/kontor_adresse_button"
@@ -169,7 +170,6 @@
                         android:layout_centerVertical="true" />
                     <RelativeLayout
                         android:layout_toRightOf="@+id/kontor_adresse_button"
-                        android:id="@+id/kontor_adresse_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:layout_margin="8dp">
@@ -212,7 +212,8 @@
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/kontor_postboks_holder">
                     <ImageButton
                         android:src="@drawable/ic_local_offer"
                         android:id="@+id/kontor_postboks_button"
@@ -230,7 +231,6 @@
                         android:layout_centerVertical="true" />
                     <RelativeLayout
                         android:layout_toRightOf="@+id/kontor_postboks_button"
-                        android:id="@+id/kontor_postboks_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:layout_margin="8dp">
@@ -273,7 +273,8 @@
                 </RelativeLayout>
                 <RelativeLayout
                     android:layout_height="wrap_content"
-                    android:layout_width="wrap_content">
+                    android:layout_width="wrap_content"
+                    android:id="@+id/kontor_epost_holder">
                     <ImageButton
                         android:src="@drawable/ic_email"
                         android:id="@+id/kontor_epost_button"
@@ -291,7 +292,6 @@
                         android:layout_centerVertical="true" />
                     <RelativeLayout
                         android:layout_toRightOf="@+id/kontor_epost_button"
-                        android:id="@+id/kontor_epost_holder"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:layout_margin="8dp">

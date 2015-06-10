@@ -1858,11 +1858,11 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b0066
 			public const int inbox_item_text2 = 2131427430;
 			
-			// aapt resource value: 0x7f0b0071
-			public const int kontor_adresse_button = 2131427441;
-			
 			// aapt resource value: 0x7f0b0072
-			public const int kontor_adresse_holder = 2131427442;
+			public const int kontor_adresse_button = 2131427442;
+			
+			// aapt resource value: 0x7f0b0071
+			public const int kontor_adresse_holder = 2131427441;
 			
 			// aapt resource value: 0x7f0b0073
 			public const int kontor_adresse_textview1 = 2131427443;
@@ -1888,11 +1888,11 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b0080
 			public const int kontor_border_6 = 2131427456;
 			
-			// aapt resource value: 0x7f0b007d
-			public const int kontor_epost_button = 2131427453;
-			
 			// aapt resource value: 0x7f0b007e
-			public const int kontor_epost_holder = 2131427454;
+			public const int kontor_epost_button = 2131427454;
+			
+			// aapt resource value: 0x7f0b007d
+			public const int kontor_epost_holder = 2131427453;
 			
 			// aapt resource value: 0x7f0b007f
 			public const int kontor_epost_textview1 = 2131427455;
@@ -1900,11 +1900,11 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b0081
 			public const int kontor_epost_textview2 = 2131427457;
 			
-			// aapt resource value: 0x7f0b0077
-			public const int kontor_postboks_button = 2131427447;
-			
 			// aapt resource value: 0x7f0b0078
-			public const int kontor_postboks_holder = 2131427448;
+			public const int kontor_postboks_button = 2131427448;
+			
+			// aapt resource value: 0x7f0b0077
+			public const int kontor_postboks_holder = 2131427447;
 			
 			// aapt resource value: 0x7f0b0079
 			public const int kontor_postboks_textview1 = 2131427449;
@@ -1915,11 +1915,11 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b007c
 			public const int kontor_postboks_textview3 = 2131427452;
 			
-			// aapt resource value: 0x7f0b006c
-			public const int kontor_telefon_button = 2131427436;
-			
 			// aapt resource value: 0x7f0b006d
-			public const int kontor_telefon_holder = 2131427437;
+			public const int kontor_telefon_button = 2131427437;
+			
+			// aapt resource value: 0x7f0b006c
+			public const int kontor_telefon_holder = 2131427436;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int kontor_telefon_textview1 = 2131427438;
@@ -1927,11 +1927,11 @@ namespace App3.Droid
 			// aapt resource value: 0x7f0b0070
 			public const int kontor_telefon_textview2 = 2131427440;
 			
-			// aapt resource value: 0x7f0b0067
-			public const int kontor_tid_button = 2131427431;
-			
 			// aapt resource value: 0x7f0b0068
-			public const int kontor_tid_holder = 2131427432;
+			public const int kontor_tid_button = 2131427432;
+			
+			// aapt resource value: 0x7f0b0067
+			public const int kontor_tid_holder = 2131427431;
 			
 			// aapt resource value: 0x7f0b0069
 			public const int kontor_tid_textview1 = 2131427433;

@@ -135,7 +135,7 @@
                             android:id="@+id/switch2"
                             android:textOn="På"
                             android:textOff="Av"
-                            android:text="Vis Utgåtte Datoer"
+                            android:text="Vis utgåtte datoer"
                             android:checked="true"
                             android:layout_margin="8dp" />
                     </RelativeLayout>
@@ -191,7 +191,7 @@
                                 android:id="@+id/switch3"
                                 android:textOn="På"
                                 android:textOff="Av"
-                                android:text="Vis Kun Skatt"
+                                android:text="Vis kun skatt"
                                 android:checked="true"
                                 android:layout_margin="8dp" />
                         </RelativeLayout>
@@ -232,7 +232,7 @@
                                 android:id="@+id/switch4"
                                 android:textOn="På"
                                 android:textOff="Av"
-                                android:text="Husk Valgte Kontorer"
+                                android:text="Husk valgte kontorer"
                                 android:checked="true"
                                 android:layout_margin="8dp" />
                             <TextView
